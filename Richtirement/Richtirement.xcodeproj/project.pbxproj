@@ -13,6 +13,9 @@
 		89668FA5222D807C004D2394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA3222D807C004D2394 /* Main.storyboard */; };
 		89668FA7222D807E004D2394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA6222D807E004D2394 /* Assets.xcassets */; };
 		89668FAA222D807E004D2394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA8222D807E004D2394 /* LaunchScreen.storyboard */; };
+		89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07E62236A992007B4A6F /* NotoSansCJKtc-Bold.otf */; };
+		89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07E82236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf */; };
+		89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		89668FA6222D807E004D2394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89668FA9222D807E004D2394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89668FAB222D807E004D2394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89BA07E62236A992007B4A6F /* NotoSansCJKtc-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Bold.otf"; sourceTree = "<group>"; };
+		89BA07E82236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Regular.otf"; sourceTree = "<group>"; };
+		89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Medium.otf"; sourceTree = "<group>"; };
 		C17385EDC1A885C0C9B8B8FA /* Pods-Richtirement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Richtirement.release.xcconfig"; path = "Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement.release.xcconfig"; sourceTree = "<group>"; };
 		C5A375F46DE23033574AD001 /* Pods-Richtirement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Richtirement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement.debug.xcconfig"; sourceTree = "<group>"; };
 		EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Richtirement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,11 +70,22 @@
 				89668F9F222D807C004D2394 /* AppDelegate.swift */,
 				89668FA1222D807C004D2394 /* ViewController.swift */,
 				89668FA3222D807C004D2394 /* Main.storyboard */,
-				89668FA6222D807E004D2394 /* Assets.xcassets */,
 				89668FA8222D807E004D2394 /* LaunchScreen.storyboard */,
+				89668FA6222D807E004D2394 /* Assets.xcassets */,
+				89BA07E52236A690007B4A6F /* Font */,
 				89668FAB222D807E004D2394 /* Info.plist */,
 			);
 			path = Richtirement;
+			sourceTree = "<group>";
+		};
+		89BA07E52236A690007B4A6F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				89BA07E62236A992007B4A6F /* NotoSansCJKtc-Bold.otf */,
+				89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */,
+				89BA07E82236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		91A0FAFD37FE937153214901 /* Frameworks */ = {
@@ -152,6 +169,9 @@
 				89668FAA222D807E004D2394 /* LaunchScreen.storyboard in Resources */,
 				89668FA7222D807E004D2394 /* Assets.xcassets in Resources */,
 				89668FA5222D807C004D2394 /* Main.storyboard in Resources */,
+				89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */,
+				89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */,
+				89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
