@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MainGameViewController: UIViewController {
-
+class MainGameView1Controller: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func TapToNext(_ sender: Any) {
+        performSegue(withIdentifier: "aaa", sender: nil)
     }
 }
