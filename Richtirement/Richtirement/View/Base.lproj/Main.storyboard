@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="-6" y="-134"/>
         </scene>
-        <!--Setting-->
+        <!--RecordSelect-->
         <scene sceneID="0eZ-98-Qkr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="VS8-3n-5De" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RecordSelect" id="VS8-3n-5De" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvy-od-SaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="875" y="-336"/>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F865A49AA83914B0487F58B /* Pods_Richtirement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */; };
+		89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89411656223D01C1007D8E55 /* RecordSelect.storyboard */; };
+		89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89411658223D0758007D8E55 /* RecordSelectViewController.swift */; };
 		89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89668F9F222D807C004D2394 /* AppDelegate.swift */; };
 		89668FA2222D807C004D2394 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89668FA1222D807C004D2394 /* MainViewController.swift */; };
 		89668FA5222D807C004D2394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA3222D807C004D2394 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89411656223D01C1007D8E55 /* RecordSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordSelect.storyboard; sourceTree = "<group>"; };
+		89411658223D0758007D8E55 /* RecordSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectViewController.swift; sourceTree = "<group>"; };
 		89668F9C222D807C004D2394 /* Richtirement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Richtirement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89668F9F222D807C004D2394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89668FA1222D807C004D2394 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				89BA081F22378F97007B4A6F /* MyUIKit */,
 				89668FA3222D807C004D2394 /* Main.storyboard */,
 				89BA081322378839007B4A6F /* Setting.storyboard */,
+				89411656223D01C1007D8E55 /* RecordSelect.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			children = (
 				89668FA1222D807C004D2394 /* MainViewController.swift */,
 				89BA0815223789BD007B4A6F /* SettingViewController.swift */,
+				89411658223D0758007D8E55 /* RecordSelectViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				89668FA5222D807C004D2394 /* Main.storyboard in Resources */,
 				89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */,
 				89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */,
+				89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */,
 				89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */,
 				89BA081422378839007B4A6F /* Setting.storyboard in Resources */,
 			);
@@ -294,6 +301,7 @@
 				89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */,
 				89668FA2222D807C004D2394 /* MainViewController.swift in Sources */,
 				89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */,
+				89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
