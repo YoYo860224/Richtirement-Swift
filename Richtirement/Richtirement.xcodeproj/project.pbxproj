@@ -10,6 +10,8 @@
 		4F865A49AA83914B0487F58B /* Pods_Richtirement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */; };
 		89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89411656223D01C1007D8E55 /* RecordSelect.storyboard */; };
 		89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89411658223D0758007D8E55 /* RecordSelectViewController.swift */; };
+		8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8941165A223D3F93007D8E55 /* MainGame.storyboard */; };
+		8941165D223D3FB3007D8E55 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941165C223D3FB3007D8E55 /* MainGameViewController.swift */; };
 		89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89668F9F222D807C004D2394 /* AppDelegate.swift */; };
 		89668FA2222D807C004D2394 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89668FA1222D807C004D2394 /* MainViewController.swift */; };
 		89668FA5222D807C004D2394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA3222D807C004D2394 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		89411656223D01C1007D8E55 /* RecordSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordSelect.storyboard; sourceTree = "<group>"; };
 		89411658223D0758007D8E55 /* RecordSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectViewController.swift; sourceTree = "<group>"; };
+		8941165A223D3F93007D8E55 /* MainGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainGame.storyboard; sourceTree = "<group>"; };
+		8941165C223D3FB3007D8E55 /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		89668F9C222D807C004D2394 /* Richtirement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Richtirement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89668F9F222D807C004D2394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89668FA1222D807C004D2394 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +85,6 @@
 				89BA07EC2236B8CE007B4A6F /* Model */,
 				89BA07ED2236B8DF007B4A6F /* View */,
 				89BA07EE2236B8E4007B4A6F /* Controller */,
-				89668FA8222D807E004D2394 /* LaunchScreen.storyboard */,
 				89668FA6222D807E004D2394 /* Assets.xcassets */,
 				89BA07E52236A690007B4A6F /* Font */,
 				89668FAB222D807E004D2394 /* Info.plist */,
@@ -110,9 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				89BA081F22378F97007B4A6F /* MyUIKit */,
+				89668FA8222D807E004D2394 /* LaunchScreen.storyboard */,
 				89668FA3222D807C004D2394 /* Main.storyboard */,
 				89BA081322378839007B4A6F /* Setting.storyboard */,
 				89411656223D01C1007D8E55 /* RecordSelect.storyboard */,
+				8941165A223D3F93007D8E55 /* MainGame.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				89668FA1222D807C004D2394 /* MainViewController.swift */,
 				89BA0815223789BD007B4A6F /* SettingViewController.swift */,
 				89411658223D0758007D8E55 /* RecordSelectViewController.swift */,
+				8941165C223D3FB3007D8E55 /* MainGameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				89668FA5222D807C004D2394 /* Main.storyboard in Resources */,
 				89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */,
 				89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */,
+				8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */,
 				89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */,
 				89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */,
 				89BA081422378839007B4A6F /* Setting.storyboard in Resources */,
@@ -300,6 +307,7 @@
 				89BA082122380D1C007B4A6F /* RadioBtn.swift in Sources */,
 				89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */,
 				89668FA2222D807C004D2394 /* MainViewController.swift in Sources */,
+				8941165D223D3FB3007D8E55 /* MainGameViewController.swift in Sources */,
 				89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */,
 				89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */,
 			);

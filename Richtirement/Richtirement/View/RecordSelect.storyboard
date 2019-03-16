@@ -105,11 +105,12 @@
                     <connections>
                         <outlet property="createNewPlayerView" destination="z8i-U9-Meh" id="2Z6-6X-C6e"/>
                         <outlet property="stackView" destination="f3y-CI-DfR" id="Tkf-U0-utp"/>
+                        <segue destination="gfR-JT-BNS" kind="show" id="rkc-Fo-ndv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxu-mT-mRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951.20000000000005" y="-559.07046476761627"/>
+            <point key="canvasLocation" x="-1026" y="-570"/>
         </scene>
         <!--Record Select View Controller-->
         <scene sceneID="Qng-OU-Lyd">
@@ -212,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6w-mC-Nl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="-559.07046476761627"/>
+            <point key="canvasLocation" x="-170" y="-571"/>
         </scene>
     </scenes>
     <resources>
