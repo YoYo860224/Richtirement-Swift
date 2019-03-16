@@ -16,6 +16,8 @@ class SettingViewController: UIViewController {
     @IBOutlet var top4Label: [UILabel]!
     
     @IBOutlet weak var qScrollView: UIScrollView!
+    
+    @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nameTF: UITextField!
     
     @IBOutlet weak var femaleRdBtn: RadioBtn!
@@ -30,6 +32,7 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        registerForKeyboardNotifications()
     }
 
     func setUI() {
@@ -37,25 +40,58 @@ class SettingViewController: UIViewController {
         progressBarOuter.layer.masksToBounds = true
         
         qScrollView.delaysContentTouches = false
+        qScrollView.delegate = self
         
+        // Top progBar animate
+        let progbarWidth = progressBarOuter.frame.width
+        progressBarTrCn.constant = progbarWidth * 0.18
+        
+        // Page1 name text field
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: nameTF.frame.height - 2, width: nameTF.frame.width, height: 2.0)
         bottomLine.backgroundColor = UIColor.white.cgColor
         nameTF.borderStyle = UITextField.BorderStyle.none
         nameTF.layer.addSublayer(bottomLine)
         
+        // Page2 gender select
         maleRdBtn.check()
         maleRdBtn.checkGroup = [femaleRdBtn]
         femaleRdBtn.checkGroup = [maleRdBtn]
         
-        qScrollView.delegate = self
-        
-        let progbarWidth = progressBarOuter.frame.width
-        progressBarTrCn.constant = progbarWidth * 0.18
-        
+        // Page4 show
         confirmBtn.isHidden = true
     }
+    // Page 1 Text
+    var originHeight: CGFloat = 0
+    var keyBoardHeight: CGFloat = 0
     
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(_:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShown(_ notification: NSNotification) {
+        if originHeight == 0 {
+            originHeight = nameView.center.y
+        }
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyBoardHeight = keyboardRectangle.height
+        }
+        nameView.center.y = originHeight - (keyBoardHeight - 150)
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
+        nameView.center.y = originHeight
+    }
+    
+    @IBAction func TapToEndEditing(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    // Page 4 Slider
     @IBAction func SliderDrag(_ sender: Any) {
         // thumb size is 57
         sliderValue.text = String(Int(5000 * slider.value))
@@ -103,5 +139,7 @@ extension SettingViewController: UIScrollViewDelegate {
                 self.confirmBtn.isHidden = false
             }, completion: nil)
         }
+        
+        self.view.endEditing(true)
     }
 }
