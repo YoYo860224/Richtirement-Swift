@@ -1,7 +1,7 @@
 [
     {
         "index": "R0",
-        "imgUrl": "Story/0_2.png",
+        "imgUrl": "0_2",
         "prob": "0.3",
         "resultContent": "恭喜！跟上這波漲潮，存款增加，龍心大悅",
         "year": "",
@@ -16,7 +16,7 @@
     },
     {
         "index": "R1",
-        "imgUrl": "Story/0_1.png",
+        "imgUrl": "0_1",
         "prob": "0.7",
         "resultContent": "啊！真不巧，遭遇股市大跌！財富損失，心情受影響",
         "year": "",
@@ -31,7 +31,7 @@
     },
     {
         "index": "R2",
-        "imgUrl": "Story/0_3.png",
+        "imgUrl": "0_3",
         "prob": "1.0",
         "resultContent": "成功與保險人購買保險",
         "year": "",
@@ -45,7 +45,7 @@
     },
     {
         "index": "R3",
-        "imgUrl": "Story/0_4.png",
+        "imgUrl": "0_4",
         "prob": "1.0",
         "resultContent": "將部分存款放入定存",
         "year": "",
@@ -59,7 +59,7 @@
     },
     {
         "index": "R4",
-        "imgUrl": "Story/1_1.png",
+        "imgUrl": "1_1",
         "prob": "1.0",
         "resultContent": "經常與廠商應酬傷害身心理健康",
         "year": "",
@@ -75,7 +75,7 @@
     },
     {
         "index": "R5",
-        "imgUrl": "Story/1_2.png",
+        "imgUrl": "1_2",
         "prob": "1.0",
         "resultContent": "在每天繁忙的生活中，偶爾偷閒，可能損失社交力，但減少更多身心理的損失",
         "year": "",
@@ -91,7 +91,7 @@
     },
     {
         "index": "R6",
-        "imgUrl": "Story/1_3.png",
+        "imgUrl": "1_3",
         "prob": "1.0",
         "resultContent": "偶爾和家人去郊外走走，增進感情也更健康！",
         "year": "",
@@ -107,7 +107,7 @@
     },
     {
         "index": "R7",
-        "imgUrl": "Story/1_4.png",
+        "imgUrl": "1_4",
         "prob": "1.0",
         "resultContent": "偶爾與家人出去放鬆、看看電影，增進感情，但也要注意健康喔～",
         "year": "",
@@ -123,7 +123,7 @@
     },
     {
         "index": "R8",
-        "imgUrl": "Story/1_5.png",
+        "imgUrl": "1_5",
         "prob": "1.0",
         "resultContent": "迎接退休生活，要好好規劃呢！",
         "year": "",
@@ -138,7 +138,7 @@
     },
     {
         "index": "R9",
-        "imgUrl": "Story/1_6.png",
+        "imgUrl": "1_6",
         "prob": "1.0",
         "resultContent": "進入新公司，準備迎接全新的挑戰吧！",
         "year": "",
@@ -153,7 +153,7 @@
     },
     {
         "index": "R10",
-        "imgUrl": "Story/2_1.png",
+        "imgUrl": "2_1",
         "prob": "1.0",
         "resultContent": "和小孩大吵一架，心理指數大減。",
         "year": "",
@@ -168,7 +168,7 @@
     },
     {
         "index": "R11",
-        "imgUrl": "Story/2_2.png",
+        "imgUrl": "2_2",
         "prob": "1.0",
         "resultContent": "孩子非常感謝你的幫助，感情加深。",
         "year": "",
@@ -184,7 +184,7 @@
     },
     {
         "index": "R12",
-        "imgUrl": "Story/2_1.png",
+        "imgUrl": "2_1",
         "prob": "1.0",
         "resultContent": "和小孩大吵一架，心理指數大減。",
         "year": "",
@@ -199,7 +199,7 @@
     },
     {
         "index": "R13",
-        "imgUrl": "Story/3_1.png",
+        "imgUrl": "3_1",
         "prob": "1.0",
         "resultContent": "偶爾出遊看看世界、認識新朋友，心情也跟著變好了呢！",
         "year": "",
@@ -215,7 +215,7 @@
     },
     {
         "index": "R14",
-        "imgUrl": "Story/3_2.png",
+        "imgUrl": "3_2",
         "prob": "1.0",
         "resultContent": "選擇待在家中，身心健康與社交能力大量下降。",
         "year": "",
@@ -231,7 +231,7 @@
     },
     {
         "index": "R15",
-        "imgUrl": "Story/3_3.png",
+        "imgUrl": "3_3",
         "prob": "1.0",
         "resultContent": "與老朋友聊聊近況與往事，心情大好",
         "year": "",
@@ -246,7 +246,7 @@
     },
     {
         "index": "R16",
-        "imgUrl": "Story/3_4.png",
+        "imgUrl": "3_4",
         "prob": "1.0",
         "resultContent": "一直待在家中，要注意健康...",
         "year": "",
@@ -262,7 +262,7 @@
     },
     {
         "index": "R17",
-        "imgUrl": "Story/4_1.png",
+        "imgUrl": "4_1",
         "prob": "0.5",
         "resultContent": "餐廳生意興隆，存款跟心情都大增！",
         "year": "",
@@ -279,7 +279,7 @@
     },
     {
         "index": "R18",
-        "imgUrl": "Story/4_2.png",
+        "imgUrl": "4_2",
         "prob": "0.5",
         "resultContent": "餐廳營運因缺乏管理不如預期。",
         "year": "",
@@ -296,7 +296,7 @@
     },
     {
         "index": "R19",
-        "imgUrl": "Story/4_2.png",
+        "imgUrl": "4_2",
         "prob": "1.0",
         "resultContent": "\"餐廳營運因缺乏管理不如預期。\"",
         "year": "",
@@ -313,7 +313,7 @@
     },
     {
         "index": "R20",
-        "imgUrl": "Story/4_3.png",
+        "imgUrl": "4_3",
         "prob": "1.0",
         "resultContent": "還是覺得多放點錢在定存比較保險呢，但與朋友的友情指數下降",
         "year": "",
@@ -328,7 +328,7 @@
     },
     {
         "index": "R21",
-        "imgUrl": "Story/5.png",
+        "imgUrl": "5.0",
         "prob": "1.0",
         "resultContent": "生大病住院治療，花費驚人",
         "year": "",
@@ -344,7 +344,7 @@
     },
     {
         "index": "R22",
-        "imgUrl": "Story/5_1.png",
+        "imgUrl": "5_1",
         "prob": "1.0",
         "resultContent": "多多運動，出去走走，恢復元氣也認識新朋友",
         "year": "",
@@ -390,7 +390,7 @@
     },
     {
         "index": "R25",
-        "imgUrl": "Story/6_1.png",
+        "imgUrl": "6_1",
         "prob": "1.0",
         "resultContent": "培養閱讀習慣，陶冶心靈，耶參加讀書會，認識新朋友",
         "year": "",
@@ -406,7 +406,7 @@
     },
     {
         "index": "R26",
-        "imgUrl": "Story/6_2.png",
+        "imgUrl": "6_2",
         "prob": "1.0",
         "resultContent": "含飴弄孫，與孩子有也保有良好關係",
         "year": "",

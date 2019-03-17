@@ -1,7 +1,7 @@
 [
     {
         "index": "E0",
-        "imgUrl": "Story/0.png",
+        "imgUrl": "0.0",
         "prob": "",
         "eventContent": "轉眼間也到了再十年就要退休的年紀呢！",
         "year": "5.0",
@@ -9,7 +9,7 @@
     },
     {
         "index": "E1",
-        "imgUrl": "Story/1.png",
+        "imgUrl": "1.0",
         "prob": "",
         "eventContent": "60歲了，小孩也都長大了，再五年就可以享受退休生活了，再努力一下吧！",
         "year": "4.0",
@@ -17,7 +17,7 @@
     },
     {
         "index": "E2",
-        "imgUrl": "Story/company.png",
+        "imgUrl": "company",
         "prob": "",
         "eventContent": "",
         "year": "1.0",
@@ -25,7 +25,7 @@
     },
     {
         "index": "E3",
-        "imgUrl": "Story/2.png",
+        "imgUrl": "2.0",
         "prob": "",
         "eventContent": "恭喜你退休了！準備好過想過的人生了嗎：）",
         "year": "5.0",
@@ -33,7 +33,7 @@
     },
     {
         "index": "E4",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "退休也五年了，時間真的不等人呢．．．",
         "year": "4.0",
@@ -41,7 +41,7 @@
     },
     {
         "index": "E5",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "",
         "year": "1.0",
@@ -49,7 +49,7 @@
     },
     {
         "index": "E6",
-        "imgUrl": "Story/4.png",
+        "imgUrl": "4.0",
         "prob": "",
         "eventContent": "你現在已經75歲了。 你對現在的生活滿意嗎？",
         "year": "5.0",
@@ -57,7 +57,7 @@
     },
     {
         "index": "E7",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "原本以為可以健健康康過完這一生，竟然在80歲這年...",
         "year": "1.0",
@@ -65,7 +65,7 @@
     },
     {
         "index": "E8",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "",
         "year": "4.0",
@@ -73,7 +73,7 @@
     },
     {
         "index": "E9",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "85歲，是個含飴弄孫的年紀呢！等等，老伴！老伴？老伴...",
         "year": "1.0",
@@ -81,7 +81,7 @@
     },
     {
         "index": "E10",
-        "imgUrl": "Story/livingroom.png",
+        "imgUrl": "livingroom",
         "prob": "",
         "eventContent": "",
         "year": "4.0",
