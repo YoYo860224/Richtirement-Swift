@@ -1,0 +1,200 @@
+[
+    {
+        "index": "C0",
+        "content": "好啊",
+        "connectEvent": [
+            "Q1"
+        ]
+    },
+    {
+        "index": "C1",
+        "content": "不了",
+        "connectEvent": [
+            "R4"
+        ]
+    },
+    {
+        "index": "C2",
+        "content": "買股票",
+        "connectEvent": [
+            "R0",
+            "R1"
+        ]
+    },
+    {
+        "index": "C3",
+        "content": "買儲蓄險",
+        "connectEvent": [
+            "R2"
+        ]
+    },
+    {
+        "index": "C4",
+        "content": "加班加到底",
+        "connectEvent": [
+            "Q3"
+        ]
+    },
+    {
+        "index": "C5",
+        "content": "花時間陪陪家人",
+        "connectEvent": [
+            "Q4"
+        ]
+    },
+    {
+        "index": "C6",
+        "content": "去",
+        "connectEvent": [
+            "R4"
+        ]
+    },
+    {
+        "index": "C7",
+        "content": "不去",
+        "connectEvent": [
+            "R5"
+        ]
+    },
+    {
+        "index": "C8",
+        "content": "踏青",
+        "connectEvent": [
+            "R6"
+        ]
+    },
+    {
+        "index": "C9",
+        "content": "看電影",
+        "connectEvent": [
+            "R7"
+        ]
+    },
+    {
+        "index": "C10",
+        "content": "提前退休",
+        "connectEvent": [
+            "R8"
+        ]
+    },
+    {
+        "index": "C11",
+        "content": "找新工作",
+        "connectEvent": [
+            "R9"
+        ]
+    },
+    {
+        "index": "C12",
+        "content": "借",
+        "connectEvent": [
+            "Q7"
+        ]
+    },
+    {
+        "index": "C13",
+        "content": "不借",
+        "connectEvent": [
+            "R12"
+        ]
+    },
+    {
+        "index": "C14",
+        "content": "要",
+        "connectEvent": [
+            "R10"
+        ]
+    },
+    {
+        "index": "C15",
+        "content": "不要",
+        "connectEvent": [
+            "R11"
+        ]
+    },
+    {
+        "index": "C16",
+        "content": "好，多出去走走",
+        "connectEvent": [
+            "R13"
+        ]
+    },
+    {
+        "index": "C17",
+        "content": "不了，很花錢的",
+        "connectEvent": [
+            "R14"
+        ]
+    },
+    {
+        "index": "C18",
+        "content": "好！",
+        "connectEvent": [
+            "R15"
+        ]
+    },
+    {
+        "index": "C19",
+        "content": "不了。",
+        "connectEvent": [
+            "R16"
+        ]
+    },
+    {
+        "index": "C20",
+        "content": "投資",
+        "connectEvent": [
+            "Q11"
+        ]
+    },
+    {
+        "index": "C21",
+        "content": "不投資",
+        "connectEvent": [
+            "R20"
+        ]
+    },
+    {
+        "index": "C22",
+        "content": "隨時到場監督",
+        "connectEvent": [
+            "R17",
+            "R18"
+        ]
+    },
+    {
+        "index": "C23",
+        "content": "每月查看報表",
+        "connectEvent": [
+            "R19"
+        ]
+    },
+    {
+        "index": "C24",
+        "content": "培養運動習慣",
+        "connectEvent": [
+            "R22"
+        ]
+    },
+    {
+        "index": "C25",
+        "content": "行動不便，待在家",
+        "connectEvent": [
+            "R23"
+        ]
+    },
+    {
+        "index": "C26",
+        "content": "活到老學到老",
+        "connectEvent": [
+            "R25"
+        ]
+    },
+    {
+        "index": "C27",
+        "content": "花點時間陪家人",
+        "connectEvent": [
+            "R26"
+        ]
+    }
+]

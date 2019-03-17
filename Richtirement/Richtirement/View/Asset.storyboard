@@ -385,6 +385,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rMA-hw-zqR"/>
                     </view>
+                    <connections>
+                        <segue destination="iG8-BJ-dvh" kind="show" identifier="aaa" id="sZE-2H-ASR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGp-Kb-lsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

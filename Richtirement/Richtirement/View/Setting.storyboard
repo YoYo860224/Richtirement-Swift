@@ -451,6 +451,9 @@
                                 <state key="normal" title="確認">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmBtn_Click:" destination="FU4-YI-vVX" eventType="touchUpInside" id="oEO-9h-UjM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,6 +495,7 @@
                         <outletCollection property="top4Label" destination="Kxo-MT-WoX" collectionClass="NSMutableArray" id="omm-CV-zju"/>
                         <outletCollection property="top4Label" destination="h12-EH-sN1" collectionClass="NSMutableArray" id="Eeg-VI-Jbp"/>
                         <outletCollection property="top4Label" destination="kaZ-5u-qLL" collectionClass="NSMutableArray" id="IBb-Id-Qcc"/>
+                        <segue destination="82v-cE-gjb" kind="show" identifier="game" id="Xoc-Tx-gCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MV-PI-3ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,6 +506,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-748" y="-34.632683658170919"/>
+        </scene>
+        <!--MainGame-->
+        <scene sceneID="NqN-ux-9VR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainGame" id="82v-cE-gjb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shy-nd-2zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="-35"/>
         </scene>
     </scenes>
     <resources>

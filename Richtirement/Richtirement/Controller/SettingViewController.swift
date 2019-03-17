@@ -9,7 +9,6 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
     @IBOutlet weak var progressBarOuter: UIView!
     @IBOutlet weak var progressBarInner: UIView!
     @IBOutlet weak var progressBarTrCn: NSLayoutConstraint!
@@ -96,6 +95,12 @@ class SettingViewController: UIViewController {
         // thumb size is 57
         sliderValue.text = String(Int(5000 * slider.value))
         sliderValue.center.x = CGFloat(Float(slider.frame.minX + 14.25) + Float(slider.frame.width - 28.5) * slider.value)
+    }
+    
+    
+    @IBAction func confirmBtn_Click(_ sender: Any) {
+        // after check
+        performSegue(withIdentifier: "game", sender: nil)
     }
 }
 

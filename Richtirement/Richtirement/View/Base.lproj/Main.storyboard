@@ -78,20 +78,29 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="VS8-3n-5De" kind="show" identifier="aaa" id="Umy-mh-WvQ"/>
+                        <segue destination="VS8-3n-5De" kind="show" identifier="first" id="Umy-mh-WvQ"/>
+                        <segue destination="6a4-MN-5R5" kind="show" identifier="normal" id="ptJ-mT-DPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="-134"/>
         </scene>
-        <!--MainGame-->
+        <!--Setting-->
         <scene sceneID="0eZ-98-Qkr">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainGame" id="VS8-3n-5De" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Setting" id="VS8-3n-5De" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvy-od-SaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="-135"/>
+            <point key="canvasLocation" x="777" y="-185"/>
+        </scene>
+        <!--RecordSelect-->
+        <scene sceneID="nhu-3I-06T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecordSelect" id="6a4-MN-5R5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzw-PF-a6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-64"/>
         </scene>
     </scenes>
     <resources>

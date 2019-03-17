@@ -1,0 +1,156 @@
+[
+    {
+        "index": "Q0",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "工作好一段時間了，有了一些存款，做點理財嗎？",
+        "year": "",
+        "connectEvent": [
+            "C0",
+            "C1"
+        ]
+    },
+    {
+        "index": "Q1",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "想要做什麼理財呢？",
+        "year": "",
+        "connectEvent": [
+            "C2",
+            "C3"
+        ]
+    },
+    {
+        "index": "Q2",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "老闆請你平日加班假日上班，你會如何選擇？",
+        "year": "",
+        "connectEvent": [
+            "C4",
+            "C5"
+        ]
+    },
+    {
+        "index": "Q3",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "這個時候，老闆叫你代替他去應酬，你會如何選擇？",
+        "year": "",
+        "connectEvent": [
+            "C6",
+            "C7"
+        ]
+    },
+    {
+        "index": "Q4",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "想與家人一起做些什麼呢？",
+        "year": "",
+        "connectEvent": [
+            "C8",
+            "C9"
+        ]
+    },
+    {
+        "index": "Q5",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "公司突然倒閉，未來妳決定該何去何從呢？",
+        "year": "",
+        "connectEvent": [
+            "C10",
+            "C11"
+        ]
+    },
+    {
+        "index": "Q6",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "這時小孩突然告知要創業，想跟你借500萬，借給他嗎？",
+        "year": "",
+        "connectEvent": [
+            "C12",
+            "C13"
+        ]
+    },
+    {
+        "index": "Q7",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "孩生意失敗，堅持要他還錢嗎？",
+        "year": "",
+        "connectEvent": [
+            "C14",
+            "C15"
+        ]
+    },
+    {
+        "index": "Q8",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "退休後有許多空閒的時間，要不要培養個興趣呢？",
+        "year": "",
+        "connectEvent": [
+            "C16",
+            "C17"
+        ]
+    },
+    {
+        "index": "Q9",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "還是跟一些老朋友聚聚聊聊嗎？\"",
+        "year": "",
+        "connectEvent": [
+            "C18",
+            "C19"
+        ]
+    },
+    {
+        "index": "Q10",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "朋友找你投資150萬創業，你會？",
+        "year": "",
+        "connectEvent": [
+            "C20",
+            "C21"
+        ]
+    },
+    {
+        "index": "Q11",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "開了間餐廳也裝潢好了；面對生意的經營，你會怎麼做呢？",
+        "year": "",
+        "connectEvent": [
+            "C22",
+            "C23"
+        ]
+    },
+    {
+        "index": "Q12",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "好不容易大病一場痊癒後，對於未來有什麼規劃？",
+        "year": "",
+        "connectEvent": [
+            "C24",
+            "C25"
+        ]
+    },
+    {
+        "index": "Q13",
+        "imgUrl": "",
+        "prob": "",
+        "questionContent": "老伴走了，但一直難過下去也不是辦法呢...走出傷痛吧，做點什麼呢？",
+        "year": "",
+        "connectEvent": [
+            "C26",
+            "C27"
+        ]
+    }
+]

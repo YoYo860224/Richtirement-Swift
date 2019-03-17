@@ -12,12 +12,17 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func startBtn_Click(_ sender: Any) {
-//        present(SecondViewController(), animated: true, completion: nil)
-        performSegue(withIdentifier: "aaa", sender: nil)
+        var isFirst = true
+        
+        if isFirst {
+            performSegue(withIdentifier: "first", sender: nil)
+        }
+        else {
+            performSegue(withIdentifier: "normal", sender: nil)
+        }
     }
 }
 

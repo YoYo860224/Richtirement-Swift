@@ -11,6 +11,12 @@
 		8926FD46223E00A20065CDC3 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD45223E00A20065CDC3 /* Income.storyboard */; };
 		8926FD48223E03790065CDC3 /* Asset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD47223E03790065CDC3 /* Asset.storyboard */; };
 		8926FD4A223E0E310065CDC3 /* Analysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD49223E0E310065CDC3 /* Analysis.storyboard */; };
+		8926FD4C223E198D0065CDC3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926FD4B223E198D0065CDC3 /* Setting.swift */; };
+		89404FAB223E21AC005D44AC /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89404FAA223E21AC005D44AC /* Story.swift */; };
+		89404FAE223E3302005D44AC /* event.json in Resources */ = {isa = PBXBuildFile; fileRef = 89404FAD223E3302005D44AC /* event.json */; };
+		89404FB0223E3316005D44AC /* choice.json in Resources */ = {isa = PBXBuildFile; fileRef = 89404FAF223E3316005D44AC /* choice.json */; };
+		89404FB2223E3323005D44AC /* result.json in Resources */ = {isa = PBXBuildFile; fileRef = 89404FB1223E3323005D44AC /* result.json */; };
+		89404FB4223E3354005D44AC /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 89404FB3223E3354005D44AC /* question.json */; };
 		89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89411656223D01C1007D8E55 /* RecordSelect.storyboard */; };
 		89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89411658223D0758007D8E55 /* RecordSelectViewController.swift */; };
 		8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8941165A223D3F93007D8E55 /* MainGame.storyboard */; };
@@ -34,6 +40,12 @@
 		8926FD45223E00A20065CDC3 /* Income.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
 		8926FD47223E03790065CDC3 /* Asset.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Asset.storyboard; sourceTree = "<group>"; };
 		8926FD49223E0E310065CDC3 /* Analysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analysis.storyboard; sourceTree = "<group>"; };
+		8926FD4B223E198D0065CDC3 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		89404FAA223E21AC005D44AC /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		89404FAD223E3302005D44AC /* event.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = event.json; sourceTree = "<group>"; };
+		89404FAF223E3316005D44AC /* choice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = choice.json; sourceTree = "<group>"; };
+		89404FB1223E3323005D44AC /* result.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = result.json; sourceTree = "<group>"; };
+		89404FB3223E3354005D44AC /* question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
 		89411656223D01C1007D8E55 /* RecordSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordSelect.storyboard; sourceTree = "<group>"; };
 		89411658223D0758007D8E55 /* RecordSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectViewController.swift; sourceTree = "<group>"; };
 		8941165A223D3F93007D8E55 /* MainGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainGame.storyboard; sourceTree = "<group>"; };
@@ -70,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89404FAC223E32DE005D44AC /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				89404FAD223E3302005D44AC /* event.json */,
+				89404FB3223E3354005D44AC /* question.json */,
+				89404FAF223E3316005D44AC /* choice.json */,
+				89404FB1223E3323005D44AC /* result.json */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		89668F93222D807C004D2394 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +138,9 @@
 		89BA07EC2236B8CE007B4A6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89404FAC223E32DE005D44AC /* Story */,
+				89404FAA223E21AC005D44AC /* Story.swift */,
+				8926FD4B223E198D0065CDC3 /* Setting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +262,7 @@
 			files = (
 				89668FAA222D807E004D2394 /* LaunchScreen.storyboard in Resources */,
 				89668FA7222D807E004D2394 /* Assets.xcassets in Resources */,
+				89404FB0223E3316005D44AC /* choice.json in Resources */,
 				8926FD4A223E0E310065CDC3 /* Analysis.storyboard in Resources */,
 				89668FA5222D807C004D2394 /* Main.storyboard in Resources */,
 				8926FD46223E00A20065CDC3 /* Income.storyboard in Resources */,
@@ -243,7 +270,10 @@
 				89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */,
 				8926FD48223E03790065CDC3 /* Asset.storyboard in Resources */,
 				8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */,
+				89404FB2223E3323005D44AC /* result.json in Resources */,
 				89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */,
+				89404FAE223E3302005D44AC /* event.json in Resources */,
+				89404FB4223E3354005D44AC /* question.json in Resources */,
 				89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */,
 				89BA081422378839007B4A6F /* Setting.storyboard in Resources */,
 			);
@@ -327,9 +357,11 @@
 				89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */,
 				89668FA2222D807C004D2394 /* MainViewController.swift in Sources */,
 				8941165D223D3FB3007D8E55 /* MainGameView1Controller.swift in Sources */,
+				8926FD4C223E198D0065CDC3 /* Setting.swift in Sources */,
 				89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */,
 				8941165F223D5BDC007D8E55 /* PersonalChapterViewController.swift in Sources */,
 				89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */,
+				89404FAB223E21AC005D44AC /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,423 @@
+[
+    {
+        "index": "R0",
+        "imgUrl": "Story/0_2.png",
+        "prob": "0.3",
+        "resultContent": "恭喜！跟上這波漲潮，存款增加，龍心大悅",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 15 18",
+            "$ + 30 80"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ]
+    },
+    {
+        "index": "R1",
+        "imgUrl": "Story/0_1.png",
+        "prob": "0.7",
+        "resultContent": "啊！真不巧，遭遇股市大跌！財富損失，心情受影響",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 18",
+            "$ - 30 80"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ]
+    },
+    {
+        "index": "R2",
+        "imgUrl": "Story/0_3.png",
+        "prob": "1.0",
+        "resultContent": "成功與保險人購買保險",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 11 15"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ]
+    },
+    {
+        "index": "R3",
+        "imgUrl": "Story/0_4.png",
+        "prob": "1.0",
+        "resultContent": "將部分存款放入定存",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 12 15"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ]
+    },
+    {
+        "index": "R4",
+        "imgUrl": "Story/1_1.png",
+        "prob": "1.0",
+        "resultContent": "經常與廠商應酬傷害身心理健康",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 20",
+            "H - 10 15",
+            "S + 8 12"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ]
+    },
+    {
+        "index": "R5",
+        "imgUrl": "Story/1_2.png",
+        "prob": "1.0",
+        "resultContent": "在每天繁忙的生活中，偶爾偷閒，可能損失社交力，但減少更多身心理的損失",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 8 13",
+            "H - 8 13",
+            "S - 15 18"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ]
+    },
+    {
+        "index": "R6",
+        "imgUrl": "Story/1_3.png",
+        "prob": "1.0",
+        "resultContent": "偶爾和家人去郊外走走，增進感情也更健康！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 12 15",
+            "H + 12 15",
+            "S + 12 15"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ]
+    },
+    {
+        "index": "R7",
+        "imgUrl": "Story/1_4.png",
+        "prob": "1.0",
+        "resultContent": "偶爾與家人出去放鬆、看看電影，增進感情，但也要注意健康喔～",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 12 15",
+            "H - 10 15",
+            "S + 12 15"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ]
+    },
+    {
+        "index": "R8",
+        "imgUrl": "Story/1_5.png",
+        "prob": "1.0",
+        "resultContent": "迎接退休生活，要好好規劃呢！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 13 18",
+            "S - 12 15"
+        ],
+        "willHappenedEvent": [
+            "E3"
+        ]
+    },
+    {
+        "index": "R9",
+        "imgUrl": "Story/1_6.png",
+        "prob": "1.0",
+        "resultContent": "進入新公司，準備迎接全新的挑戰吧！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 13 18",
+            "H - 10 13"
+        ],
+        "willHappenedEvent": [
+            "E3"
+        ]
+    },
+    {
+        "index": "R10",
+        "imgUrl": "Story/2_1.png",
+        "prob": "1.0",
+        "resultContent": "和小孩大吵一架，心理指數大減。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 20",
+            "$ - 100"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ]
+    },
+    {
+        "index": "R11",
+        "imgUrl": "Story/2_2.png",
+        "prob": "1.0",
+        "resultContent": "孩子非常感謝你的幫助，感情加深。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 10 13",
+            "S + 10",
+            "$ - 200"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ]
+    },
+    {
+        "index": "R12",
+        "imgUrl": "Story/2_1.png",
+        "prob": "1.0",
+        "resultContent": "和小孩大吵一架，心理指數大減。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 12 15",
+            "S - 5 8"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ]
+    },
+    {
+        "index": "R13",
+        "imgUrl": "Story/3_1.png",
+        "prob": "1.0",
+        "resultContent": "偶爾出遊看看世界、認識新朋友，心情也跟著變好了呢！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 13 15",
+            "S + 10 12"
+        ],
+        "willHappenedEvent": [
+            "E5"
+        ]
+    },
+    {
+        "index": "R14",
+        "imgUrl": "Story/3_2.png",
+        "prob": "1.0",
+        "resultContent": "選擇待在家中，身心健康與社交能力大量下降。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 18",
+            "S - 15",
+            "H - 15 18"
+        ],
+        "willHappenedEvent": [
+            "E5"
+        ]
+    },
+    {
+        "index": "R15",
+        "imgUrl": "Story/3_3.png",
+        "prob": "1.0",
+        "resultContent": "與老朋友聊聊近況與往事，心情大好",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 10 15",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            "E6"
+        ]
+    },
+    {
+        "index": "R16",
+        "imgUrl": "Story/3_4.png",
+        "prob": "1.0",
+        "resultContent": "一直待在家中，要注意健康...",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 10 15",
+            "S - 15 18",
+            "H - 10 15"
+        ],
+        "willHappenedEvent": [
+            "E6"
+        ]
+    },
+    {
+        "index": "R17",
+        "imgUrl": "Story/4_1.png",
+        "prob": "0.5",
+        "resultContent": "餐廳生意興隆，存款跟心情都大增！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ + 50",
+            "P + 13 15",
+            "H - 15 18",
+            "S + 15 18"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ]
+    },
+    {
+        "index": "R18",
+        "imgUrl": "Story/4_2.png",
+        "prob": "0.5",
+        "resultContent": "餐廳營運因缺乏管理不如預期。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 150",
+            "P - 15 18",
+            "H - 12 15",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ]
+    },
+    {
+        "index": "R19",
+        "imgUrl": "Story/4_2.png",
+        "prob": "1.0",
+        "resultContent": "\"餐廳營運因缺乏管理不如預期。\"",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 150",
+            "P - 10 15",
+            "H - 12",
+            "S + 12"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ]
+    },
+    {
+        "index": "R20",
+        "imgUrl": "Story/4_3.png",
+        "prob": "1.0",
+        "resultContent": "還是覺得多放點錢在定存比較保險呢，但與朋友的友情指數下降",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 8 12",
+            "S - 10 13"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ]
+    },
+    {
+        "index": "R21",
+        "imgUrl": "Story/5.png",
+        "prob": "1.0",
+        "resultContent": "生大病住院治療，花費驚人",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 50 80",
+            "P - 13 18",
+            "H - 25"
+        ],
+        "willHappenedEvent": [
+            "E8"
+        ]
+    },
+    {
+        "index": "R22",
+        "imgUrl": "Story/5_1.png",
+        "prob": "1.0",
+        "resultContent": "多多運動，出去走走，恢復元氣也認識新朋友",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 15",
+            "S + 10 12"
+        ],
+        "willHappenedEvent": [
+            "E9"
+        ]
+    },
+    {
+        "index": "R23",
+        "imgUrl": "",
+        "prob": "1.0",
+        "resultContent": "行動不便，待在家",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            ""
+        ],
+        "willHappenedEvent": [
+            ""
+        ]
+    },
+    {
+        "index": "R24",
+        "imgUrl": "",
+        "prob": "1.0",
+        "resultContent": "老伴提前走了，心情大受影響，儀式也花了不少錢...",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 80",
+            "P - 20",
+            "H - 10 12"
+        ],
+        "willHappenedEvent": [
+            "E10"
+        ]
+    },
+    {
+        "index": "R25",
+        "imgUrl": "Story/6_1.png",
+        "prob": "1.0",
+        "resultContent": "培養閱讀習慣，陶冶心靈，耶參加讀書會，認識新朋友",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 18",
+            "H + 10",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            ""
+        ]
+    },
+    {
+        "index": "R26",
+        "imgUrl": "Story/6_2.png",
+        "prob": "1.0",
+        "resultContent": "含飴弄孫，與孩子有也保有良好關係",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 12 15",
+            "S + 8 12"
+        ],
+        "willHappenedEvent": [
+            ""
+        ]
+    }
+]
