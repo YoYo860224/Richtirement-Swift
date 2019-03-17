@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F865A49AA83914B0487F58B /* Pods_Richtirement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */; };
+		8926FD46223E00A20065CDC3 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD45223E00A20065CDC3 /* Income.storyboard */; };
+		8926FD48223E03790065CDC3 /* Asset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD47223E03790065CDC3 /* Asset.storyboard */; };
+		8926FD4A223E0E310065CDC3 /* Analysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD49223E0E310065CDC3 /* Analysis.storyboard */; };
 		89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89411656223D01C1007D8E55 /* RecordSelect.storyboard */; };
 		89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89411658223D0758007D8E55 /* RecordSelectViewController.swift */; };
 		8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8941165A223D3F93007D8E55 /* MainGame.storyboard */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8926FD45223E00A20065CDC3 /* Income.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
+		8926FD47223E03790065CDC3 /* Asset.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Asset.storyboard; sourceTree = "<group>"; };
+		8926FD49223E0E310065CDC3 /* Analysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analysis.storyboard; sourceTree = "<group>"; };
 		89411656223D01C1007D8E55 /* RecordSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordSelect.storyboard; sourceTree = "<group>"; };
 		89411658223D0758007D8E55 /* RecordSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectViewController.swift; sourceTree = "<group>"; };
 		8941165A223D3F93007D8E55 /* MainGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainGame.storyboard; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				89BA081322378839007B4A6F /* Setting.storyboard */,
 				89411656223D01C1007D8E55 /* RecordSelect.storyboard */,
 				8941165A223D3F93007D8E55 /* MainGame.storyboard */,
+				8926FD45223E00A20065CDC3 /* Income.storyboard */,
+				8926FD47223E03790065CDC3 /* Asset.storyboard */,
+				8926FD49223E0E310065CDC3 /* Analysis.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,9 +236,12 @@
 			files = (
 				89668FAA222D807E004D2394 /* LaunchScreen.storyboard in Resources */,
 				89668FA7222D807E004D2394 /* Assets.xcassets in Resources */,
+				8926FD4A223E0E310065CDC3 /* Analysis.storyboard in Resources */,
 				89668FA5222D807C004D2394 /* Main.storyboard in Resources */,
+				8926FD46223E00A20065CDC3 /* Income.storyboard in Resources */,
 				89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */,
 				89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */,
+				8926FD48223E03790065CDC3 /* Asset.storyboard in Resources */,
 				8941165B223D3F93007D8E55 /* MainGame.storyboard in Resources */,
 				89411657223D01C1007D8E55 /* RecordSelect.storyboard in Resources */,
 				89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */,
