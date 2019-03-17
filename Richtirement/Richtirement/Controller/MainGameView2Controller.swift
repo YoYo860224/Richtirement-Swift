@@ -14,12 +14,41 @@ class MainGameView2Controller: UIViewController {
     @IBOutlet weak var propH: PropImageView!
     @IBOutlet weak var propS: PropImageView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var questionContent: UITextView!
+    
+    @IBOutlet weak var c1TextView: UILabel!
+    @IBOutlet weak var c2TextView: UILabel!
+    @IBOutlet weak var c1ImageView: UIImageView!
+    @IBOutlet weak var c2ImageView: UIImageView!
+    
+    @IBOutlet weak var gameResultView: UIView!
     @IBOutlet weak var gameResultTexOuter: UIView!
+    @IBOutlet weak var gameResultTitle: UILabel!
     @IBOutlet weak var gameResultText: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStory()
         setUI()
+    }
+    
+    func setStory() {
+        propM.changeRatio(ratio: 0.1)
+        propP.changeRatio(ratio: 0.2)
+        propH.changeRatio(ratio: 0.3)
+        propS.changeRatio(ratio: 0.4)
+        
+        let s = Story.getStory()
+        let nowQuestion = s.questions["Q0"]
+        let c1 = s.choices["C1"]
+        let c2 = s.choices["C2"]
+        
+        imageView.image = nowQuestion?.img
+        questionContent.text = nowQuestion?.content
+        
+        c1TextView.text = c1?.content
+        c2TextView.text = c2?.content
     }
     
     func setUI() {
@@ -39,13 +68,36 @@ class MainGameView2Controller: UIViewController {
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
-        
+
         self.gameResultTexOuter.layer.addSublayer(gradient)
+    }
+    
+    @IBAction func c1_Click(_ sender: Any) {
+        let s = Story.getStory()
+        let r = s.results["R0"]
+        imageView.image = r?.img
+        gameResultTitle.text = ""
+        gameResultText.text = r?.content
+        gameResultView.isHidden = false
+    }
+    
+    @IBAction func c2_Click(_ sender: Any) {
+        let s = Story.getStory()
+        let r = s.results["R1"]
+        imageView.image = r?.img
+        gameResultTitle.text = ""
+        gameResultText.text = r?.content
+        gameResultView.isHidden = false
+    }
+    
+    @IBAction func gameResultView_Click(_ sender: Any) {
+        performSegue(withIdentifier: "nextQuetion", sender: nil)
     }
 }
 
 class PropImageView: UIView {
     @IBInspectable var image: UIImage?
+    var ratio: Float = 1.0
     let top: CALayer = CALayer()
     
     func initSelf() {
@@ -55,7 +107,8 @@ class PropImageView: UIView {
         self.layer.mask = mask
 
         top.backgroundColor = UIColor(white: 147/255, alpha: 1.0).cgColor
-        top.frame = CGRect(x: 0, y: 0, width: 45, height: 20)
+        let ratioHeight = 45 * (1 - ratio)
+        top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))
         self.layer.addSublayer(top)
     }
     
@@ -68,6 +121,7 @@ class PropImageView: UIView {
     }
     
     func changeRatio(ratio: Float) {
+        self.ratio = ratio
         let ratioHeight = 45 * (1 - ratio)
         top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))
     }
