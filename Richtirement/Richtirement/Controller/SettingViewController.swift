@@ -17,10 +17,16 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var qScrollView: UIScrollView!
     
     @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var nameHint: UILabel!
     @IBOutlet weak var nameTF: UITextField!
     
     @IBOutlet weak var femaleRdBtn: RadioBtn!
     @IBOutlet weak var maleRdBtn: RadioBtn!
+    
+    @IBOutlet weak var parentBtn: SelectBtn!
+    @IBOutlet weak var friendBtn: SelectBtn!
+    @IBOutlet weak var childsBtn: SelectBtn!
+    @IBOutlet weak var coupleBtn: SelectBtn!
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var sliderValue: UILabel!
@@ -93,14 +99,49 @@ class SettingViewController: UIViewController {
     // Page 4 Slider
     @IBAction func SliderDrag(_ sender: Any) {
         // thumb size is 57
-        sliderValue.text = String(Int(5000 * slider.value))
+        sliderValue.text = String(Int(4000 * slider.value) + 1000)
         sliderValue.center.x = CGFloat(Float(slider.frame.minX + 14.25) + Float(slider.frame.width - 28.5) * slider.value)
     }
     
     
     @IBAction func confirmBtn_Click(_ sender: Any) {
-        // after check
-        performSegue(withIdentifier: "game", sender: nil)
+        let getName = nameTF.text!
+        let getGender = maleRdBtn.checkState ? 1 : 0
+        let getParent = parentBtn.checkState
+        let getFriend = friendBtn.checkState
+        let getChilds = childsBtn.checkState
+        let getCouple = coupleBtn.checkState
+        let getInitMoney = Int(sliderValue.text!)!
+        
+        if SystemSetting.Players.keys.contains(getName) {
+            nameHint.text = "已有此玩家姓名"
+            nameHint.textColor = UIColor.red
+            UIView.animate(withDuration: 0.5, animations: {
+                self.qScrollView.contentSize = CGSize(width: self.qScrollView.frame.size.width * 0, height: 0)
+            })
+        }
+        else if getName == "" {
+            nameHint.text = "請輸入玩家姓名"
+            nameHint.textColor = UIColor.red
+            UIView.animate(withDuration: 0.5, animations: {
+                self.qScrollView.contentSize = CGSize(width: self.qScrollView.frame.size.width * 0, height: 0)
+            })
+        }
+        else {
+            // after check
+            let nowPlayer = PlayerData()
+            nowPlayer.name = getName
+            nowPlayer.gender = getGender
+            nowPlayer.hasChilds = getChilds
+            nowPlayer.hasParent = getParent
+            nowPlayer.hasCouple = getCouple
+            nowPlayer.hasFriend = getFriend
+            nowPlayer.deposit = getInitMoney
+            
+            SystemSetting.nowPlayerName = getName
+            SystemSetting.Players[getName] = nowPlayer
+            performSegue(withIdentifier: "game", sender: nil)
+        }
     }
 }
 

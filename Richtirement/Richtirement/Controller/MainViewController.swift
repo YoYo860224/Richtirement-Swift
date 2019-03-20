@@ -15,14 +15,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func startBtn_Click(_ sender: Any) {
-        var isFirst = true
-        
-        if isFirst {
-            performSegue(withIdentifier: "first", sender: nil)
-        }
-        else {
-            performSegue(withIdentifier: "normal", sender: nil)
-        }
+        performSegue(withIdentifier: "first", sender: nil)
     }
 }
 

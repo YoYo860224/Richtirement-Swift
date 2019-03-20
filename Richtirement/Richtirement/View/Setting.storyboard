@@ -479,12 +479,17 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="childsBtn" destination="CjS-Fd-E4W" id="xUo-Gm-0Xe"/>
                         <outlet property="confirmBtn" destination="GCT-iO-pq8" id="qad-R2-b4D"/>
+                        <outlet property="coupleBtn" destination="g5U-G7-0nZ" id="PNw-ve-6tF"/>
                         <outlet property="femaleRdBtn" destination="bdF-0u-tC4" id="lmi-cH-GHU"/>
+                        <outlet property="friendBtn" destination="JM5-jv-gpT" id="dsW-Lu-gUP"/>
                         <outlet property="maleRdBtn" destination="6NA-Oq-Wjg" id="A59-xe-cmM"/>
+                        <outlet property="nameHint" destination="tcw-1P-QCl" id="pcZ-5Y-7EI"/>
                         <outlet property="nameTF" destination="WgR-vh-cvT" id="1KT-d6-3Wp"/>
                         <outlet property="nameView" destination="e8S-y4-MrF" id="jAb-eb-sMw"/>
                         <outlet property="pageControl" destination="ia0-l1-s9V" id="0Di-xc-RGj"/>
+                        <outlet property="parentBtn" destination="RF4-WD-Cmt" id="9dP-ac-cBq"/>
                         <outlet property="progressBarInner" destination="Im3-IT-WfY" id="bWe-7V-LzQ"/>
                         <outlet property="progressBarOuter" destination="ffu-fc-854" id="jME-YP-1u6"/>
                         <outlet property="progressBarTrCn" destination="F7B-eW-1AF" id="oNL-Kd-83N"/>

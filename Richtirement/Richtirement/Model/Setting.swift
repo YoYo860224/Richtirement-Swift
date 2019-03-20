@@ -12,8 +12,8 @@ class SystemSetting {
     static let AnnuityMax = 50;              // 年金每年最多增加多少
     static let MedicineInsuranceMax = 50;    // 醫療保險每年最多增加多少
     
-    static let nowPlayer = ""
-    static let Players: [PlayerData] = []
+    static var nowPlayerName = ""
+    static var Players: [String: PlayerData] = [:]
 }
 
 class PlayerData: Codable {
