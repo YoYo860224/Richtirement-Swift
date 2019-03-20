@@ -26,9 +26,9 @@ class MainGameView1Controller: UIViewController {
         let s = Story.getStory()
         let p = SystemSetting.getPlayer()
         
-        let nowEvent = s.events[p.nowEvent]
-        eventImageView.image = nowEvent?.img
-        eventText.text = nowEvent?.content
+        let nowEvent = s.events[p.nowEvent]!
+        eventImageView.image = nowEvent.img
+        eventText.text = nowEvent.content
     }
     
     func setUI() {

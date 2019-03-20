@@ -31,7 +31,11 @@ class MainGameView2Controller: UIViewController {
     @IBOutlet weak var gameResultTexOuter: UIView!
     @IBOutlet weak var gameResultTitle: UILabel!
     @IBOutlet weak var gameResultText: UITextView!
-
+    
+    let s = Story.getStory()
+    let p = SystemSetting.getPlayer()
+    var nowQuestion: Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStory()
@@ -39,21 +43,36 @@ class MainGameView2Controller: UIViewController {
     }
     
     func setStory() {
-        propM.changeRatio(ratio: 0.1)
-        propP.changeRatio(ratio: 0.2)
-        propH.changeRatio(ratio: 0.3)
-        propS.changeRatio(ratio: 0.4)
+        propM.changeRatio(ratio: Double(p.money) / 100.0)
+        propP.changeRatio(ratio: Double(p.phychological) / 100.0)
+        propH.changeRatio(ratio: Double(p.healthy) / 100.0)
+        propS.changeRatio(ratio: Double(p.social) / 100.0)
         
-        let s = Story.getStory()
-        let nowQuestion = s.questions["Q0"]
-        let c1 = s.choices["C1"]
-        let c2 = s.choices["C2"]
+        let nowEvent = s.events[p.nowEvent]!
         
-        imageView.image = s.events["E0"]?.img
-        questionContent.text = nowQuestion?.content
-        
-        c1TextView.text = c1?.content
-        c2TextView.text = c2?.content
+        if nowEvent.absResult != nil {
+            let r = s.results[nowEvent.absResult!]!
+            
+            gameResultTitle.text = ""
+            gameResultText.text = r.content
+            
+            c1View.isHidden = true
+            c2View.isHidden = true
+            quetionView.isHidden = true
+        }
+        else {
+            nowQuestion = s.questions[nowEvent.connectQuestion!]!
+            let c1 = s.choices[nowQuestion!.choice1!]
+            let c2 = s.choices[nowQuestion!.choice2!]
+            
+            imageView.image = nowEvent.img
+            questionContent.text = nowQuestion!.content
+            
+            c1TextView.text = c1?.content
+            c2TextView.text = c2?.content
+            c1ImageView.image = UIImage(named: "CardH")
+            c2ImageView.image = UIImage(named: "CardH")
+        }
     }
     
     func setUI() {
@@ -78,37 +97,71 @@ class MainGameView2Controller: UIViewController {
     }
     
     @IBAction func c1_Click(_ sender: Any) {
-        let s = Story.getStory()
-        let r = s.results["R0"]
-        imageView.image = r?.img
-        gameResultTitle.text = ""
-        gameResultText.text = r?.content
-        
-        c1View.isHidden = true
-        c2View.isHidden = true
-        quetionView.isHidden = true
-        gameResultView.isHidden = true
+        let c1 = s.choices[nowQuestion!.choice1!]!
+
+        if c1.nextQuestion != nil {
+            nowQuestion = s.questions[c1.nextQuestion!]!
+            let c_c1 = s.choices[nowQuestion!.choice1!]
+            let c_c2 = s.choices[nowQuestion!.choice2!]
+            
+            questionContent.text = nowQuestion!.content
+            
+            c1TextView.text = c_c1?.content
+            c2TextView.text = c_c2?.content
+            c1ImageView.image = UIImage(named: "CardH")
+            c2ImageView.image = UIImage(named: "CardH")
+        }
+        else {
+            let rStr = c1.connectResult[0]!
+            let r = s.results[rStr]!
+            imageView.image = r.img
+            gameResultTitle.text = ""
+            gameResultText.text = r.content
+    
+            c1View.isHidden = true
+            c2View.isHidden = true
+            quetionView.isHidden = true
+        }
     }
     
     @IBAction func c2_Click(_ sender: Any) {
-        let s = Story.getStory()
-        let r = s.results["R1"]
-        imageView.image = r?.img
-        gameResultTitle.text = ""
-        gameResultText.text = r?.content
+        let c2 = s.choices[nowQuestion!.choice2!]!
         
-        c1View.isHidden = true
-        c2View.isHidden = true
-        quetionView.isHidden = true
-        gameResultView.isHidden = false
+        if c2.nextQuestion != nil {
+            nowQuestion = s.questions[c2.nextQuestion!]!
+            let c_c1 = s.choices[nowQuestion!.choice1!]
+            let c_c2 = s.choices[nowQuestion!.choice2!]
+            
+            questionContent.text = nowQuestion!.content
+            
+            c1TextView.text = c_c1?.content
+            c2TextView.text = c_c2?.content
+            c1ImageView.image = UIImage(named: "CardH")
+            c2ImageView.image = UIImage(named: "CardH")
+        }
+        else {
+            let rStr = c2.connectResult[0]!
+            let r = s.results[rStr]!
+            imageView.image = r.img
+            gameResultTitle.text = ""
+            gameResultText.text = r.content
+            
+            c1View.isHidden = true
+            c2View.isHidden = true
+            quetionView.isHidden = true
+        }
     }
     
     @IBAction func imageView_Click(_ sender: Any) {
         if quetionView.isHidden == true {
-            gameResultView.isHidden = false
+            self.gameResultView.isHidden = false
+            self.gameResultView.alpha = 0
+            UIView.transition(with: gameResultView, duration: 0.5, options: .curveEaseInOut, animations: {
+                self.gameResultView.alpha = 1
+                
+            }, completion: nil)
         }
     }
-    
     
     @IBAction func gameResultView_Click(_ sender: Any) {
         performSegue(withIdentifier: "nextQuetion", sender: nil)
@@ -117,7 +170,7 @@ class MainGameView2Controller: UIViewController {
 
 class PropImageView: UIView {
     @IBInspectable var image: UIImage?
-    var ratio: Float = 1.0
+    var ratio: Double = 1.0
     let top: CALayer = CALayer()
     
     func initSelf() {
@@ -141,7 +194,7 @@ class PropImageView: UIView {
         initSelf()
     }
     
-    func changeRatio(ratio: Float) {
+    func changeRatio(ratio: Double) {
         self.ratio = ratio
         let ratioHeight = 45 * (1 - ratio)
         top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))

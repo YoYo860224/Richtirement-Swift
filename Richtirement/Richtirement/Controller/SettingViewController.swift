@@ -176,10 +176,7 @@ extension SettingViewController: UIScrollViewDelegate {
             if !self.confirmBtn.isHidden {
                 UIView.transition(with: confirmBtn, duration: 0.3, options: .curveEaseInOut, animations: {
                     self.confirmBtn.alpha = 0
-                }, completion: {
-                    _ in
-                    // self.confirmBtn.isHidden = true
-                })
+                }, completion: nil)
             }
         }
         else {

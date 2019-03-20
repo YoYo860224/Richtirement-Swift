@@ -336,7 +336,7 @@
                                             <outletCollection property="gestureRecognizers" destination="6oj-UM-hkc" appends="YES" id="Gff-7M-I53"/>
                                         </connections>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kND-Ze-Xep">
+                                    <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kND-Ze-Xep">
                                         <rect key="frame" x="16" y="132" width="343" height="505"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1p-hr-ut1">
