@@ -150,6 +150,16 @@ class MainGameView2Controller: UIViewController {
             c2View.isHidden = true
             quetionView.isHidden = true
         }
+        
+        propM.changeRatio(ratio: 1)
+        
+//        UIView.animate(withDuration: 3, animations: {
+//            self.propM.alpha = 0
+//            self.propM.changeRatio(ratio: 0.1)
+//        })
+////        UIView.transition(with: propM, duration: 100000, options: .curveLinear, animations: {
+////            self.propM.changeRatio(ratio: 0.1)
+////        }, completion: nil)
     }
     
     @IBAction func imageView_Click(_ sender: Any) {

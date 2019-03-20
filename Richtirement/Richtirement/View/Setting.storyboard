@@ -389,7 +389,7 @@
                                                                     <action selector="SliderDrag:" destination="FU4-YI-vVX" eventType="valueChanged" id="7fK-FL-k6f"/>
                                                                 </connections>
                                                             </slider>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-Dd-8GZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-Dd-8GZ">
                                                                 <rect key="frame" x="157.5" y="275" width="60" height="37"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="Ur1-OD-IHd"/>
