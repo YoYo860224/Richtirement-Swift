@@ -24,7 +24,9 @@ class MainGameView1Controller: UIViewController {
     
     func setStory() {
         let s = Story.getStory()
-        let nowEvent = s.events["E0"]
+        let p = SystemSetting.getPlayer()
+        
+        let nowEvent = s.events[p.nowEvent]
         eventImageView.image = nowEvent?.img
         eventText.text = nowEvent?.content
     }
@@ -58,7 +60,12 @@ class MainGameView1Controller: UIViewController {
     
     @IBAction func TapToNext(_ sender: Any) {
         if eventTextView.isHidden == true {
-            eventTextView.isHidden = false
+            self.eventTextView.isHidden = false
+            self.eventTextView.alpha = 0
+            UIView.transition(with: eventTextView, duration: 0.5, options: .curveEaseInOut, animations: {
+                
+                self.eventTextView.alpha = 1
+            }, completion: nil)
         }
         else {
             performSegue(withIdentifier: "toQuestion", sender: nil)

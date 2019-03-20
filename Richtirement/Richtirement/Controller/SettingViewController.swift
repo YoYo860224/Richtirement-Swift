@@ -174,15 +174,18 @@ extension SettingViewController: UIScrollViewDelegate {
             progressBarTrCn.constant = (widRate[pageRatioInt] + (widRate[pageRatioInt + 1] - widRate[pageRatioInt]) * pageRationFloat) * progbWidth
             
             if !self.confirmBtn.isHidden {
-                print("x")
                 UIView.transition(with: confirmBtn, duration: 0.3, options: .curveEaseInOut, animations: {
-                    self.confirmBtn.isHidden = true
-                }, completion: nil)
+                    self.confirmBtn.alpha = 0
+                }, completion: {
+                    _ in
+                    // self.confirmBtn.isHidden = true
+                })
             }
         }
         else {
-            UIView.transition(with: confirmBtn, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: confirmBtn, duration: 0.3, options: .curveEaseInOut, animations: {
                 self.confirmBtn.isHidden = false
+                self.confirmBtn.alpha = 1
             }, completion: nil)
         }
         

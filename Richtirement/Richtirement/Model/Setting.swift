@@ -14,6 +14,10 @@ class SystemSetting {
     
     static var nowPlayerName = ""
     static var Players: [String: PlayerData] = [:]
+    
+    static func getPlayer() -> PlayerData {
+        return Players[nowPlayerName]!
+    }
 }
 
 class PlayerData: Codable {
@@ -39,6 +43,13 @@ class PlayerData: Codable {
     var fund: Int = 0                   // 基金
     var annuity: Int = 0                // 年金
     var medicineInsurance: Int = 0      // 醫療險
+    
+    // 故事內容
+    var nowEvent: String = "E0"
+    var eventIDs: [String] = []
+    
+    
+    
 //    func save() {
 //        let fm = FileManager()
 //        let path = NSHomeDirectory() + "/tmp/" + self.name + ".json"
