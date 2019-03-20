@@ -42,7 +42,7 @@ class MainGameView1Controller: UIViewController {
         gradient.locations = [ 0.0, 0.37, 0.77, 1.0]
         
         let shape = CAShapeLayer()
-        shape.lineWidth = 1
+        shape.lineWidth = 4
         shape.path = UIBezierPath(rect: self.eventTextOuter.bounds).cgPath
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor

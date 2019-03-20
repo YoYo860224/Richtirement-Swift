@@ -15,13 +15,18 @@ class MainGameView2Controller: UIViewController {
     @IBOutlet weak var propS: PropImageView!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var quetionView: UIView!
     @IBOutlet weak var questionContent: UITextView!
     
+    @IBOutlet weak var c1View: UIView!
     @IBOutlet weak var c1TextView: UILabel!
-    @IBOutlet weak var c2TextView: UILabel!
     @IBOutlet weak var c1ImageView: UIImageView!
-    @IBOutlet weak var c2ImageView: UIImageView!
     
+    @IBOutlet weak var c2View: UIView!
+    @IBOutlet weak var c2TextView: UILabel!
+    @IBOutlet weak var c2ImageView: UIImageView!
+
     @IBOutlet weak var gameResultView: UIView!
     @IBOutlet weak var gameResultTexOuter: UIView!
     @IBOutlet weak var gameResultTitle: UILabel!
@@ -44,7 +49,7 @@ class MainGameView2Controller: UIViewController {
         let c1 = s.choices["C1"]
         let c2 = s.choices["C2"]
         
-        imageView.image = nowQuestion?.img
+        imageView.image = s.events["E0"]?.img
         questionContent.text = nowQuestion?.content
         
         c1TextView.text = c1?.content
@@ -78,7 +83,11 @@ class MainGameView2Controller: UIViewController {
         imageView.image = r?.img
         gameResultTitle.text = ""
         gameResultText.text = r?.content
-        gameResultView.isHidden = false
+        
+        c1View.isHidden = true
+        c2View.isHidden = true
+        quetionView.isHidden = true
+        gameResultView.isHidden = true
     }
     
     @IBAction func c2_Click(_ sender: Any) {
@@ -87,8 +96,19 @@ class MainGameView2Controller: UIViewController {
         imageView.image = r?.img
         gameResultTitle.text = ""
         gameResultText.text = r?.content
+        
+        c1View.isHidden = true
+        c2View.isHidden = true
+        quetionView.isHidden = true
         gameResultView.isHidden = false
     }
+    
+    @IBAction func imageView_Click(_ sender: Any) {
+        if quetionView.isHidden == true {
+            gameResultView.isHidden = false
+        }
+    }
+    
     
     @IBAction func gameResultView_Click(_ sender: Any) {
         performSegue(withIdentifier: "nextQuetion", sender: nil)
@@ -101,15 +121,16 @@ class PropImageView: UIView {
     let top: CALayer = CALayer()
     
     func initSelf() {
-        let mask = CALayer()
-        mask.frame = CGRect(x: 0, y: 0, width: 45  , height: 45)
-        mask.contents = image?.cgImage
-        self.layer.mask = mask
+        let mask = UIImageView(frame: CGRect(x: 0, y: 0, width: 45  , height: 45))
+        mask.image = image
+        mask.contentMode = .scaleAspectFit
+        self.layer.mask = mask.layer
 
         top.backgroundColor = UIColor(white: 147/255, alpha: 1.0).cgColor
         let ratioHeight = 45 * (1 - ratio)
         top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))
         self.layer.addSublayer(top)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
