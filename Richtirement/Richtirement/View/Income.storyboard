@@ -62,6 +62,9 @@
                                 <state key="normal" title="確認">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmBtn_Click:" destination="VCK-bT-9nd" eventType="touchUpInside" id="gvE-Rg-Y3u"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkn-1F-CfE">
                                 <rect key="frame" x="38" y="519" width="65" height="28.5"/>
@@ -96,7 +99,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN0-Y7-fz0" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="208" width="375" height="301"/>
+                                <rect key="frame" x="0.0" y="208" width="375" height="281"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -114,7 +117,7 @@
                             <constraint firstItem="4mG-3Z-ZoB" firstAttribute="centerX" secondItem="Ne9-rE-92n" secondAttribute="centerX" id="agK-zC-fyF"/>
                             <constraint firstAttribute="trailing" secondItem="nre-0H-KkX" secondAttribute="trailing" constant="23" id="daD-gt-2j4"/>
                             <constraint firstItem="SBg-th-Smu" firstAttribute="top" secondItem="xkn-1F-CfE" secondAttribute="bottom" constant="13" id="gf8-xv-pi2"/>
-                            <constraint firstItem="xkn-1F-CfE" firstAttribute="top" secondItem="kN0-Y7-fz0" secondAttribute="bottom" constant="10" id="jq4-vJ-cm9"/>
+                            <constraint firstItem="xkn-1F-CfE" firstAttribute="top" secondItem="kN0-Y7-fz0" secondAttribute="bottom" constant="30" id="jq4-vJ-cm9"/>
                             <constraint firstItem="nre-0H-KkX" firstAttribute="leading" secondItem="Z8V-SW-ciq" secondAttribute="leading" constant="23" id="kJ4-yg-Ysv"/>
                             <constraint firstItem="kN0-Y7-fz0" firstAttribute="top" secondItem="Zt6-Jx-cY6" secondAttribute="bottom" constant="10" id="lRz-2n-jPt"/>
                             <constraint firstItem="weQ-kU-aIl" firstAttribute="leading" secondItem="xkn-1F-CfE" secondAttribute="trailing" constant="18" id="mxj-BH-xqL"/>
@@ -127,12 +130,25 @@
                         <viewLayoutGuide key="safeArea" id="Z8V-SW-ciq"/>
                     </view>
                     <connections>
+                        <outlet property="allMoneyTextView" destination="Zt6-Jx-cY6" id="Tnb-RB-EFY"/>
+                        <outlet property="incomeTextView" destination="weQ-kU-aIl" id="Kcv-Ff-dJ0"/>
                         <outlet property="lineChartView" destination="kN0-Y7-fz0" id="xRS-Ze-Ckd"/>
+                        <outlet property="nthYearTextView" destination="xuY-E7-esl" id="2Vx-E0-IGv"/>
+                        <outlet property="outgoingTextview" destination="e2E-rH-TZ5" id="w45-Fu-wmS"/>
+                        <segue destination="xMe-lj-O19" kind="showDetail" identifier="toAsset" id="wf5-xD-FCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN1-Cs-stY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503" y="-19"/>
+        </scene>
+        <!--Asset-->
+        <scene sceneID="DhK-np-kue">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Asset" id="xMe-lj-O19" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNL-g6-0pX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="-20"/>
         </scene>
     </scenes>
 </document>
