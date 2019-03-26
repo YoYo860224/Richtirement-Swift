@@ -48,7 +48,18 @@ class PlayerData: Codable {
     var nowEvent: String = "E0"
     var eventIDs: [String] = []
     
-    
+    func getNextEvent() -> Bool{
+        if eventIDs.count > 0 {
+            let number = Int.random(in: 0..<eventIDs.count)
+            nowEvent = eventIDs[number]
+            eventIDs.remove(at: number)
+            return true
+        }
+        else {
+            // 沒事件 死亡？
+            return false
+        }
+    }
     
 //    func save() {
 //        let fm = FileManager()

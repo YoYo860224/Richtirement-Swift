@@ -16,6 +16,8 @@ class MainGameView1Controller: UIViewController {
     @IBOutlet weak var eventTextOuter: UIView!
     @IBOutlet weak var eventText: UITextView!
     
+    var nowEventContent: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStory()
@@ -26,9 +28,15 @@ class MainGameView1Controller: UIViewController {
         let s = Story.getStory()
         let p = SystemSetting.getPlayer()
         
+        p.getNextEvent()
         let nowEvent = s.events[p.nowEvent]!
         eventImageView.image = nowEvent.img
-        eventText.text = nowEvent.content
+        if nowEvent.content == "" {
+            nowEventContent = false
+        }
+        else {
+            eventText.text = nowEvent.content
+        }
     }
     
     func setUI() {
@@ -59,7 +67,7 @@ class MainGameView1Controller: UIViewController {
     }
     
     @IBAction func TapToNext(_ sender: Any) {
-        if eventTextView.isHidden == true {
+        if eventTextView.isHidden == true && nowEventContent{
             self.eventTextView.isHidden = false
             self.eventTextView.alpha = 0
             UIView.transition(with: eventTextView, duration: 0.5, options: .curveEaseInOut, animations: {

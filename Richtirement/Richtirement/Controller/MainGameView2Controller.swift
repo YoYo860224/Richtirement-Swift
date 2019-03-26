@@ -56,6 +56,10 @@ class MainGameView2Controller: UIViewController {
             gameResultTitle.text = ""
             gameResultText.text = r.content
             
+            for we in r.willHappenedEvent {
+                p.eventIDs.append(we)
+            }
+            
             c1View.isHidden = true
             c2View.isHidden = true
             quetionView.isHidden = true
@@ -117,6 +121,10 @@ class MainGameView2Controller: UIViewController {
             imageView.image = r.img
             gameResultTitle.text = ""
             gameResultText.text = r.content
+            
+            for we in r.willHappenedEvent {
+                p.eventIDs.append(we)
+            }
     
             c1View.isHidden = true
             c2View.isHidden = true
@@ -146,29 +154,23 @@ class MainGameView2Controller: UIViewController {
             gameResultTitle.text = ""
             gameResultText.text = r.content
             
+            for we in r.willHappenedEvent {
+                p.eventIDs.append(we)
+            }
+    
             c1View.isHidden = true
             c2View.isHidden = true
             quetionView.isHidden = true
         }
-        
-        propM.changeRatio(ratio: 1)
-        
-//        UIView.animate(withDuration: 3, animations: {
-//            self.propM.alpha = 0
-//            self.propM.changeRatio(ratio: 0.1)
-//        })
-////        UIView.transition(with: propM, duration: 100000, options: .curveLinear, animations: {
-////            self.propM.changeRatio(ratio: 0.1)
-////        }, completion: nil)
     }
     
     @IBAction func imageView_Click(_ sender: Any) {
+        // 要到 Result 了!!
         if quetionView.isHidden == true {
             self.gameResultView.isHidden = false
             self.gameResultView.alpha = 0
             UIView.transition(with: gameResultView, duration: 0.5, options: .curveEaseInOut, animations: {
                 self.gameResultView.alpha = 1
-                
             }, completion: nil)
         }
     }

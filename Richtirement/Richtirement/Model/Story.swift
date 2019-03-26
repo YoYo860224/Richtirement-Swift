@@ -137,6 +137,22 @@ class Choice {
             }
         }
     }
+    
+    func getResult() -> String {
+        let s = Story.getStory()
+        let x = Float.random(in: 0...1)
+        var nowRate: Float = 0.0
+        
+        for rs in connectResult {
+            let r = s.results[rs!]!
+            nowRate += r.prob
+            
+            if x >= nowRate {
+                return rs!
+            }
+        }
+        return connectResult[0]!
+    }
 }
 
 class Result {

@@ -360,7 +360,7 @@
     },
     {
         "index": "R23",
-        "imgUrl": "",
+        "imgUrl": "livingroom",
         "prob": "1.0",
         "resultContent": "行動不便，待在家",
         "year": "",
@@ -374,7 +374,7 @@
     },
     {
         "index": "R24",
-        "imgUrl": "",
+        "imgUrl": "livingroom",
         "prob": "1.0",
         "resultContent": "老伴提前走了，心情大受影響，儀式也花了不少錢...",
         "year": "",
