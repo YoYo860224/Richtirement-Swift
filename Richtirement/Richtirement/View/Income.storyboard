@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Income View Controller-->
         <scene sceneID="2d4-hU-WCV">
             <objects>
-                <viewController id="VCK-bT-9nd" sceneMemberID="viewController">
+                <viewController id="VCK-bT-9nd" customClass="IncomeViewController" customModule="Richtirement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ne9-rE-92n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN0-Y7-fz0" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="208" width="375" height="301"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -103,14 +107,18 @@
                             <constraint firstItem="e2E-rH-TZ5" firstAttribute="centerY" secondItem="SBg-th-Smu" secondAttribute="centerY" id="CWZ-0N-1UX"/>
                             <constraint firstItem="Zt6-Jx-cY6" firstAttribute="centerX" secondItem="Ne9-rE-92n" secondAttribute="centerX" id="GQ3-lQ-Omi"/>
                             <constraint firstItem="SBg-th-Smu" firstAttribute="leading" secondItem="Z8V-SW-ciq" secondAttribute="leading" constant="38" id="N3G-Sk-ACl"/>
+                            <constraint firstItem="kN0-Y7-fz0" firstAttribute="leading" secondItem="Z8V-SW-ciq" secondAttribute="leading" id="Oeq-sQ-4nk"/>
                             <constraint firstItem="lHm-In-dcg" firstAttribute="top" secondItem="Z8V-SW-ciq" secondAttribute="top" constant="31" id="PRO-Co-krT"/>
                             <constraint firstItem="weQ-kU-aIl" firstAttribute="centerY" secondItem="xkn-1F-CfE" secondAttribute="centerY" id="WLo-Ya-bh1"/>
                             <constraint firstItem="e2E-rH-TZ5" firstAttribute="leading" secondItem="SBg-th-Smu" secondAttribute="trailing" constant="18" id="Yt6-8p-aad"/>
                             <constraint firstItem="4mG-3Z-ZoB" firstAttribute="centerX" secondItem="Ne9-rE-92n" secondAttribute="centerX" id="agK-zC-fyF"/>
                             <constraint firstAttribute="trailing" secondItem="nre-0H-KkX" secondAttribute="trailing" constant="23" id="daD-gt-2j4"/>
                             <constraint firstItem="SBg-th-Smu" firstAttribute="top" secondItem="xkn-1F-CfE" secondAttribute="bottom" constant="13" id="gf8-xv-pi2"/>
+                            <constraint firstItem="xkn-1F-CfE" firstAttribute="top" secondItem="kN0-Y7-fz0" secondAttribute="bottom" constant="10" id="jq4-vJ-cm9"/>
                             <constraint firstItem="nre-0H-KkX" firstAttribute="leading" secondItem="Z8V-SW-ciq" secondAttribute="leading" constant="23" id="kJ4-yg-Ysv"/>
+                            <constraint firstItem="kN0-Y7-fz0" firstAttribute="top" secondItem="Zt6-Jx-cY6" secondAttribute="bottom" constant="10" id="lRz-2n-jPt"/>
                             <constraint firstItem="weQ-kU-aIl" firstAttribute="leading" secondItem="xkn-1F-CfE" secondAttribute="trailing" constant="18" id="mxj-BH-xqL"/>
+                            <constraint firstItem="Z8V-SW-ciq" firstAttribute="trailing" secondItem="kN0-Y7-fz0" secondAttribute="trailing" id="oa6-mj-WIq"/>
                             <constraint firstItem="lHm-In-dcg" firstAttribute="centerX" secondItem="Ne9-rE-92n" secondAttribute="centerX" id="rA0-vR-7J9"/>
                             <constraint firstItem="4mG-3Z-ZoB" firstAttribute="top" secondItem="lHm-In-dcg" secondAttribute="bottom" constant="25" id="rsV-ey-lBI"/>
                             <constraint firstItem="nre-0H-KkX" firstAttribute="top" secondItem="SBg-th-Smu" secondAttribute="bottom" constant="24" id="y8v-fw-Q7N"/>
@@ -118,6 +126,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z8V-SW-ciq"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="kN0-Y7-fz0" id="xRS-Ze-Ckd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN1-Cs-stY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
