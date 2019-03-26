@@ -6,5 +6,5 @@ target 'Richtirement' do
   use_frameworks!
 
   # Pods for Richtirement
-
+  pod 'Charts'
 end

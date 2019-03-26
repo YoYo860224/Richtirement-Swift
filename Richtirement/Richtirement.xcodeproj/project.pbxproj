@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F865A49AA83914B0487F58B /* Pods_Richtirement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */; };
+		89091F1C224A0374004C4212 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89091F1B224A0374004C4212 /* IncomeViewController.swift */; };
 		8926FD46223E00A20065CDC3 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD45223E00A20065CDC3 /* Income.storyboard */; };
 		8926FD48223E03790065CDC3 /* Asset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD47223E03790065CDC3 /* Asset.storyboard */; };
 		8926FD4A223E0E310065CDC3 /* Analysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926FD49223E0E310065CDC3 /* Analysis.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89091F1B224A0374004C4212 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		8926FD45223E00A20065CDC3 /* Income.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
 		8926FD47223E03790065CDC3 /* Asset.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Asset.storyboard; sourceTree = "<group>"; };
 		8926FD49223E0E310065CDC3 /* Analysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analysis.storyboard; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				8941165E223D5BDC007D8E55 /* PersonalChapterViewController.swift */,
 				8941165C223D3FB3007D8E55 /* MainGameView1Controller.swift */,
 				89411660223D5C02007D8E55 /* MainGameView2Controller.swift */,
+				89091F1B224A0374004C4212 /* IncomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,7 +214,6 @@
 				89668F99222D807C004D2394 /* Frameworks */,
 				89668F9A222D807C004D2394 /* Resources */,
 				CA69BE6CA16D35F28E34FBD0 /* [CP] Embed Pods Frameworks */,
-				878931D25740DB06CB80A73F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,25 +306,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		878931D25740DB06CB80A73F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CA69BE6CA16D35F28E34FBD0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,18 +314,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Richtirement/Pods-Richtirement-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Richtirement/Pods-Richtirement-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -352,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89091F1C224A0374004C4212 /* IncomeViewController.swift in Sources */,
 				89411661223D5C02007D8E55 /* MainGameView2Controller.swift in Sources */,
 				89BA082122380D1C007B4A6F /* RadioBtn.swift in Sources */,
 				89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */,
