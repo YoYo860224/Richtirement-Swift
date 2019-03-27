@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Asset View Controller-->
         <scene sceneID="Uk4-qu-CNR">
             <objects>
-                <viewController id="bLC-S9-rjM" sceneMemberID="viewController">
+                <viewController id="bLC-S9-rjM" customClass="AssetViewController" customModule="Richtirement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvl-3n-wFC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,10 +205,10 @@
                                                                 <color key="thumbTintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ex9-Bl-9xc">
-                                                                <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                                                                <rect key="frame" x="0.0" y="87" width="375" height="3"/>
                                                                 <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="c7g-uM-vAJ"/>
+                                                                    <constraint firstAttribute="height" constant="3" id="c7g-uM-vAJ"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcV-Eh-6Aa">
@@ -255,10 +255,10 @@
                                                                 <color key="thumbTintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm3-T5-aMu">
-                                                                <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                                                                <rect key="frame" x="0.0" y="87" width="375" height="3"/>
                                                                 <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="h1U-sq-f0A"/>
+                                                                    <constraint firstAttribute="height" constant="3" id="h1U-sq-f0A"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpu-o8-u1X">
@@ -305,10 +305,10 @@
                                                                 <color key="thumbTintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-m6-DiP">
-                                                                <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                                                                <rect key="frame" x="0.0" y="87" width="375" height="3"/>
                                                                 <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="Uqh-05-zrT"/>
+                                                                    <constraint firstAttribute="height" constant="3" id="Uqh-05-zrT"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0U-fR-JYH">
@@ -386,6 +386,7 @@
                         <viewLayoutGuide key="safeArea" id="rMA-hw-zqR"/>
                     </view>
                     <connections>
+                        <outlet property="topBGView" destination="IBz-ga-d7u" id="ygG-gH-fZ1"/>
                         <segue destination="iG8-BJ-dvh" kind="show" identifier="aaa" id="sZE-2H-ASR"/>
                     </connections>
                 </viewController>
@@ -393,10 +394,10 @@
             </objects>
             <point key="canvasLocation" x="-226.40000000000001" y="-603.14842578710648"/>
         </scene>
-        <!--View Controller-->
+        <!--Asset Confirm View Controller-->
         <scene sceneID="2lr-cS-F0C">
             <objects>
-                <viewController id="iG8-BJ-dvh" sceneMemberID="viewController">
+                <viewController id="iG8-BJ-dvh" customClass="AssetConfirmViewController" customModule="Richtirement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHd-K0-Wee">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -791,6 +792,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V89-VF-6dW"/>
                     </view>
+                    <connections>
+                        <outlet property="topBGView" destination="w8m-MJ-dhM" id="uxI-Jt-kol"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSm-Hj-4Ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
