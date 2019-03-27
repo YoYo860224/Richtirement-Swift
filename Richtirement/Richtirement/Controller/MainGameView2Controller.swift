@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainGameView2Controller: UIViewController {
     // TODO: - gameResultTitle 稍微注意一下 結果圖需要 title 嗎？ 不需要的話應該是 hidden 一下貨怎樣的
@@ -44,6 +45,7 @@ class MainGameView2Controller: UIViewController {
         super.viewDidLoad()
         setStory()
         setUI()
+//        gameResultText.centerVertically()
     }
     
     func setStory() {
@@ -61,7 +63,9 @@ class MainGameView2Controller: UIViewController {
             gameResultText.text = r!.content
             
             for we in r!.willHappenedEvent {
-                p.eventIDs.append(we)
+                if(we != ""){
+                    p.eventIDs.append(we)
+                }
             }
             
             c1View.isHidden = true
@@ -79,9 +83,21 @@ class MainGameView2Controller: UIViewController {
             c1TextView.text = c1?.content
             c2TextView.text = c2?.content
             
-            // TODO:- 卡片圖片可能要更改喔
-            c1ImageView.image = UIImage(named: "CardH")
-            c2ImageView.image = UIImage(named: "CardH")
+            // Finish:- 卡片圖片可能要更改喔
+            let c1ImageMainValue = c1?.getMainValue()
+            if(c1ImageMainValue != "$"){
+                c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+            }
+            else{
+                c1ImageView.image = UIImage(named: "CardM")
+            }
+            let c2ImageMainValue = c2?.getMainValue()
+            if(c2ImageMainValue != "$"){
+                c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
+            }
+            else{
+                c2ImageView.image = UIImage(named: "CardM")
+            }
         }
     }
     
@@ -118,9 +134,22 @@ class MainGameView2Controller: UIViewController {
             
             c1TextView.text = c_c1?.content
             c2TextView.text = c_c2?.content
-            // TODO:- 卡片圖片可能要更改喔
-            c1ImageView.image = UIImage(named: "CardH")
-            c2ImageView.image = UIImage(named: "CardH")
+            
+            // Finish:- 卡片圖片可能要更改喔
+            let c1ImageMainValue = c_c1?.getMainValue()
+            if(c1ImageMainValue != "$"){
+                c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+            }
+            else{
+                c1ImageView.image = UIImage(named: "CardM")
+            }
+            let c2ImageMainValue = c_c2?.getMainValue()
+            if(c2ImageMainValue != "$"){
+                c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
+            }
+            else{
+                c2ImageView.image = UIImage(named: "CardM")
+            }
         }
         else {
             let rStr = c1.connectResult[0]!
@@ -130,7 +159,9 @@ class MainGameView2Controller: UIViewController {
             gameResultText.text = r!.content
             
             for we in r!.willHappenedEvent {
-                p.eventIDs.append(we)
+                if(we != ""){
+                    p.eventIDs.append(we)
+                }
             }
     
             c1View.isHidden = true
@@ -151,9 +182,22 @@ class MainGameView2Controller: UIViewController {
             
             c1TextView.text = c_c1?.content
             c2TextView.text = c_c2?.content
-            // TODO:- 卡片圖片可能要更改喔
-            c1ImageView.image = UIImage(named: "CardH")
-            c2ImageView.image = UIImage(named: "CardH")
+            
+            // Finish:- 卡片圖片可能要更改喔
+            let c1ImageMainValue = c_c1?.getMainValue()
+            if(c1ImageMainValue != "$"){
+                c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+            }
+            else{
+                c1ImageView.image = UIImage(named: "CardM")
+            }
+            let c2ImageMainValue = c_c2?.getMainValue()
+            if(c2ImageMainValue != "$"){
+                c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
+            }
+            else{
+                c2ImageView.image = UIImage(named: "CardM")
+            }
         }
         else {
             let rStr = c2.connectResult[0]!
@@ -163,7 +207,9 @@ class MainGameView2Controller: UIViewController {
             gameResultText.text = r!.content
             
             for we in r!.willHappenedEvent {
-                p.eventIDs.append(we)
+                if(we != ""){
+                    p.eventIDs.append(we)
+                }
             }
     
             c1View.isHidden = true
@@ -176,16 +222,96 @@ class MainGameView2Controller: UIViewController {
         // TODO:- 改變上面屬性圖片的 fill propX.changeRatio(0.4)
         // TODO:- 人物數值上的改變也要記得
         if quetionView.isHidden == true {
+            valueChanged(change : (r?.valueChange)!)
+            
             self.gameResultView.isHidden = false
             self.gameResultView.alpha = 0
             UIView.transition(with: gameResultView, duration: 0.5, options: .curveEaseInOut, animations: {
                 self.gameResultView.alpha = 1
             }, completion: nil)
+            
+            
+        }
+    }
+    
+    func valueChanged(change: [String]){
+        let p = SystemSetting.getPlayer()
+
+        for i in change{
+            let value = i.components(separatedBy: " ")
+            var num = 0
+            if(value.count == 3){
+                num = Int(value[2])!
+            }
+            else if (value.count == 4){
+                num = Int.random(in: Int(value[2])!...Int(value[3])!)
+            }
+            
+            if(value[0] == "$"){
+                if(value[1] == "+"){
+                    p.deposit += num
+                }
+                else{
+                    // TODO: 判斷破產
+                    let _ = p.payMoney(money: num)
+                }
+            }
+            else if(value[0] == "P"){
+                if(value[1] == "+"){
+                    p.phychological += num
+                }
+                else{
+                    p.phychological -= num
+
+                }
+            }
+            else if(value[0] == "H"){
+                if(value[1] == "+"){
+                    p.healthy += num
+
+                }
+                else{
+                    p.healthy -= num
+
+                }
+            }
+            else if(value[0] == "S"){
+                if(value[1] == "+"){
+                    p.social += num
+
+                }
+                else{
+                    p.social -= num
+
+                }
+            }
+            
+            
         }
     }
     
     @IBAction func gameResultView_Click(_ sender: Any) {
-        performSegue(withIdentifier: "nextQuetion", sender: nil)
+        let p = SystemSetting.getPlayer()
+        let s = Story.getStory()
+        let nowEvent = s.events[p.nowEvent]!
+        p.age += nowEvent.year
+        
+        if(p.isGameOver() != 0){
+            // TODO: 連接game over畫面
+            print("Game Over")
+            performSegue(withIdentifier: "analysis", sender: nil)
+        }
+        
+        if(p.age % 5 == 0){
+            performSegue(withIdentifier: "Asset", sender: nil)
+        }
+        
+        if(p.eventIDs.count <= 0){
+            performSegue(withIdentifier: "analysis", sender: nil)
+        }
+        else{
+            performSegue(withIdentifier: "nextQuetion", sender: nil)
+        }
     }
 }
 
@@ -228,4 +354,15 @@ class PropImageView: UIView {
         
         top.add(anim1, forKey: nil)
     }
+}
+extension UITextView {
+    
+    func centerVertically() {
+        let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
+        let size = sizeThatFits(fittingSize)
+        let topOffset = (bounds.size.height - size.height * zoomScale) / 2
+        let positiveTopOffset = max(1, topOffset)
+        contentOffset.y = -positiveTopOffset
+    }
+    
 }

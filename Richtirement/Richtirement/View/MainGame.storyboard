@@ -348,7 +348,7 @@
                                                 <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hi" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgA-CB-bgb">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hi" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgA-CB-bgb">
                                                 <rect key="frame" x="20" y="76" width="303" height="409"/>
                                                 <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="21"/>
@@ -486,6 +486,8 @@
                         <outlet property="questionContent" destination="cv4-uu-RkL" id="xCn-rK-bpi"/>
                         <outlet property="quetionView" destination="dPy-AU-lrf" id="dcb-I2-aKa"/>
                         <segue destination="f5c-5m-0HH" kind="show" identifier="nextQuetion" id="Qij-oM-Jrx"/>
+                        <segue destination="asn-mM-XIM" kind="show" identifier="analysis" id="ohL-L9-8Z2"/>
+                        <segue destination="TUf-s4-UOl" kind="show" identifier="Asset" id="zWq-YV-4E2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-UE-SoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,6 +521,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVQ-lS-f0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1480" y="80"/>
+        </scene>
+        <!--Asset-->
+        <scene sceneID="g4j-pT-DtY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Asset" id="TUf-s4-UOl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSn-Ft-1P2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="162"/>
+        </scene>
+        <!--Analysis-->
+        <scene sceneID="cvp-7e-6GA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Analysis" id="asn-mM-XIM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxq-Tk-AvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-25"/>
         </scene>
     </scenes>
     <resources>

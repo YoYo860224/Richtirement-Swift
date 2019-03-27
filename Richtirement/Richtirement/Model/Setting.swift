@@ -45,8 +45,38 @@ class PlayerData: Codable {
     var medicineInsurance: Int = 0      // 醫療險
     
     // 故事內容
-    var nowEvent: String = "E0"
-    var eventIDs: [String] = []
+    var nowEvent: String = ""
+    var eventIDs: [String] = ["E0"]
+    
+    func payMoney(money: Int) -> Bool {
+        var money = money
+        if(money > self.deposit){
+            money -= self.deposit
+            self.deposit = 0
+            if(money > self.stock){
+                money -= self.stock
+                self.stock = 0
+                if(money > self.fund){
+                    money -= self.fund
+                    self.fund = 0
+                    // game over
+                    return false
+                }
+                else{
+                    self.fund -= money
+                    return true
+                }
+            }
+            else{
+                self.stock -= money
+                return true
+            }
+        }
+        else{
+            self.deposit -= money
+            return true
+        }
+    }
     
     func getNextEvent() -> Bool{
         if eventIDs.count > 0 {
@@ -59,6 +89,22 @@ class PlayerData: Codable {
             // 沒事件 死亡？
             return false
         }
+    }
+
+    func isGameOver() -> Int{
+        if(self.deposit <= 0 && self.stock <= 0 && self.fund <= 0){
+            return 1
+        }
+        else if(self.phychological <= 0){
+            return 2
+        }
+        else if(self.healthy <= 0){
+            return 3
+        }
+        else if(self.social <= 0){
+            return 4
+        }
+        return 0
     }
     
     // TODO: - 讀存擋範例 就交給你了

@@ -22,6 +22,8 @@ class AnalysisViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setChart()
+        wholeRadarView.isHidden = true
+        
     }
     
     func setUI() {
@@ -210,8 +212,13 @@ class AnalysisViewController: UIViewController {
         }
     }
 
-    @IBAction func confirmBtn_Click(_ sender: Any) {
+    
+    @IBAction func nextBtn_Click(_ sender: Any) {
         wholeRadarView.isHidden = true
+    }
+    
+    @IBAction func confirmBtn_Click(_ sender: Any) {
+        performSegue(withIdentifier: "restart", sender: nil)
     }
     
     @IBAction func showRadarBtn_Click(_ sender: Any) {

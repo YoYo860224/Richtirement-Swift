@@ -344,6 +344,10 @@
                                                                 <state key="normal" title="確認">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="ToConfirmBtn_Click:" destination="bLC-S9-rjM" eventType="touchUpInside" id="gzl-3Q-SRD"/>
+                                                                    <segue destination="iG8-BJ-dvh" kind="show" id="zCd-sm-Rmf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -387,7 +391,6 @@
                     </view>
                     <connections>
                         <outlet property="topBGView" destination="IBz-ga-d7u" id="ygG-gH-fZ1"/>
-                        <segue destination="iG8-BJ-dvh" kind="show" identifier="aaa" id="sZE-2H-ASR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGp-Kb-lsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -741,6 +744,9 @@
                                                                 <state key="normal" title="返回">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="bLC-S9-rjM" kind="show" id="YCU-cl-LzP"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6va-we-LaO">
                                                                 <rect key="frame" x="199.5" y="16" width="152.5" height="42"/>
@@ -749,6 +755,10 @@
                                                                 <state key="normal" title="確認">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="ConfirmBtn_Click:" destination="iG8-BJ-dvh" eventType="touchUpInside" id="GyA-ia-Nzj"/>
+                                                                    <segue destination="LDC-VN-4hI" kind="show" id="Mv9-Zz-zoj"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -799,6 +809,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSm-Hj-4Ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="591" y="-603"/>
+        </scene>
+        <!--MainGame-->
+        <scene sceneID="XoQ-fb-czz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainGame" id="LDC-VN-4hI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egi-NG-CDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1274" y="-604"/>
         </scene>
     </scenes>
     <resources>

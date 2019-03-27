@@ -138,6 +138,20 @@ class Choice {
         }
     }
     
+    func getMainValue() -> Character {
+        if(connectResult != []){
+            let s = Story.getStory()
+            let r = s.results[connectResult[0]!]!
+            if(r.valueChange[0] != ""){
+                return r.valueChange[0].first!
+            }
+            else{
+                return "M"
+            }
+        }
+        return "M"
+    }
+    
     func getResult() -> String {
         let s = Story.getStory()
         let x = Float.random(in: 0...1)

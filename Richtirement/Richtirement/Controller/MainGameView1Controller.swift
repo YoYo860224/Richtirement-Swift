@@ -28,9 +28,10 @@ class MainGameView1Controller: UIViewController {
         let s = Story.getStory()
         let p = SystemSetting.getPlayer()
         
-        // TODO: 可以知道還有沒有下一個事件 記得是判斷死亡的標準？
+        // Finish: 可以知道還有沒有下一個事件 記得是判斷死亡的標準？
+        // 改到結尾做
         let _ = p.getNextEvent()
-        
+
         let nowEvent = s.events[p.nowEvent]!
         eventImageView.image = nowEvent.img
         if nowEvent.content == "" {

@@ -27,4 +27,8 @@ class AssetViewController: UIViewController {
         gradient.locations = [0.0, 1.0]
         topBGView.layer.insertSublayer(gradient, at: 0)
     }
+    @IBAction func ToConfirmBtn_Click(_ sender: UIButton) {
+    }
+    
+    
 }
