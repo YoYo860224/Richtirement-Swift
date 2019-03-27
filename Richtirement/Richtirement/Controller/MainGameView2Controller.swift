@@ -43,10 +43,10 @@ class MainGameView2Controller: UIViewController {
     }
     
     func setStory() {
-        propM.changeRatio(ratio: Double(p.money) / 100.0)
-        propP.changeRatio(ratio: Double(p.phychological) / 100.0)
-        propH.changeRatio(ratio: Double(p.healthy) / 100.0)
-        propS.changeRatio(ratio: Double(p.social) / 100.0)
+        propM.changeRatio(ratio: Double(p.money)         / 100.0, duration: 0)
+        propP.changeRatio(ratio: Double(p.phychological) / 100.0, duration: 0)
+        propH.changeRatio(ratio: Double(p.healthy)       / 100.0, duration: 0)
+        propS.changeRatio(ratio: Double(p.social)        / 100.0, duration: 0)
         
         let nowEvent = s.events[p.nowEvent]!
         
@@ -74,6 +74,8 @@ class MainGameView2Controller: UIViewController {
             
             c1TextView.text = c1?.content
             c2TextView.text = c2?.content
+            
+            // TODO:- 卡片圖片可能要更改喔
             c1ImageView.image = UIImage(named: "CardH")
             c2ImageView.image = UIImage(named: "CardH")
         }
@@ -165,7 +167,7 @@ class MainGameView2Controller: UIViewController {
     }
     
     @IBAction func imageView_Click(_ sender: Any) {
-        // 要到 Result 了!!
+        // TODO:- 改變上面屬性圖片的 fill propX.changeRatio(0.4)
         if quetionView.isHidden == true {
             self.gameResultView.isHidden = false
             self.gameResultView.alpha = 0
@@ -182,7 +184,7 @@ class MainGameView2Controller: UIViewController {
 
 class PropImageView: UIView {
     @IBInspectable var image: UIImage?
-    var ratio: Double = 1.0
+    var ratio: Double = 0.5
     let top: CALayer = CALayer()
     
     func initSelf() {
@@ -193,9 +195,10 @@ class PropImageView: UIView {
 
         top.backgroundColor = UIColor(white: 147/255, alpha: 1.0).cgColor
         let ratioHeight = 45 * (1 - ratio)
-        top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))
         self.layer.addSublayer(top)
-        
+        top.anchorPoint = CGPoint(x: 0, y: 0)
+        top.frame = CGRect(x: 0, y: 0, width: 45, height: ratioHeight)
+        top.position = CGPoint(x: 0, y: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -206,9 +209,16 @@ class PropImageView: UIView {
         initSelf()
     }
     
-    func changeRatio(ratio: Double) {
+    func changeRatio(ratio: Double, duration: Double) {
         self.ratio = ratio
         let ratioHeight = 45 * (1 - ratio)
-        top.frame = CGRect(x: 0, y: 0, width: 45, height: Int(ratioHeight))
+
+        let anim1 = CABasicAnimation(keyPath: "bounds")
+
+        CATransaction.disableActions()
+        top.bounds = CGRect(x: 0, y: 0, width: 45, height: ratioHeight)
+        anim1.duration = 3.0
+        
+        top.add(anim1, forKey: nil)
     }
 }
