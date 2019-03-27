@@ -16,7 +16,7 @@ class AnalysisViewController: UIViewController {
     @IBOutlet var illImgViews: [UIImageView]!
     @IBOutlet var illTxtViews: [UILabel]!
     
-    var data = [80, 64, 78, 82, 77]
+    var fiveBIGData = [80, 64, 78, 82, 77]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +111,7 @@ class AnalysisViewController: UIViewController {
         let mLineShapeLayer = CAShapeLayer()
         
         mLinePath.removeAllPoints()
-        for (i, d) in data.enumerated() {
+        for (i, d) in fiveBIGData.enumerated() {
             if i == 0 {
                 mLinePath.move(to: pointCompute(ori: midPoint, radius: long * Double(d) / 100.0, angle: -90))
             }
@@ -119,7 +119,7 @@ class AnalysisViewController: UIViewController {
                 mLinePath.addLine(to: pointCompute(ori: midPoint, radius: long * Double(d) / 100.0, angle: -90 + Double(i) * 72))
             }
         }
-        mLinePath.addLine(to: pointCompute(ori: midPoint, radius: long * Double(data[0]) / 100.0, angle: -90))
+        mLinePath.addLine(to: pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[0]) / 100.0, angle: -90))
         
         mLineShapeLayer.path = mLinePath.cgPath
         mLineShapeLayer.lineWidth = 2.0
@@ -142,12 +142,12 @@ class AnalysisViewController: UIViewController {
             let otLineShapeLayer = CAShapeLayer()
             
             otLinePath.removeAllPoints()
-            let p1 = pointCompute(ori: midPoint, radius: long * Double(data[i]) / 100.0, angle: -90 + Double(i) * 72)
+            let p1 = pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[i]) / 100.0, angle: -90 + Double(i) * 72)
             let c1 = colors[i]
-            var p2 = pointCompute(ori: midPoint, radius: long * Double(data[0]) / 100.0, angle: -90 + Double(0) * 72)
+            var p2 = pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[0]) / 100.0, angle: -90 + Double(0) * 72)
             var c2 = colors[0]
             if i != 4 {
-                p2 = pointCompute(ori: midPoint, radius: long * Double(data[i + 1]) / 100.0, angle: -90 + Double(i + 1) * 72)
+                p2 = pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[i + 1]) / 100.0, angle: -90 + Double(i + 1) * 72)
                 c2 = colors[i + 1]
             }
             
@@ -169,14 +169,14 @@ class AnalysisViewController: UIViewController {
 
             radarChartView.layer.addSublayer(gradient)
             
-            let pVal = pointCompute(ori: midPoint, radius: long * Double(data[i]) / 100.0 + 20, angle: -90 + Double(i) * 72)
+            let pVal = pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[i]) / 100.0 + 20, angle: -90 + Double(i) * 72)
             let labelWit: CGFloat = 40
             let labelHei: CGFloat = 25
             let valLabel = UILabel(frame: CGRect(x: pVal.x - labelWit / 2,
                                                y: pVal.y - labelHei / 2,
                                                width: labelWit,
                                                height: labelHei))
-            valLabel.text = String(data[i])
+            valLabel.text = String(fiveBIGData[i])
             valLabel.font = UIFont(name: "NotoSansCJKtc-Medium", size: 24)
             valLabel.textColor = UIColor.white
             valLabel.textAlignment = .center

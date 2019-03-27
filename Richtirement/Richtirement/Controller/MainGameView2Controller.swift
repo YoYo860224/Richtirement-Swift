@@ -35,7 +35,8 @@ class MainGameView2Controller: UIViewController {
     let s = Story.getStory()
     let p = SystemSetting.getPlayer()
     var nowQuestion: Question?
-    
+    var r: Result?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStory()
@@ -51,12 +52,12 @@ class MainGameView2Controller: UIViewController {
         let nowEvent = s.events[p.nowEvent]!
         
         if nowEvent.absResult != nil {
-            let r = s.results[nowEvent.absResult!]!
+            self.r = s.results[nowEvent.absResult!]
             
             gameResultTitle.text = ""
-            gameResultText.text = r.content
+            gameResultText.text = r!.content
             
-            for we in r.willHappenedEvent {
+            for we in r!.willHappenedEvent {
                 p.eventIDs.append(we)
             }
             
@@ -119,12 +120,12 @@ class MainGameView2Controller: UIViewController {
         }
         else {
             let rStr = c1.connectResult[0]!
-            let r = s.results[rStr]!
-            imageView.image = r.img
+            self.r = s.results[rStr]!
+            imageView.image = r!.img
             gameResultTitle.text = ""
-            gameResultText.text = r.content
+            gameResultText.text = r!.content
             
-            for we in r.willHappenedEvent {
+            for we in r!.willHappenedEvent {
                 p.eventIDs.append(we)
             }
     
@@ -146,17 +147,18 @@ class MainGameView2Controller: UIViewController {
             
             c1TextView.text = c_c1?.content
             c2TextView.text = c_c2?.content
+            // TODO:- 卡片圖片可能要更改喔
             c1ImageView.image = UIImage(named: "CardH")
             c2ImageView.image = UIImage(named: "CardH")
         }
         else {
             let rStr = c2.connectResult[0]!
-            let r = s.results[rStr]!
-            imageView.image = r.img
+            self.r = s.results[rStr]
+            imageView.image = r!.img
             gameResultTitle.text = ""
-            gameResultText.text = r.content
+            gameResultText.text = r!.content
             
-            for we in r.willHappenedEvent {
+            for we in r!.willHappenedEvent {
                 p.eventIDs.append(we)
             }
     
@@ -168,6 +170,7 @@ class MainGameView2Controller: UIViewController {
     
     @IBAction func imageView_Click(_ sender: Any) {
         // TODO:- 改變上面屬性圖片的 fill propX.changeRatio(0.4)
+        // TODO:- 人物數值上的改變也要記得
         if quetionView.isHidden == true {
             self.gameResultView.isHidden = false
             self.gameResultView.alpha = 0

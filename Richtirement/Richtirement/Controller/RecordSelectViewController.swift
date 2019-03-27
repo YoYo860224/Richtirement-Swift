@@ -13,11 +13,13 @@ class RecordSelectViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var createNewPlayerView: UIView!
     
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         addPlayerBolck()
     }
     
+    // 用這個加入新的玩家框框喔！！
     func addPlayerBolck() {
         let a = PlayerBlock(frame: CGRect(x: 0, y: 0, width: 320, height: 130))
         let cn1 = NSLayoutConstraint(item: a, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 320)
@@ -37,7 +39,7 @@ class PlayerBlock: UIView {
         innerPic.backgroundColor = UIColor.blue
         innerPic.image = UIImage(named: "PB01")
         
-        // 幹 我原本以為黃色框框要自己編 所以把 Image 包在裡面
+        // 幹 我原本以為黃色框框要自己編 所以把 Image 包在裡面 結果圖片本身有含 所以 constant 改為 0 沒差
         let imCnW = NSLayoutConstraint(item: innerPic, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0)
         let imCnH = NSLayoutConstraint(item: innerPic, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 0)
         let imCnHor = NSLayoutConstraint(item: innerPic, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0)

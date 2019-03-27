@@ -34,6 +34,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -66,7 +67,8 @@ class SettingViewController: UIViewController {
         // Page4 show
         confirmBtn.isHidden = true
     }
-    // Page 1 Text
+    
+    // MARK: - keyboard issue
     var originHeight: CGFloat = 0
     var keyBoardHeight: CGFloat = 0
     
@@ -96,13 +98,13 @@ class SettingViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - IBAction
     // Page 4 Slider
     @IBAction func SliderDrag(_ sender: Any) {
         // thumb size is 57
         sliderValue.text = String(Int(4000 * slider.value) + 1000)
         sliderValue.center.x = CGFloat(Float(slider.frame.minX + 14.25) + Float(slider.frame.width - 28.5) * slider.value)
     }
-    
     
     @IBAction func confirmBtn_Click(_ sender: Any) {
         let getName = nameTF.text!
@@ -128,7 +130,6 @@ class SettingViewController: UIViewController {
             })
         }
         else {
-            // after check
             let nowPlayer = PlayerData()
             nowPlayer.name = getName
             nowPlayer.gender = getGender

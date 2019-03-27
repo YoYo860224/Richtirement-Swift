@@ -18,8 +18,8 @@ class IncomeViewController: UIViewController {
     
     let nowYear = 3
     let allYear = 9
-    let incomeVals: [Double] = [0, 50, 22, 29, 12,22,33,55,11]
-    let outgoingVals: [Double] = [18, 22, 19, 23,22,33,55,11,33]
+    let incomeVals: [Double] = [0, 50, 22, 29, 12, 22, 33, 55, 11]
+    let outgoingVals: [Double] = [18, 22, 19, 23, 22, 33, 55, 11, 33]
     
     override func viewDidLoad() {
         super.viewDidLoad()
