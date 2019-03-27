@@ -31,6 +31,7 @@
 		89668FAA222D807E004D2394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89668FA8222D807E004D2394 /* LaunchScreen.storyboard */; };
 		897BD32B224B17AB0064B545 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BD32A224B17AB0064B545 /* AssetViewController.swift */; };
 		897BD32D224B1A4D0064B545 /* AssetConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BD32C224B1A4D0064B545 /* AssetConfirmViewController.swift */; };
+		897BD32F224B36720064B545 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BD32E224B36720064B545 /* AnalysisViewController.swift */; };
 		89BA07E72236A992007B4A6F /* NotoSansCJKtc-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07E62236A992007B4A6F /* NotoSansCJKtc-Bold.otf */; };
 		89BA07E92236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07E82236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf */; };
 		89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */; };
@@ -65,6 +66,7 @@
 		89668FAB222D807E004D2394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		897BD32A224B17AB0064B545 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		897BD32C224B1A4D0064B545 /* AssetConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetConfirmViewController.swift; sourceTree = "<group>"; };
+		897BD32E224B36720064B545 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		89BA07E62236A992007B4A6F /* NotoSansCJKtc-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Bold.otf"; sourceTree = "<group>"; };
 		89BA07E82236ADEC007B4A6F /* NotoSansCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Regular.otf"; sourceTree = "<group>"; };
 		89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Medium.otf"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				89091F1B224A0374004C4212 /* IncomeViewController.swift */,
 				897BD32A224B17AB0064B545 /* AssetViewController.swift */,
 				897BD32C224B1A4D0064B545 /* AssetConfirmViewController.swift */,
+				897BD32E224B36720064B545 /* AnalysisViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				8926FD4C223E198D0065CDC3 /* Setting.swift in Sources */,
 				897BD32B224B17AB0064B545 /* AssetViewController.swift in Sources */,
 				89668FA0222D807C004D2394 /* AppDelegate.swift in Sources */,
+				897BD32F224B36720064B545 /* AnalysisViewController.swift in Sources */,
 				8941165F223D5BDC007D8E55 /* PersonalChapterViewController.swift in Sources */,
 				89411659223D0758007D8E55 /* RecordSelectViewController.swift in Sources */,
 				89404FAB223E21AC005D44AC /* Story.swift in Sources */,
