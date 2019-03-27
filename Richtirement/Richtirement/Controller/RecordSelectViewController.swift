@@ -32,11 +32,14 @@ class RecordSelectViewController: UIViewController {
 }
 
 class PlayerBlock: UIView {
+    // TODO: - 要改一些地方 對應到玩家 應該是要加一個屬性 再轉場的時候才知道是對應到什麼玩家
+    // 參考 MyUIKit/RadioBtn #16 #27 讓 UIView 加入點擊事件
     func initSelf() {
         self.backgroundColor = UIColor(red: 1, green: 216/255, blue: 113/255, alpha: 1)
         
         let innerPic = UIImageView()
         innerPic.backgroundColor = UIColor.blue
+        // TODO: 改圖片
         innerPic.image = UIImage(named: "PB01")
         
         // 幹 我原本以為黃色框框要自己編 所以把 Image 包在裡面 結果圖片本身有含 所以 constant 改為 0 沒差
@@ -49,6 +52,7 @@ class PlayerBlock: UIView {
         NSLayoutConstraint.activate([imCnHor, imCnVer, imCnW, imCnH])
         
         let innerText = UILabel()
+        // TODO: 改名字
         innerText.text = "玩家 沈政一"
         innerText.textColor = UIColor.white
         innerText.font = UIFont(name: "NotoSansCJKtc-Medium", size: 29)

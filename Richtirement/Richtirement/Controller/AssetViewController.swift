@@ -9,6 +9,7 @@
 import UIKit
 
 class AssetViewController: UIViewController {
+    // TODO: 交給你了 我只用灰階背景
     @IBOutlet weak var topBGView: UIView!
     
     override func viewDidLoad() {

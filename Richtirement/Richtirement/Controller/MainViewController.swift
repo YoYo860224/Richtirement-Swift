@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func startBtn_Click(_ sender: Any) {
+        // TODO:  如果使用者不是第一次用 換成 segue 到 record select
         performSegue(withIdentifier: "first", sender: nil)
     }
 }

@@ -9,6 +9,8 @@
 import UIKit
 
 class MainGameView2Controller: UIViewController {
+    // TODO: - gameResultTitle 稍微注意一下 結果圖需要 title 嗎？ 不需要的話應該是 hidden 一下貨怎樣的
+    // TODO: - gameResultText  垂直置中
     @IBOutlet weak var propM: PropImageView!
     @IBOutlet weak var propP: PropImageView!
     @IBOutlet weak var propH: PropImageView!
@@ -37,6 +39,7 @@ class MainGameView2Controller: UIViewController {
     var nowQuestion: Question?
     var r: Result?
 
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         setStory()
@@ -115,6 +118,7 @@ class MainGameView2Controller: UIViewController {
             
             c1TextView.text = c_c1?.content
             c2TextView.text = c_c2?.content
+            // TODO:- 卡片圖片可能要更改喔
             c1ImageView.image = UIImage(named: "CardH")
             c2ImageView.image = UIImage(named: "CardH")
         }

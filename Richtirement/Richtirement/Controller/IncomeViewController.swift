@@ -23,8 +23,15 @@ class IncomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         setChart()
     }
+    
+    func setUI() {
+        // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
+        // TODO: View 的文字也要套個
+    }
+    
     
     func setChart() {
         var inEntries: [ChartDataEntry] = []

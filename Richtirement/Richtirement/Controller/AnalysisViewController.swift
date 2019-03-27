@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 class AnalysisViewController: UIViewController {
-
+    // TODO: - 好像沒有結果的文字呢
     @IBOutlet weak var wholeRadarView: UIView!
     @IBOutlet weak var radarChartView: UIView!
     @IBOutlet var illImgViews: [UIImageView]!
@@ -25,7 +25,9 @@ class AnalysisViewController: UIViewController {
     }
     
     func setUI() {
-        
+        // TODO: 去 player 撈資料套到 fiveBIGData 就有完美圖表
+        // TODO: 結果文字稍微設定一下吧
+        // TODO: 圖片好像要問一下 我好像弄錯的圖片
     }
 
     func setChart() {

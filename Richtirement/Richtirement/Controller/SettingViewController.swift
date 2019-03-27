@@ -130,6 +130,7 @@ class SettingViewController: UIViewController {
             })
         }
         else {
+            // TODO: - 建完直接進遊戲應改沒問題
             let nowPlayer = PlayerData()
             nowPlayer.name = getName
             nowPlayer.gender = getGender
