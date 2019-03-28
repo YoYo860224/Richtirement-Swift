@@ -784,6 +784,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="LX4-9W-MnF" secondAttribute="bottom" id="I6h-N4-DxU"/>
+                                    <constraint firstItem="DXh-ff-LRt" firstAttribute="width" secondItem="Txj-GT-5Yt" secondAttribute="width" id="N2Q-9I-pIa"/>
                                     <constraint firstItem="LX4-9W-MnF" firstAttribute="top" secondItem="Txj-GT-5Yt" secondAttribute="top" id="YAq-KD-z2s"/>
                                     <constraint firstAttribute="trailing" secondItem="LX4-9W-MnF" secondAttribute="trailing" id="fRT-JM-rDL"/>
                                     <constraint firstItem="LX4-9W-MnF" firstAttribute="leading" secondItem="Txj-GT-5Yt" secondAttribute="leading" id="pMG-2o-Ejz"/>
@@ -793,12 +794,12 @@
                         <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="w8m-MJ-dhM" firstAttribute="leading" secondItem="V89-VF-6dW" secondAttribute="leading" id="B9P-zq-u0V"/>
-                            <constraint firstItem="V89-VF-6dW" firstAttribute="trailing" secondItem="Txj-GT-5Yt" secondAttribute="trailing" id="MJ0-9K-0gl"/>
+                            <constraint firstAttribute="trailing" secondItem="Txj-GT-5Yt" secondAttribute="trailing" id="MJ0-9K-0gl"/>
                             <constraint firstItem="w8m-MJ-dhM" firstAttribute="top" secondItem="V89-VF-6dW" secondAttribute="top" id="Oom-iH-hf0"/>
-                            <constraint firstItem="V89-VF-6dW" firstAttribute="trailing" secondItem="w8m-MJ-dhM" secondAttribute="trailing" id="SfB-gh-LMd"/>
+                            <constraint firstAttribute="trailing" secondItem="w8m-MJ-dhM" secondAttribute="trailing" id="SfB-gh-LMd"/>
                             <constraint firstItem="Txj-GT-5Yt" firstAttribute="leading" secondItem="V89-VF-6dW" secondAttribute="leading" id="TdZ-Xy-moL"/>
                             <constraint firstItem="Txj-GT-5Yt" firstAttribute="top" secondItem="w8m-MJ-dhM" secondAttribute="bottom" id="bjn-Ra-Y9P"/>
-                            <constraint firstItem="V89-VF-6dW" firstAttribute="bottom" secondItem="Txj-GT-5Yt" secondAttribute="bottom" id="pZN-rF-xrL"/>
+                            <constraint firstAttribute="bottom" secondItem="Txj-GT-5Yt" secondAttribute="bottom" id="pZN-rF-xrL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V89-VF-6dW"/>
                     </view>
