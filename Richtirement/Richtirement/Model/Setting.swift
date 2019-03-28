@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 class SystemSetting {
     static let AnnuityMax = 50;              // 年金每年最多增加多少
@@ -37,13 +38,16 @@ class PlayerData: Codable {
     var healthy = 75
     var social = 75
     
-    
+    var InitMoney: Int = 0
     var deposit: Int = 1500             // 存款
     var stock: Int = 0                  // 股票
     var fund: Int = 0                   // 基金
     var annuity: Int = 0                // 年金
     var medicineInsurance: Int = 0      // 醫療險
     
+    var incomeRecord: [Double] = []
+    var outgoingRecord: [Double] = []
+
     // 故事內容
     var nowEvent: String = ""
     var eventIDs: [String] = ["E0"]
@@ -105,6 +109,46 @@ class PlayerData: Codable {
             return 4
         }
         return 0
+    }
+    
+    func yearMoneyChange(){
+        self.incomeRecord.append(0)
+        self.outgoingRecord.append(0)
+        
+        let depositChange = (self.randomNormalNumber(deviation: 0.003, mean: 0.96) - 1.0) * Float(InitMoney)
+        deposit += Int(depositChange)
+        self.outgoingRecord[self.outgoingRecord.count - 1] += Double(Int(depositChange))
+        
+        let stockChange = (self.randomNormalNumber(deviation: 0.3, mean: 1.0) - 1.0) * Float(stock)
+        stock += Int(stockChange)
+        print(stockChange)
+        if(stockChange > 0){
+            self.incomeRecord[self.incomeRecord.count - 1] += Double(stockChange)
+        }
+        else{
+            self.outgoingRecord[self.outgoingRecord.count - 1] += Double(stockChange)
+        }
+
+        let fundChange = (self.randomNormalNumber(deviation: 0.15, mean: 1.0) - 1.0) * Float(fund)
+        fund += Int(fundChange)
+        print(fundChange)
+        if(fundChange > 0){
+            self.incomeRecord[self.incomeRecord.count - 1] += Double(fundChange)
+        }
+        else{
+            self.outgoingRecord[self.outgoingRecord.count - 1] += Double(fundChange)
+        }
+
+    }
+    
+    func randomNormalNumber(deviation:Float, mean:Float) -> Float{
+        let u1 = Float(arc4random()) / Float(UINT32_MAX) // uniform distribution
+        let u2 = Float(arc4random()) / Float(UINT32_MAX) // uniform distribution
+        let f1 = sqrt(-2 * log(u1));
+        let f2 = 2 * Float.pi * u2;
+        let g1 = f1 * cos(f2); // gaussian distribution
+//        var g2 = f1 * sin(f2); // gaussian distribution
+        return g1 * deviation + mean
     }
     
     // TODO: - 讀存擋範例 就交給你了

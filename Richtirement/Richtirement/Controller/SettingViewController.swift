@@ -139,6 +139,7 @@ class SettingViewController: UIViewController {
             nowPlayer.hasCouple = getCouple
             nowPlayer.hasFriend = getFriend
             nowPlayer.deposit = getInitMoney
+            nowPlayer.InitMoney = getInitMoney
             
             SystemSetting.nowPlayerName = getName
             SystemSetting.Players[getName] = nowPlayer

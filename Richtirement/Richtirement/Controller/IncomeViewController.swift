@@ -16,10 +16,10 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var nthYearTextView: UILabel!
     @IBOutlet weak var allMoneyTextView: UILabel!
     
-    let nowYear = 3
-    let allYear = 9
-    let incomeVals: [Double] = [0, 50, 22, 29, 12, 22, 33, 55, 11]
-    let outgoingVals: [Double] = [18, 22, 19, 23, 22, 33, 55, 11, 33]
+    var nowYear = 3
+    var allYear = 5
+    var incomeVals: [Double] = []
+    var outgoingVals: [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,15 @@ class IncomeViewController: UIViewController {
     }
     
     func setUI() {
+        let p = SystemSetting.getPlayer()
+
         // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
+        nowYear = p.age - 55 - 2
+        allYear = p.age - 55
+        incomeVals = p.incomeRecord
+        print(incomeVals)
+        outgoingVals = p.outgoingRecord
+        print(outgoingVals)
         // TODO: View 的文字也要套個
     }
     

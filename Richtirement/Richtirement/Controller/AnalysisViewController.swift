@@ -27,7 +27,15 @@ class AnalysisViewController: UIViewController {
     }
     
     func setUI() {
-        // TODO: 去 player 撈資料套到 fiveBIGData 就有完美圖表
+        let p = SystemSetting.getPlayer()
+
+        // Finish: 去 player 撈資料套到 fiveBIGData 就有完美圖表
+
+        fiveBIGData[0] = p.age
+        fiveBIGData[1] = min(p.social, 0)
+        fiveBIGData[2] = min(p.healthy,0)
+        fiveBIGData[3] = min(p.phychological,0)
+        fiveBIGData[4] = min(p.money, 0)
         // TODO: 結果文字稍微設定一下吧
         // TODO: 圖片好像要問一下 我好像弄錯的圖片
     }
@@ -174,7 +182,7 @@ class AnalysisViewController: UIViewController {
             radarChartView.layer.addSublayer(gradient)
             
             let pVal = pointCompute(ori: midPoint, radius: long * Double(fiveBIGData[i]) / 100.0 + 20, angle: -90 + Double(i) * 72)
-            let labelWit: CGFloat = 40
+            let labelWit: CGFloat = 45
             let labelHei: CGFloat = 25
             let valLabel = UILabel(frame: CGRect(x: pVal.x - labelWit / 2,
                                                y: pVal.y - labelHei / 2,

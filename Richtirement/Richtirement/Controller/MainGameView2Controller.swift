@@ -274,8 +274,8 @@ class MainGameView2Controller: UIViewController {
     }
     
     @IBAction func imageView_Click(_ sender: Any) {
-        // TODO:- 改變上面屬性圖片的 fill propX.changeRatio(0.4)
-        // TODO:- 人物數值上的改變也要記得
+        // Finish:- 改變上面屬性圖片的 fill propX.changeRatio(0.4)
+        // Finish:- 人物數值上的改變也要記得
         if quetionView.isHidden == true {
             valueChanged(change : (r?.valueChange)!)
             
@@ -311,6 +311,16 @@ class MainGameView2Controller: UIViewController {
                     let _ = p.payMoney(money: num)
                 }
                 propM.changeRatio(ratio: Double(p.money) / 100.0, duration: 1)
+                
+                UIView.animate(withDuration: 0.3,
+                               delay: 0,
+                               options: [UIView.AnimationOptions.autoreverse, UIView.AnimationOptions.repeat],
+                               animations: {
+                                UIView.setAnimationRepeatCount(5)
+                                self.propM.alpha = 0.5
+                }, completion: { (finished: Bool) in
+                    self.propM.alpha = 1
+                })
             }
             else if(value[0] == "P"){
                 if(value[1] == "+"){
@@ -321,7 +331,15 @@ class MainGameView2Controller: UIViewController {
 
                 }
                 propP.changeRatio(ratio: Double(p.phychological) / 100.0, duration: 1)
-
+                UIView.animate(withDuration: 0.3,
+                               delay: 0,
+                               options: [UIView.AnimationOptions.autoreverse, UIView.AnimationOptions.repeat],
+                               animations: {
+                                UIView.setAnimationRepeatCount(5)
+                                self.propP.alpha = 0.5
+                }, completion: { (finished: Bool) in
+                    self.propP.alpha = 1
+                })
             }
             else if(value[0] == "H"){
                 if(value[1] == "+"){
@@ -333,7 +351,15 @@ class MainGameView2Controller: UIViewController {
 
                 }
                 propH.changeRatio(ratio: Double(p.healthy) / 100.0, duration: 1)
-
+                UIView.animate(withDuration: 0.3,
+                               delay: 0,
+                               options: [UIView.AnimationOptions.autoreverse, UIView.AnimationOptions.repeat],
+                               animations: {
+                                UIView.setAnimationRepeatCount(5)
+                                self.propH.alpha = 0.5
+                }, completion: { (finished: Bool) in
+                    self.propH.alpha = 1
+                })
             }
             else if(value[0] == "S"){
                 if(value[1] == "+"){
@@ -345,7 +371,15 @@ class MainGameView2Controller: UIViewController {
 
                 }
                 propS.changeRatio(ratio: Double(p.social) / 100.0, duration: 1)
-
+                UIView.animate(withDuration: 0.3,
+                               delay: 0,
+                               options: [UIView.AnimationOptions.autoreverse, UIView.AnimationOptions.repeat],
+                               animations: {
+                                UIView.setAnimationRepeatCount(5)
+                                self.propS.alpha = 0.5
+                }, completion: { (finished: Bool) in
+                    self.propS.alpha = 1
+                })
             }
         }
         
@@ -355,7 +389,11 @@ class MainGameView2Controller: UIViewController {
         let p = SystemSetting.getPlayer()
         let s = Story.getStory()
         let nowEvent = s.events[p.nowEvent]!
-        p.age += nowEvent.year
+        
+        for _ in 1...nowEvent.year {
+            p.age += 1
+            p.yearMoneyChange()
+        }
         
         if(p.isGameOver() != 0){
             // TODO: 連接game over畫面
@@ -366,7 +404,7 @@ class MainGameView2Controller: UIViewController {
             performSegue(withIdentifier: "analysis", sender: nil)
         }
         else if(p.age % 5 == 0){
-            performSegue(withIdentifier: "Asset", sender: nil)
+            performSegue(withIdentifier: "Income", sender: nil)
         }
         else{
             performSegue(withIdentifier: "nextQuetion", sender: nil)
