@@ -536,7 +536,7 @@
                 <viewControllerPlaceholder storyboardName="Analysis" id="asn-mM-XIM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxq-Tk-AvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481" y="-25"/>
+            <point key="canvasLocation" x="1473" y="-1"/>
         </scene>
     </scenes>
     <resources>

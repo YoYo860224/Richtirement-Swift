@@ -39,13 +39,17 @@ class MainGameView2Controller: UIViewController {
     let p = SystemSetting.getPlayer()
     var nowQuestion: Question?
     var r: Result?
+    
+    var onChoice = 0
 
+    var c1OriginalTransform:CGAffineTransform = CGAffineTransform()
+    var c2OriginalTransform:CGAffineTransform = CGAffineTransform()
+    
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         setStory()
         setUI()
-//        gameResultText.centerVertically()
     }
     
     func setStory() {
@@ -98,6 +102,9 @@ class MainGameView2Controller: UIViewController {
             else{
                 c2ImageView.image = UIImage(named: "CardM")
             }
+            
+            c1OriginalTransform = self.c1View.transform
+            c2OriginalTransform = self.c2View.transform
         }
     }
     
@@ -123,99 +130,147 @@ class MainGameView2Controller: UIViewController {
     }
     
     @IBAction func c1_Click(_ sender: Any) {
-        let c1 = s.choices[nowQuestion!.choice1!]!
-
-        if c1.nextQuestion != nil {
-            nowQuestion = s.questions[c1.nextQuestion!]!
-            let c_c1 = s.choices[nowQuestion!.choice1!]
-            let c_c2 = s.choices[nowQuestion!.choice2!]
-            
-            questionContent.text = nowQuestion!.content
-            
-            c1TextView.text = c_c1?.content
-            c2TextView.text = c_c2?.content
-            
-            // Finish:- 卡片圖片可能要更改喔
-            let c1ImageMainValue = c_c1?.getMainValue()
-            if(c1ImageMainValue != "$"){
-                c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+        if(onChoice == 0 || onChoice == 2){
+            if(onChoice == 2){
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.c2View.transform = self.c2OriginalTransform
+                })
             }
-            else{
-                c1ImageView.image = UIImage(named: "CardM")
-            }
-            let c2ImageMainValue = c_c2?.getMainValue()
-            if(c2ImageMainValue != "$"){
-                c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
-            }
-            else{
-                c2ImageView.image = UIImage(named: "CardM")
-            }
+            let originalTransform = self.c1View.transform
+            let scaledTransform = originalTransform.scaledBy(x: 1.2, y: 1.2)
+            //        let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: -250.0) move
+            UIView.animate(withDuration: 0.5, animations: {
+                self.c1View.transform = scaledTransform
+            })
+            onChoice = 1
         }
-        else {
-            let rStr = c1.connectResult[0]!
-            self.r = s.results[rStr]!
-            imageView.image = r!.img
-            gameResultTitle.text = ""
-            gameResultText.text = r!.content
+        else if (onChoice == 1){
+            onChoice = 0
+
+            let c1 = s.choices[nowQuestion!.choice1!]!
             
-            for we in r!.willHappenedEvent {
-                if(we != ""){
-                    p.eventIDs.append(we)
+            if c1.nextQuestion != nil {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.c1View.transform = self.c1OriginalTransform
+                    self.c2View.transform = self.c2OriginalTransform
+                })
+
+
+                nowQuestion = s.questions[c1.nextQuestion!]!
+                let c_c1 = s.choices[nowQuestion!.choice1!]
+                let c_c2 = s.choices[nowQuestion!.choice2!]
+                
+                questionContent.text = nowQuestion!.content
+                
+                c1TextView.text = c_c1?.content
+                c2TextView.text = c_c2?.content
+                
+                // Finish:- 卡片圖片可能要更改喔
+                let c1ImageMainValue = c_c1?.getMainValue()
+                if(c1ImageMainValue != "$"){
+                    c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+                }
+                else{
+                    c1ImageView.image = UIImage(named: "CardM")
+                }
+                let c2ImageMainValue = c_c2?.getMainValue()
+                if(c2ImageMainValue != "$"){
+                    c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
+                }
+                else{
+                    c2ImageView.image = UIImage(named: "CardM")
                 }
             }
-    
-            c1View.isHidden = true
-            c2View.isHidden = true
-            quetionView.isHidden = true
+            else {
+                let rStr = c1.connectResult[0]!
+                self.r = s.results[rStr]!
+                imageView.image = r!.img
+                gameResultTitle.text = ""
+                gameResultText.text = r!.content
+                
+                for we in r!.willHappenedEvent {
+                    if(we != ""){
+                        p.eventIDs.append(we)
+                    }
+                }
+                
+                c1View.isHidden = true
+                c2View.isHidden = true
+                quetionView.isHidden = true
+            }
         }
     }
     
     @IBAction func c2_Click(_ sender: Any) {
-        let c2 = s.choices[nowQuestion!.choice2!]!
-        
-        if c2.nextQuestion != nil {
-            nowQuestion = s.questions[c2.nextQuestion!]!
-            let c_c1 = s.choices[nowQuestion!.choice1!]
-            let c_c2 = s.choices[nowQuestion!.choice2!]
-            
-            questionContent.text = nowQuestion!.content
-            
-            c1TextView.text = c_c1?.content
-            c2TextView.text = c_c2?.content
-            
-            // Finish:- 卡片圖片可能要更改喔
-            let c1ImageMainValue = c_c1?.getMainValue()
-            if(c1ImageMainValue != "$"){
-                c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+        if(onChoice == 0 || onChoice == 1){
+            if(onChoice == 1){
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.c1View.transform = self.c1OriginalTransform
+                })
             }
-            else{
-                c1ImageView.image = UIImage(named: "CardM")
-            }
-            let c2ImageMainValue = c_c2?.getMainValue()
-            if(c2ImageMainValue != "$"){
-                c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
-            }
-            else{
-                c2ImageView.image = UIImage(named: "CardM")
-            }
+
+            let originalTransform = self.c2View.transform
+            let scaledTransform = originalTransform.scaledBy(x: 1.2, y: 1.2)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.c2View.transform = scaledTransform
+            })
+            onChoice = 2
         }
-        else {
-            let rStr = c2.connectResult[0]!
-            self.r = s.results[rStr]
-            imageView.image = r!.img
-            gameResultTitle.text = ""
-            gameResultText.text = r!.content
+        else if(onChoice == 2){
+            onChoice = 0
+
+            let c2 = s.choices[nowQuestion!.choice2!]!
             
-            for we in r!.willHappenedEvent {
-                if(we != ""){
-                    p.eventIDs.append(we)
+            if c2.nextQuestion != nil {
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.c1View.transform = self.c1OriginalTransform
+                    self.c2View.transform = self.c2OriginalTransform
+                })
+                nowQuestion = s.questions[c2.nextQuestion!]!
+                let c_c1 = s.choices[nowQuestion!.choice1!]
+                let c_c2 = s.choices[nowQuestion!.choice2!]
+                
+                questionContent.text = nowQuestion!.content
+                
+                c1TextView.text = c_c1?.content
+                c2TextView.text = c_c2?.content
+                
+                // Finish:- 卡片圖片可能要更改喔
+                let c1ImageMainValue = c_c1?.getMainValue()
+                if(c1ImageMainValue != "$"){
+                    c1ImageView.image = UIImage(named: "Card" + String(c1ImageMainValue!))
+                }
+                else{
+                    c1ImageView.image = UIImage(named: "CardM")
+                }
+                let c2ImageMainValue = c_c2?.getMainValue()
+                if(c2ImageMainValue != "$"){
+                    c2ImageView.image = UIImage(named: "Card" + String(c2ImageMainValue!))
+                }
+                else{
+                    c2ImageView.image = UIImage(named: "CardM")
                 }
             }
-    
-            c1View.isHidden = true
-            c2View.isHidden = true
-            quetionView.isHidden = true
+            else {
+                let rStr = c2.connectResult[0]!
+                self.r = s.results[rStr]
+                imageView.image = r!.img
+                gameResultTitle.text = ""
+                gameResultText.text = r!.content
+                
+                for we in r!.willHappenedEvent {
+                    if(we != ""){
+                        p.eventIDs.append(we)
+                    }
+                }
+                
+                c1View.isHidden = true
+                c2View.isHidden = true
+                quetionView.isHidden = true
+            }
         }
+
     }
     
     @IBAction func imageView_Click(_ sender: Any) {
@@ -255,6 +310,7 @@ class MainGameView2Controller: UIViewController {
                     // TODO: 判斷破產
                     let _ = p.payMoney(money: num)
                 }
+                propM.changeRatio(ratio: Double(p.money) / 100.0, duration: 1)
             }
             else if(value[0] == "P"){
                 if(value[1] == "+"){
@@ -264,6 +320,8 @@ class MainGameView2Controller: UIViewController {
                     p.phychological -= num
 
                 }
+                propP.changeRatio(ratio: Double(p.phychological) / 100.0, duration: 1)
+
             }
             else if(value[0] == "H"){
                 if(value[1] == "+"){
@@ -274,6 +332,8 @@ class MainGameView2Controller: UIViewController {
                     p.healthy -= num
 
                 }
+                propH.changeRatio(ratio: Double(p.healthy) / 100.0, duration: 1)
+
             }
             else if(value[0] == "S"){
                 if(value[1] == "+"){
@@ -284,10 +344,11 @@ class MainGameView2Controller: UIViewController {
                     p.social -= num
 
                 }
+                propS.changeRatio(ratio: Double(p.social) / 100.0, duration: 1)
+
             }
-            
-            
         }
+        
     }
     
     @IBAction func gameResultView_Click(_ sender: Any) {
@@ -301,17 +362,16 @@ class MainGameView2Controller: UIViewController {
             print("Game Over")
             performSegue(withIdentifier: "analysis", sender: nil)
         }
-        
-        if(p.age % 5 == 0){
-            performSegue(withIdentifier: "Asset", sender: nil)
-        }
-        
         if(p.eventIDs.count <= 0){
             performSegue(withIdentifier: "analysis", sender: nil)
+        }
+        else if(p.age % 5 == 0){
+            performSegue(withIdentifier: "Asset", sender: nil)
         }
         else{
             performSegue(withIdentifier: "nextQuetion", sender: nil)
         }
+
     }
 }
 
@@ -354,15 +414,4 @@ class PropImageView: UIView {
         
         top.add(anim1, forKey: nil)
     }
-}
-extension UITextView {
-    
-    func centerVertically() {
-        let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
-        let size = sizeThatFits(fittingSize)
-        let topOffset = (bounds.size.height - size.height * zoomScale) / 2
-        let positiveTopOffset = max(1, topOffset)
-        contentOffset.y = -positiveTopOffset
-    }
-    
 }

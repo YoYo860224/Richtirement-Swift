@@ -12,6 +12,24 @@ class AssetConfirmViewController: UIViewController {
     // TODO: 交給你了 我只用灰階背景
     @IBOutlet weak var topBGView: UIView!
     
+    @IBOutlet weak var totalMoneyLabel: UILabel!
+    
+    @IBOutlet weak var depositLabel: UILabel!
+    
+    @IBOutlet weak var stockLabel: UILabel!
+    
+    @IBOutlet weak var fundLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let p = SystemSetting.getPlayer()
+
+        totalMoneyLabel.text = "總資產  " + String(p.deposit + p.stock + p.fund) + "萬"
+        
+        depositLabel.text = String(p.deposit) + "萬"
+        stockLabel.text = String(p.stock) + "萬"
+        fundLabel.text = String(p.fund) + "萬"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
