@@ -16,7 +16,6 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var nthYearTextView: UILabel!
     @IBOutlet weak var allMoneyTextView: UILabel!
     
-    var nowYear = 3
     var allYear = 5
     var incomeVals: [Double] = []
     var outgoingVals: [Double] = []
@@ -31,7 +30,6 @@ class IncomeViewController: UIViewController {
         let p = SystemSetting.getPlayer()
 
         // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
-        nowYear = p.age - 55 + 1 - 2
         allYear = p.age - 55 + 1
         incomeVals = p.incomeRecord
         print(incomeVals)
@@ -132,7 +130,7 @@ class IncomeViewController: UIViewController {
         lineChartView.addSubview(yTitle)
         lineChartView.extraTopOffset = 50
         lineChartView.setVisibleXRange(minXRange: 3.001, maxXRange: 3.001)
-        lineChartView.moveViewToX(Double(nowYear) - 0.55 - 2)
+        lineChartView.moveViewToX(Double(1000))
     }
     
     @IBAction func confirmBtn_Click(_ sender: Any) {
