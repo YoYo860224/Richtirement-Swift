@@ -117,7 +117,7 @@ class PlayerData: Codable {
         
         let depositChange = (self.randomNormalNumber(deviation: 0.003, mean: 0.96) - 1.0) * Float(InitMoney)
         deposit += Int(depositChange)
-        self.outgoingRecord[self.outgoingRecord.count - 1] += Double(Int(depositChange))
+        self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(Int(depositChange))
         
         let stockChange = (self.randomNormalNumber(deviation: 0.3, mean: 1.0) - 1.0) * Float(stock)
         stock += Int(stockChange)
@@ -126,7 +126,7 @@ class PlayerData: Codable {
             self.incomeRecord[self.incomeRecord.count - 1] += Double(stockChange)
         }
         else{
-            self.outgoingRecord[self.outgoingRecord.count - 1] += Double(stockChange)
+            self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(stockChange)
         }
 
         let fundChange = (self.randomNormalNumber(deviation: 0.15, mean: 1.0) - 1.0) * Float(fund)
@@ -136,7 +136,7 @@ class PlayerData: Codable {
             self.incomeRecord[self.incomeRecord.count - 1] += Double(fundChange)
         }
         else{
-            self.outgoingRecord[self.outgoingRecord.count - 1] += Double(fundChange)
+            self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(fundChange)
         }
 
     }

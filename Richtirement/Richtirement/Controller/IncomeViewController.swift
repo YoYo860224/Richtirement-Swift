@@ -31,8 +31,8 @@ class IncomeViewController: UIViewController {
         let p = SystemSetting.getPlayer()
 
         // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
-        nowYear = p.age - 55 - 2
-        allYear = p.age - 55
+        nowYear = p.age - 55 + 1 - 2
+        allYear = p.age - 55 + 1
         incomeVals = p.incomeRecord
         print(incomeVals)
         outgoingVals = p.outgoingRecord
