@@ -975,6 +975,7 @@
                     <connections>
                         <outlet property="depositLabel" destination="TCM-TD-AMz" id="gIJ-bF-M0h"/>
                         <outlet property="fundLabel" destination="3tU-vd-0Ct" id="fSv-Vp-HN0"/>
+                        <outlet property="medicineInsuranceLabel" destination="CbV-y0-CFz" id="R3f-2O-yat"/>
                         <outlet property="stockLabel" destination="i0f-gW-UV2" id="8Zk-3p-5XC"/>
                         <outlet property="topBGView" destination="w8m-MJ-dhM" id="uxI-Jt-kol"/>
                         <outlet property="totalMoneyLabel" destination="pRs-gl-vPA" id="fCV-35-6P2"/>

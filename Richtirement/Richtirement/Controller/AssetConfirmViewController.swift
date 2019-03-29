@@ -20,6 +20,8 @@ class AssetConfirmViewController: UIViewController {
     
     @IBOutlet weak var fundLabel: UILabel!
     
+    @IBOutlet weak var medicineInsuranceLabel: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         let p = SystemSetting.getPlayer()
 
@@ -28,6 +30,7 @@ class AssetConfirmViewController: UIViewController {
         depositLabel.text = String(p.deposit) + "萬"
         stockLabel.text = String(p.stock) + "萬"
         fundLabel.text = String(p.fund) + "萬"
+        medicineInsuranceLabel.text = String(p.medicineInsurance) + "萬"
     }
     
     override func viewDidLoad() {
