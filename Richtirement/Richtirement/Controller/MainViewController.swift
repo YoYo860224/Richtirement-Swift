@@ -19,5 +19,12 @@ class MainViewController: UIViewController {
         // TODO:  如果使用者不是第一次用 換成 segue 到 record select
         performSegue(withIdentifier: "first", sender: nil)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showAction" {
+//            let toViewController = segue.destination as UIViewController
+//            toViewController.transitioningDelegate = self as? UIViewControllerTransitioningDelegate
+//        }
+//    }
 }
 

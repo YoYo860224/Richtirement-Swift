@@ -78,7 +78,15 @@ class MainGameView1Controller: UIViewController {
             }, completion: nil)
         }
         else {
-            performSegue(withIdentifier: "toQuestion", sender: nil)
+            UIView.animate(withDuration: 1.0,
+                           delay: 0,
+                           options: [],
+                           animations: {
+                            self.eventTextView.alpha = 0
+            }, completion: { (finished: Bool) in
+                self.performSegue(withIdentifier: "toQuestion", sender: nil)
+            })
+            
         }
     }
 }

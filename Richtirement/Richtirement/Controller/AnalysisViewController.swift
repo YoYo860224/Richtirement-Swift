@@ -30,12 +30,12 @@ class AnalysisViewController: UIViewController {
         let p = SystemSetting.getPlayer()
 
         // Finish: 去 player 撈資料套到 fiveBIGData 就有完美圖表
-
         fiveBIGData[0] = p.age
-        fiveBIGData[1] = min(p.social, 0)
-        fiveBIGData[2] = min(p.healthy,0)
-        fiveBIGData[3] = min(p.phychological,0)
-        fiveBIGData[4] = min(p.money, 0)
+        fiveBIGData[1] = min(max(p.social, 0), 100)
+        fiveBIGData[2] = min(max(p.healthy,0), 100)
+        fiveBIGData[3] = min(max(p.phychological,0), 100)
+        fiveBIGData[4] = min(max(p.money, 0), 100)
+        
         // TODO: 結果文字稍微設定一下吧
         // TODO: 圖片好像要問一下 我好像弄錯的圖片
     }

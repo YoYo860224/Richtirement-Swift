@@ -45,8 +45,9 @@ class PlayerData: Codable {
     var annuity: Int = 0                // 年金
     var medicineInsurance: Int = 0      // 醫療險
     
-    var incomeRecord: [Double] = []
-    var outgoingRecord: [Double] = []
+    var livingExpenseRecord: [Double] = []
+    var stockRecord: [Double] = []
+    var fundRecord: [Double] = []
 
     // 故事內容
     var nowEvent: String = ""
@@ -112,32 +113,24 @@ class PlayerData: Codable {
     }
     
     func yearMoneyChange(){
-        self.incomeRecord.append(0)
-        self.outgoingRecord.append(0)
+        self.livingExpenseRecord.append(0)
+        self.stockRecord.append(0)
+        self.fundRecord.append(0)
+
+        let depositChange = (1.0 - self.randomNormalNumber(deviation: 0.003, mean: 0.97)) * Float(deposit + stock + fund)
+        let _ = self.payMoney(money: Int(depositChange))
+        self.livingExpenseRecord[self.livingExpenseRecord.count - 1] += Double(Int(depositChange))
         
-        let depositChange = (self.randomNormalNumber(deviation: 0.003, mean: 0.96) - 1.0) * Float(InitMoney)
-        deposit += Int(depositChange)
-        self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(Int(depositChange))
-        
-        let stockChange = (self.randomNormalNumber(deviation: 0.3, mean: 1.0) - 1.0) * Float(stock)
+        let stockChange = (self.randomNormalNumber(deviation: 0.2, mean: 1.0) - 1.0) * Float(stock)
         stock += Int(stockChange)
         print(stockChange)
-        if(stockChange > 0){
-            self.incomeRecord[self.incomeRecord.count - 1] += Double(stockChange)
-        }
-        else{
-            self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(stockChange)
-        }
+        self.stockRecord[self.stockRecord.count - 1] += Double(stockChange)
 
-        let fundChange = (self.randomNormalNumber(deviation: 0.15, mean: 1.0) - 1.0) * Float(fund)
+
+        let fundChange = (self.randomNormalNumber(deviation: 0.05, mean: 1.0) - 1.0) * Float(fund)
         fund += Int(fundChange)
         print(fundChange)
-        if(fundChange > 0){
-            self.incomeRecord[self.incomeRecord.count - 1] += Double(fundChange)
-        }
-        else{
-            self.outgoingRecord[self.outgoingRecord.count - 1] -= Double(fundChange)
-        }
+        self.fundRecord[self.fundRecord.count - 1] += Double(fundChange)
 
     }
     

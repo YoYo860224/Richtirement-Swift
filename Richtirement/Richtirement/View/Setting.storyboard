@@ -447,8 +447,8 @@
                                     <constraint firstAttribute="width" constant="328" id="3lS-Sp-ftB"/>
                                     <constraint firstAttribute="height" constant="53" id="eCR-Ms-X2U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="20"/>
-                                <state key="normal" title="確認">
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="28"/>
+                                <state key="normal" title="確 認">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -500,7 +500,7 @@
                         <outletCollection property="top4Label" destination="Kxo-MT-WoX" collectionClass="NSMutableArray" id="omm-CV-zju"/>
                         <outletCollection property="top4Label" destination="h12-EH-sN1" collectionClass="NSMutableArray" id="Eeg-VI-Jbp"/>
                         <outletCollection property="top4Label" destination="kaZ-5u-qLL" collectionClass="NSMutableArray" id="IBb-Id-Qcc"/>
-                        <segue destination="82v-cE-gjb" kind="show" identifier="game" id="Xoc-Tx-gCz"/>
+                        <segue destination="82v-cE-gjb" kind="presentation" identifier="game" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Xoc-Tx-gCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MV-PI-3ar" userLabel="First Responder" sceneMemberID="firstResponder"/>

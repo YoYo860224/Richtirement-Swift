@@ -28,14 +28,79 @@ class IncomeViewController: UIViewController {
     
     func setUI() {
         let p = SystemSetting.getPlayer()
-
+        var incomeText = ""
+        var outgoingText = ""
+        incomeTextView.text = ""
+        outgoingTextview.text = ""
+        
+        
         // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
         allYear = p.age - 55 + 1
-        incomeVals = p.incomeRecord
-        print(incomeVals)
-        outgoingVals = p.outgoingRecord
-        print(outgoingVals)
+        for _ in 55..<p.age {
+            self.incomeVals.append(0)
+            self.outgoingVals.append(0)
+        }
+        var expenseTotal = 0
+        var stockTotal = 0
+        var fundTotal = 0
+        
+        print(p.livingExpenseRecord.count)
+        print(p.stockRecord.count)
+        print(p.fundRecord.count)
+        
+        for i in 0..<p.livingExpenseRecord.count{
+            if(p.livingExpenseRecord.count - i <= 5){
+                expenseTotal += Int(p.livingExpenseRecord[i])
+            }
+            self.outgoingVals[i] += p.livingExpenseRecord[i]
+        }
+        
+        for i in 0 ..< p.stockRecord.count{
+            if(p.stockRecord.count - i <= 5){
+                stockTotal += Int(p.stockRecord[i])
+            }
+            if(p.stockRecord[i] > 0){
+                self.incomeVals[i] += p.stockRecord[i]
+            }
+            else{
+                self.outgoingVals[i] -= p.stockRecord[i]
+            }
+        }
+        
+        for i in 0 ..< p.fundRecord.count{
+            if(p.fundRecord.count - i <= 5){
+                fundTotal += Int(p.fundRecord[i])
+            }
+            if(p.fundRecord[i] > 0){
+                self.incomeVals[i] += p.fundRecord[i]
+            }
+            else{
+                self.outgoingVals[i] -= p.fundRecord[i]
+            }
+        }
+        
+        
         // TODO: View 的文字也要套個
+        nthYearTextView.text = "第" + String(Int(p.age - 55)) + "年"
+        allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock)) + "萬"
+        
+        outgoingText = "生活費" + String(expenseTotal) + "萬 "
+        if(fundTotal > 0){
+            incomeText += "基金" + String(fundTotal) + "萬 "
+        }
+        else if(fundTotal < 0){
+            outgoingText += "基金" + String(-fundTotal) + "萬 "
+        }
+        if(stockTotal > 0){
+            incomeText += "股票" + String(stockTotal) + "萬 "
+        }
+        else if(stockTotal < 0){
+            outgoingText += "股票" + String(-stockTotal) + "萬 "
+        }
+        
+        incomeTextView.text = incomeText
+        outgoingTextview.text = outgoingText
+
     }
     
     

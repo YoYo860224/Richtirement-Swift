@@ -334,7 +334,7 @@
                         <outletCollection property="illTxtViews" destination="yGD-ol-txJ" collectionClass="NSMutableArray" id="AH3-VR-v5i"/>
                         <outletCollection property="illTxtViews" destination="LBO-9q-ZWd" collectionClass="NSMutableArray" id="hkW-FR-YK5"/>
                         <outletCollection property="illTxtViews" destination="5Um-OE-hh9" collectionClass="NSMutableArray" id="llS-b5-MMB"/>
-                        <segue destination="mE0-Nn-vNd" kind="show" identifier="restart" id="KBV-zV-uq5"/>
+                        <segue destination="mE0-Nn-vNd" kind="presentation" identifier="restart" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KBV-zV-uq5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRJ-26-tNS" userLabel="First Responder" sceneMemberID="firstResponder"/>

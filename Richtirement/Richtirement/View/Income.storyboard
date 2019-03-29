@@ -56,10 +56,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nre-0H-KkX">
-                                <rect key="frame" x="23" y="613" width="329" height="42"/>
+                                <rect key="frame" x="23" y="607" width="329" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="20"/>
-                                <state key="normal" title="確認">
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="24"/>
+                                <state key="normal" title="確 認">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkn-1F-CfE">
-                                <rect key="frame" x="38" y="519" width="65" height="28.5"/>
+                                <rect key="frame" x="38" y="513" width="65" height="28.5"/>
                                 <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="F9d-XR-Pyw"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-th-Smu">
-                                <rect key="frame" x="38" y="560.5" width="65" height="28.5"/>
+                                <rect key="frame" x="38" y="554.5" width="65" height="28.5"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.38431372549999998" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="scr-qX-6FK"/>
@@ -87,19 +87,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生活費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2E-rH-TZ5">
-                                <rect key="frame" x="121" y="560.5" width="57" height="28.5"/>
+                                <rect key="frame" x="121" y="554.5" width="57" height="28.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="股票15萬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weQ-kU-aIl">
-                                <rect key="frame" x="121" y="519" width="79" height="28.5"/>
+                                <rect key="frame" x="121" y="513" width="79" height="28.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN0-Y7-fz0" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="208" width="375" height="281"/>
+                                <rect key="frame" x="0.0" y="208" width="375" height="275"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -135,7 +135,7 @@
                         <outlet property="lineChartView" destination="kN0-Y7-fz0" id="xRS-Ze-Ckd"/>
                         <outlet property="nthYearTextView" destination="xuY-E7-esl" id="2Vx-E0-IGv"/>
                         <outlet property="outgoingTextview" destination="e2E-rH-TZ5" id="w45-Fu-wmS"/>
-                        <segue destination="xMe-lj-O19" kind="showDetail" identifier="toAsset" id="wf5-xD-FCa"/>
+                        <segue destination="xMe-lj-O19" kind="presentation" identifier="toAsset" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="wf5-xD-FCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN1-Cs-stY" userLabel="First Responder" sceneMemberID="firstResponder"/>

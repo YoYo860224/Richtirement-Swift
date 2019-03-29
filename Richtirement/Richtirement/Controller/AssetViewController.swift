@@ -22,6 +22,8 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var depositUISlider: UISlider!
     @IBOutlet weak var stockUISlider: UISlider!
     @IBOutlet weak var fundUISlider: UISlider!
+    @IBOutlet weak var annuityUISlider: UISlider!
+    @IBOutlet weak var medicineInsuranceUISlider: UISlider!
     
     @IBOutlet weak var depositLabel: UILabel!
     @IBOutlet weak var depositPersent: UILabel!
@@ -31,6 +33,15 @@ class AssetViewController: UIViewController {
     
     @IBOutlet weak var fundLabel: UILabel!
     @IBOutlet weak var fundPersent: UILabel!
+    
+    @IBOutlet weak var annuityLabel: UILabel!
+    @IBOutlet weak var annuityPersent: UILabel!
+
+    @IBOutlet weak var medicineLabel: UILabel!
+    @IBOutlet weak var medicinePersent: UILabel!
+    
+    @IBOutlet weak var annuityView: UIView!
+    @IBOutlet weak var medicineView: UIView!
     
     var tempTotalMoney = 0
     var tempDeposit = 0
@@ -42,6 +53,12 @@ class AssetViewController: UIViewController {
     }
     @IBAction func fundUISlider(_ sender: UISlider) {
         sliderValueChanged(index: 1)
+    }
+    @IBAction func annuityUISlider(_ sender: UISlider) {
+        sliderValueChanged(index: 2)
+    }
+    @IBAction func MedicineUISlider(_ sender: UISlider) {
+        sliderValueChanged(index: 3)
     }
     
     func sliderValueChanged(index: Int){
@@ -61,7 +78,12 @@ class AssetViewController: UIViewController {
                 fundUISlider.value = 1.0 - stockUISlider.value
             }
             tempFund = Int(Float(tempTotalMoney) * Float(fundUISlider.value))
-
+        }
+        else if(index == 2){
+            
+        }
+        else if(index == 3){
+            
         }
         
         depositUISlider.value = 1.0 - stockUISlider.value - fundUISlider.value
@@ -91,6 +113,8 @@ class AssetViewController: UIViewController {
     }
     
     func setUI() {
+        let p = SystemSetting.getPlayer()
+
         let gradient = CAGradientLayer()
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topBGView.frame.size)
         gradient.colors = [
@@ -100,6 +124,10 @@ class AssetViewController: UIViewController {
         gradient.locations = [0.0, 1.0]
         topBGView.layer.insertSublayer(gradient, at: 0)
     
+        if(p.age > 65){
+            annuityView.isHidden = true
+            medicineView.isHidden = true
+        }
     }
     
     func getMoney(){

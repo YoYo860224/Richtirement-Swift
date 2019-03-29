@@ -13,9 +13,6 @@
         <array key="NotoSansCJKtc-Bold.otf">
             <string>NotoSansCJKtc-Bold</string>
         </array>
-        <array key="NotoSansCJKtc-Medium.otf">
-            <string>NotoSansCJKtc-Medium</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Main View Controller-->
@@ -33,16 +30,38 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="富退人生攻略" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-ds-bzc">
-                                <rect key="frame" x="105" y="47" width="204" height="51"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="34"/>
+                                <rect key="frame" x="87" y="47" width="240" height="59.333333333333343"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="透過退休人生的模擬體驗認知決 策帶來的風險並做好萬全的準備" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxS-Um-wIE">
-                                <rect key="frame" x="0.0" y="98" width="414" height="47.666666666666657"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
-                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxS-Um-wIE">
+                                <rect key="frame" x="0.0" y="106.33333333333333" width="414" height="33.999999999999986"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="透過退休人生的模擬體驗認知決">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name=".PingFangTC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="策帶來的風險並做好萬全的準備">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name=".PingFangTC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUy-p6-cub">
                                 <rect key="frame" x="43" y="668" width="328" height="53"/>
@@ -51,8 +70,8 @@
                                     <constraint firstAttribute="width" constant="328" id="LUw-8o-JHc"/>
                                     <constraint firstAttribute="height" constant="53" id="ggd-em-D3O"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="20"/>
-                                <state key="normal" title="開始">
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="28"/>
+                                <state key="normal" title="開 始">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -78,8 +97,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="VS8-3n-5De" kind="show" identifier="first" id="Umy-mh-WvQ"/>
-                        <segue destination="6a4-MN-5R5" kind="show" identifier="normal" id="ptJ-mT-DPk"/>
+                        <segue destination="VS8-3n-5De" kind="presentation" identifier="first" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Umy-mh-WvQ"/>
+                        <segue destination="6a4-MN-5R5" kind="show" identifier="normal" id="O9p-qr-xeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +116,9 @@
         <!--RecordSelect-->
         <scene sceneID="nhu-3I-06T">
             <objects>
-                <viewControllerPlaceholder storyboardName="RecordSelect" id="6a4-MN-5R5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RecordSelect" id="6a4-MN-5R5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YPg-O1-9wA"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzw-PF-a6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="-64"/>
