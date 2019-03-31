@@ -120,12 +120,16 @@ class IncomeViewController: UIViewController {
     
     func setChart() {
         var inEntries: [ChartDataEntry] = []
+        let nocence1 = ChartDataEntry(x: Double(1), y: incomeVals[0])
+        inEntries.append(nocence1)
         for i in 1..<allYear {
             let dataEntry = ChartDataEntry(x: Double(i), y: incomeVals[i - 1])
             inEntries.append(dataEntry)
         }
         
         var outEntries: [ChartDataEntry] = []
+        let nocence2 = ChartDataEntry(x: Double(1), y: outgoingVals[0])
+        outEntries.append(nocence2)
         for i in 1..<allYear {
             let dataEntry = ChartDataEntry(x: Double(i), y: outgoingVals[i - 1])
             outEntries.append(dataEntry)
@@ -172,6 +176,7 @@ class IncomeViewController: UIViewController {
         xAxis.spaceMin = 0
         xAxis.granularity = 1
         xAxis.yOffset = 20
+        xAxis.avoidFirstLastClippingEnabled = false
         
         lineChartView.rightAxis.enabled = false
         lineChartView.leftAxis.enabled = true
@@ -208,7 +213,7 @@ class IncomeViewController: UIViewController {
         lineChartView.addSubview(xTitle)
         lineChartView.addSubview(yTitle)
         lineChartView.extraTopOffset = 50
-        lineChartView.setVisibleXRange(minXRange: 3.001, maxXRange: 3.001)
+        lineChartView.setVisibleXRange(minXRange: 4.001, maxXRange: 4.001)
         lineChartView.moveViewToX(Double(1000))
     }
     
@@ -219,11 +224,7 @@ class IncomeViewController: UIViewController {
 
 class IntVChartFormatter: NSObject, IValueFormatter {
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
-        if Double(Int(value)) == value {
-            return String(Int(value))
-            
-        }
-        return ""
+        return String(Int(value))
     }
 }
 
@@ -232,7 +233,6 @@ class IntAChartFormatter: NSObject, IAxisValueFormatter {
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if Double(Int(value)) == value {
             return String(Int(value))
-            
         }
         return ""
     }
