@@ -34,7 +34,7 @@ class IncomeViewController: UIViewController {
         outgoingTextview.text = ""
         
         
-        // TODO: 去 player 撈資料套到 4 個參數 就有完美圖表
+        // Finish: 去 player 撈資料套到 4 個參數 就有完美圖表
         allYear = p.age - 55 + 1
         for _ in 55..<p.age {
             self.incomeVals.append(0)
@@ -91,7 +91,7 @@ class IncomeViewController: UIViewController {
         }
         
         
-        // TODO: View 的文字也要套個
+        // Finish: View 的文字也要套個
         nthYearTextView.text = "第" + String(Int(p.age - 55)) + "年"
         allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock)) + "萬"
         

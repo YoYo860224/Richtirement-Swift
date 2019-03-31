@@ -66,43 +66,49 @@ class MainGameView2Controller: UIViewController {
     }
     
     func setStory() {
-        propM.changeRatio(ratio: Double(p.money)         / 100.0, duration: 0)
+        propM.changeRatio(ratio: Double(p.getMoneyPersent()) / 100.0, duration: 0)
         propP.changeRatio(ratio: Double(p.phychological) / 100.0, duration: 0)
         propH.changeRatio(ratio: Double(p.healthy)       / 100.0, duration: 0)
         propS.changeRatio(ratio: Double(p.social)        / 100.0, duration: 0)
         
         c1OriginalTransform = self.c1View.transform
         c2OriginalTransform = self.c2View.transform
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.quetionView.alpha = 1
-//            self.c1View.alpha = 1
-//            self.c2View.alpha = 1
-//        })
         
         let nowEvent = s.events[p.nowEvent]!
         
         if nowEvent.absResult != nil {
-            self.r = s.results[nowEvent.absResult!]
-            
-            gameResultTitle.text = ""
-            gameResultText.text = r!.content
-            
-            for we in r!.willHappenedEvent {
-                if(we != ""){
-                    p.eventIDs.append(we)
-                }
-            }
-            
             c1View.isHidden = true
             c2View.isHidden = true
             quetionView.isHidden = true
             
-            self.moneyLabel.text = " "
-            self.phychologicalLabel.text = " "
-            self.healthLabel.text = " "
-            self.socialLabel.text = " "
-            
-            self.valueChanged(change : (self.r?.valueChange)!)
+            UIView.animate(withDuration: 1.0,
+                           delay: 0,
+                           options: [],
+                           animations: {
+                            self.moneyLabel.alpha = 0
+                            self.phychologicalLabel.alpha = 0
+                            self.healthLabel.alpha = 0
+                            self.socialLabel.alpha = 0
+            }, completion: { (finished: Bool) in
+                
+                self.moneyLabel.text = " "
+                self.phychologicalLabel.text = " "
+                self.healthLabel.text = " "
+                self.socialLabel.text = " "
+                
+                self.r = self.s.results[nowEvent.absResult!]
+                
+                self.gameResultTitle.text = ""
+                self.gameResultText.text = self.r!.content
+                
+                for we in self.r!.willHappenedEvent {
+                    if(we != ""){
+                        self.p.eventIDs.append(we)
+                    }
+                }
+                
+                self.valueChanged(change : (self.r?.valueChange)!)
+            })
         }
         else {
             nowQuestion = s.questions[nowEvent.connectQuestion!]!
@@ -423,7 +429,7 @@ class MainGameView2Controller: UIViewController {
                     let _ = p.payMoney(money: num)
                     self.moneyLabel.text = "-" + String(num)
                 }
-                propM.changeRatio(ratio: Double(p.money) / 100.0, duration: 1)
+                propM.changeRatio(ratio: Double(p.getMoneyPersent()) / 100.0, duration: 1)
                 
                 
                 let originalTransform = self.propM.transform

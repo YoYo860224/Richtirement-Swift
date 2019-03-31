@@ -27,7 +27,7 @@ class AnalysisViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setChart()
-        wholeRadarView.isHidden = true
+//        wholeRadarView.isHidden = true
         
     }
     
@@ -39,7 +39,7 @@ class AnalysisViewController: UIViewController {
         fiveBIGData[1] = min(max(p.social, 0), 100)
         fiveBIGData[2] = min(max(p.healthy,0), 100)
         fiveBIGData[3] = min(max(p.phychological,0), 100)
-        fiveBIGData[4] = min(max(p.money, 0), 100)
+        fiveBIGData[4] = min(max(p.getMoneyPersent(), 0), 100)
         
         // Finish: 結果文字稍微設定一下吧
         totalMoneyLabel.text = String(Int(p.deposit + p.fund + p.stock)) + "萬"

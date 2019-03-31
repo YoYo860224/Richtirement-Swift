@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var progressBarOuter: UIView!
     @IBOutlet weak var progressBarInner: UIView!
     @IBOutlet weak var progressBarTrCn: NSLayoutConstraint!
@@ -66,6 +66,8 @@ class SettingViewController: UIViewController {
         
         // Page4 show
         confirmBtn.isHidden = true
+        
+        nameTF.delegate = self
     }
     
     // MARK: - keyboard issue
@@ -96,6 +98,11 @@ class SettingViewController: UIViewController {
     
     @IBAction func TapToEndEditing(_ sender: Any) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ nameTF: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     // MARK: - IBAction

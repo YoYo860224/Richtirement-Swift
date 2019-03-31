@@ -56,6 +56,10 @@ class PlayerData: Codable {
     var nowEvent: String = ""
     var eventIDs: [String] = ["E0"]
     
+    func getMoneyPersent() -> Int{
+        return min(Int(Float(deposit + stock + fund) / (Float(InitMoney) * 0.4) * 100), 100)
+    }
+    
     func payMoney(money: Int) -> Bool {
         var money = money
         if(money > self.deposit){
@@ -127,7 +131,7 @@ class PlayerData: Codable {
             self.deposit += Int(annuityChange)
         }
         
-        let depositChange = (1.0 - self.randomNormalNumber(deviation: 0.003, mean: 0.97)) * Float(deposit + stock + fund)
+        let depositChange = (1.0 - self.randomNormalNumber(deviation: 0.003, mean: 0.97)) * max(Float(deposit + stock + fund), 1000)
         let _ = self.payMoney(money: Int(depositChange))
         self.livingExpenseRecord[self.livingExpenseRecord.count - 1] += Double(Int(depositChange))
         

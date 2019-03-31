@@ -126,7 +126,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="94" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="AaZ-w4-DTH" customClass="PropImageView" customModule="Richtirement" customModuleProvider="target">
-                                                                <rect key="frame" x="24.5" y="18" width="45" height="45"/>
+                                                                <rect key="frame" x="24.5" y="16" width="45" height="45"/>
                                                                 <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="2BZ-Yb-9A3"/>
@@ -148,14 +148,14 @@
                                                             <constraint firstItem="AaZ-w4-DTH" firstAttribute="centerX" secondItem="B68-Ol-acG" secondAttribute="centerX" id="HOv-4V-drH"/>
                                                             <constraint firstItem="M92-fg-SY1" firstAttribute="centerX" secondItem="B68-Ol-acG" secondAttribute="centerX" id="InE-6j-UpD"/>
                                                             <constraint firstAttribute="bottom" secondItem="M92-fg-SY1" secondAttribute="bottom" constant="13" id="Tdo-Oo-GFO"/>
-                                                            <constraint firstItem="M92-fg-SY1" firstAttribute="top" secondItem="AaZ-w4-DTH" secondAttribute="bottom" constant="2" id="u4A-SN-6cx"/>
+                                                            <constraint firstItem="M92-fg-SY1" firstAttribute="top" secondItem="AaZ-w4-DTH" secondAttribute="bottom" constant="4" id="u4A-SN-6cx"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQY-YW-Y8i">
                                                         <rect key="frame" x="94" y="0.0" width="93.5" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZAS-KT-zrK" customClass="PropImageView" customModule="Richtirement" customModuleProvider="target">
-                                                                <rect key="frame" x="24" y="18" width="45" height="45"/>
+                                                                <rect key="frame" x="24" y="16" width="45" height="45"/>
                                                                 <color key="backgroundColor" red="0.90588235294117647" green="0.38431372549019605" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="9cF-UG-iLF"/>
@@ -174,7 +174,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="JLu-Bd-Xpt" firstAttribute="top" secondItem="ZAS-KT-zrK" secondAttribute="bottom" constant="2" id="1AZ-cn-fKM"/>
+                                                            <constraint firstItem="JLu-Bd-Xpt" firstAttribute="top" secondItem="ZAS-KT-zrK" secondAttribute="bottom" constant="4" id="1AZ-cn-fKM"/>
                                                             <constraint firstItem="JLu-Bd-Xpt" firstAttribute="centerX" secondItem="WQY-YW-Y8i" secondAttribute="centerX" id="2PR-JJ-23M"/>
                                                             <constraint firstAttribute="bottom" secondItem="JLu-Bd-Xpt" secondAttribute="bottom" constant="13" id="NRL-NR-Uck"/>
                                                             <constraint firstItem="ZAS-KT-zrK" firstAttribute="centerX" secondItem="WQY-YW-Y8i" secondAttribute="centerX" id="QtO-jF-RB2"/>
@@ -184,7 +184,7 @@
                                                         <rect key="frame" x="187.5" y="0.0" width="94" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-uC-3zw" customClass="PropImageView" customModule="Richtirement" customModuleProvider="target">
-                                                                <rect key="frame" x="24.5" y="18" width="45" height="45"/>
+                                                                <rect key="frame" x="24.5" y="16" width="45" height="45"/>
                                                                 <color key="backgroundColor" red="0.24705882352941178" green="0.68235294117647061" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="08h-jT-RGL"/>
@@ -204,7 +204,7 @@
                                                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="oiX-uC-3zw" firstAttribute="centerX" secondItem="fh6-05-5b0" secondAttribute="centerX" id="1Xc-B3-4Q8"/>
-                                                            <constraint firstItem="9pa-Gf-WaU" firstAttribute="top" secondItem="oiX-uC-3zw" secondAttribute="bottom" constant="2" id="UO3-42-maZ"/>
+                                                            <constraint firstItem="9pa-Gf-WaU" firstAttribute="top" secondItem="oiX-uC-3zw" secondAttribute="bottom" constant="4" id="UO3-42-maZ"/>
                                                             <constraint firstItem="9pa-Gf-WaU" firstAttribute="centerX" secondItem="fh6-05-5b0" secondAttribute="centerX" id="iXK-wN-Klj"/>
                                                             <constraint firstAttribute="bottom" secondItem="9pa-Gf-WaU" secondAttribute="bottom" constant="13" id="m0J-qp-Pbj"/>
                                                         </constraints>
@@ -213,7 +213,7 @@
                                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-IY-kKy" customClass="PropImageView" customModule="Richtirement" customModuleProvider="target">
-                                                                <rect key="frame" x="24" y="18" width="45" height="45"/>
+                                                                <rect key="frame" x="24" y="16" width="45" height="45"/>
                                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.76470588240000004" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="45" id="CKS-8N-egw"/>
@@ -235,7 +235,7 @@
                                                             <constraint firstItem="lLa-IY-kKy" firstAttribute="centerX" secondItem="tLF-S0-lw2" secondAttribute="centerX" id="583-d0-Shd"/>
                                                             <constraint firstItem="lZH-2I-h1R" firstAttribute="centerX" secondItem="tLF-S0-lw2" secondAttribute="centerX" id="81L-JZ-82X"/>
                                                             <constraint firstAttribute="bottom" secondItem="lZH-2I-h1R" secondAttribute="bottom" constant="13" id="LPh-Fa-6Qb"/>
-                                                            <constraint firstItem="lZH-2I-h1R" firstAttribute="top" secondItem="lLa-IY-kKy" secondAttribute="bottom" constant="2" id="tSw-Zh-W2T"/>
+                                                            <constraint firstItem="lZH-2I-h1R" firstAttribute="top" secondItem="lLa-IY-kKy" secondAttribute="bottom" constant="4" id="tSw-Zh-W2T"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
