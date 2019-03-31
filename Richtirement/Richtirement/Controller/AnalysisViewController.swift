@@ -16,6 +16,11 @@ class AnalysisViewController: UIViewController {
     @IBOutlet var illImgViews: [UIImageView]!
     @IBOutlet var illTxtViews: [UILabel]!
     
+    @IBOutlet weak var totalMoneyLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
+    @IBOutlet weak var resultTextLabel: UITextView!
+    
     var fiveBIGData = [80, 64, 78, 82, 77]
     
     override func viewDidLoad() {
@@ -36,7 +41,20 @@ class AnalysisViewController: UIViewController {
         fiveBIGData[3] = min(max(p.phychological,0), 100)
         fiveBIGData[4] = min(max(p.money, 0), 100)
         
-        // TODO: 結果文字稍微設定一下吧
+        // Finish: 結果文字稍微設定一下吧
+        totalMoneyLabel.text = String(Int(p.deposit + p.fund + p.stock)) + "萬"
+        ageLabel.text = "你的人生活到了 " + String(p.age) + "歲"
+        
+        var resultText = ""
+        for text in p.resultRecord{
+            if(text != ""){
+                if(resultText != ""){
+                    resultText += "\n\n"
+                }
+                resultText += text
+            }
+        }
+        resultTextLabel.text = resultText
         // TODO: 圖片好像要問一下 我好像弄錯的圖片
     }
 

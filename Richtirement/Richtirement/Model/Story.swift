@@ -178,6 +178,7 @@ class Result {
     var connectEvent: String
     var valueChange: [String]
     var willHappenedEvent: [String]
+    var endEffect: String
     
     init(rj: ResultJ) {
         self.index = rj.index!
@@ -188,6 +189,7 @@ class Result {
         self.connectEvent = rj.connectEvent!
         self.valueChange = rj.valueChanged!
         self.willHappenedEvent = rj.willHappenedEvent!
+        self.endEffect = rj.endEffect!
     }
 }
 
@@ -223,4 +225,5 @@ class ResultJ: Codable {
     var connectEvent: String?
     var valueChanged: [String]?
     var willHappenedEvent: [String]?
+    var endEffect:String?
 }

@@ -181,11 +181,12 @@ class AssetViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let p = SystemSetting.getPlayer()
+        
         p.stock = Int(Float(stockUISlider.value) * Float(tempTotalMoney))
         p.fund = Int(Float(fundUISlider.value) * Float(tempTotalMoney))
         p.annuity += Int(Float(annuityUISlider.value))
         p.medicineInsurance += Int(Float(medicineInsuranceUISlider.value))
-        p.deposit = tempTotalMoney - p.stock - p.fund - p.annuity - p.medicineInsurance
+        p.deposit = tempTotalMoney - p.stock - p.fund - Int(Float(annuityUISlider.value)) - Int(Float(medicineInsuranceUISlider.value))
     }
     
     @IBAction func ToConfirmBtn_Click(_ sender: UIButton) {

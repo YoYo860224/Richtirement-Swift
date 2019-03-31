@@ -324,7 +324,10 @@
                         <viewLayoutGuide key="safeArea" id="oFa-nL-fqC"/>
                     </view>
                     <connections>
+                        <outlet property="ageLabel" destination="r6i-JF-wSi" id="UFX-DK-AaM"/>
                         <outlet property="radarChartView" destination="i47-Vv-7O4" id="Em1-qS-9hP"/>
+                        <outlet property="resultTextLabel" destination="o8b-Wr-48I" id="Avo-el-xEd"/>
+                        <outlet property="totalMoneyLabel" destination="0M3-gS-8N7" id="Sp1-XL-8yw"/>
                         <outlet property="wholeRadarView" destination="rVW-LS-ftI" id="fTe-tG-rJC"/>
                         <outletCollection property="illImgViews" destination="AF9-l5-YYi" collectionClass="NSMutableArray" id="hPE-Ta-ezk"/>
                         <outletCollection property="illImgViews" destination="Bkk-GB-W2f" collectionClass="NSMutableArray" id="oJd-XI-0pt"/>

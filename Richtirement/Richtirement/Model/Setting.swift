@@ -45,6 +45,9 @@ class PlayerData: Codable {
     var annuity: Int = 0                // 年金
     var medicineInsurance: Int = 0      // 醫療險
     
+    var resultRecord: [String] = []
+    
+    var annuityRecord:[Double] = []
     var livingExpenseRecord: [Double] = []
     var stockRecord: [Double] = []
     var fundRecord: [Double] = []
@@ -116,7 +119,14 @@ class PlayerData: Codable {
         self.livingExpenseRecord.append(0)
         self.stockRecord.append(0)
         self.fundRecord.append(0)
-
+        self.annuityRecord.append(0)
+        
+        if(self.age > 65){
+            let annuityChange = 0.1 * Float(annuity)
+            self.annuityRecord[self.annuityRecord.count - 1] += Double(Int(annuityChange))
+            self.deposit += Int(annuityChange)
+        }
+        
         let depositChange = (1.0 - self.randomNormalNumber(deviation: 0.003, mean: 0.97)) * Float(deposit + stock + fund)
         let _ = self.payMoney(money: Int(depositChange))
         self.livingExpenseRecord[self.livingExpenseRecord.count - 1] += Double(Int(depositChange))

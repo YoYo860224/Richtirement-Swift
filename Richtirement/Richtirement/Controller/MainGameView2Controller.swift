@@ -174,7 +174,7 @@ class MainGameView2Controller: UIViewController {
         }
         else if (onChoice == 1){
             onChoice = 0
-
+            
             let c1 = s.choices[nowQuestion!.choice1!]!
             
             if c1.nextQuestion != nil {
@@ -239,7 +239,9 @@ class MainGameView2Controller: UIViewController {
                     
                     let rStr = c1.connectResult[0]!
                     self.r = self.s.results[rStr]!
-                    self.imageView.image = self.r!.img
+                    if(self.r!.img != nil ){
+                        self.imageView.image = self.r!.img
+                    }
                     
                     UIView.animate(withDuration: 1.0, animations:{
                         self.imageView.alpha = 1
@@ -281,7 +283,7 @@ class MainGameView2Controller: UIViewController {
             onChoice = 0
 
             let c2 = s.choices[nowQuestion!.choice2!]!
-            
+
             if c2.nextQuestion != nil {
                 UIView.animate(withDuration: 0.5, animations: {
                     self.c1View.transform = self.c1OriginalTransform
@@ -343,7 +345,9 @@ class MainGameView2Controller: UIViewController {
                     
                     let rStr = c2.connectResult[0]!
                     self.r = self.s.results[rStr]
-                    self.imageView.image = self.r!.img
+                    if(self.r!.img != nil){
+                        self.imageView.image = self.r!.img
+                    }
                     
                     UIView.animate(withDuration: 1.0, animations:{
                         self.imageView.alpha = 1
@@ -384,7 +388,8 @@ class MainGameView2Controller: UIViewController {
                 self.gameResultView.alpha = 1
             }, completion: nil)
             
-            
+            p.resultRecord.append(self.r?.endEffect ?? "")
+            print(self.r?.endEffect as Any)
         }
     }
     

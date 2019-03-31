@@ -40,6 +40,7 @@ class IncomeViewController: UIViewController {
             self.incomeVals.append(0)
             self.outgoingVals.append(0)
         }
+        var annuityTotal = 0
         var expenseTotal = 0
         var stockTotal = 0
         var fundTotal = 0
@@ -47,6 +48,16 @@ class IncomeViewController: UIViewController {
         print(p.livingExpenseRecord.count)
         print(p.stockRecord.count)
         print(p.fundRecord.count)
+        
+        if(p.age > 65){
+            for i in 0..<p.annuityRecord.count{
+                if(p.annuityRecord.count - i <= 5){
+                    annuityTotal += Int(p.annuityRecord[i])
+                }
+                self.incomeVals[i] += p.annuityRecord[i]
+            }
+        }
+
         
         for i in 0..<p.livingExpenseRecord.count{
             if(p.livingExpenseRecord.count - i <= 5){
@@ -84,6 +95,9 @@ class IncomeViewController: UIViewController {
         nthYearTextView.text = "第" + String(Int(p.age - 55)) + "年"
         allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock)) + "萬"
         
+        if(p.age > 65 && annuityTotal > 0){
+            incomeText += "年金回饋" + String(annuityTotal) + "萬 "
+        }
         outgoingText = "生活費" + String(expenseTotal) + "萬 "
         if(fundTotal > 0){
             incomeText += "基金" + String(fundTotal) + "萬 "
