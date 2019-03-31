@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bee-fM-VGz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKtc-Medium.otf">
+            <string>NotoSansCJKtc-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Game Over View Controller-->
+        <scene sceneID="Ntm-WC-JGL">
+            <objects>
+                <viewController id="bee-fM-VGz" customClass="GameOverViewController" customModule="Richtirement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIb-s2-HBR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money0" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-PV-bIi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9V-aQ-QEk">
+                                <rect key="frame" x="20" y="75" width="335" height="517"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-5I-RxN">
+                                        <rect key="frame" x="10" y="10" width="315" height="497"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hi" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZU-2l-w0p">
+                                        <rect key="frame" x="20" y="20" width="295" height="477"/>
+                                        <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="0.82763364780000004" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="tw0-fY-cLL" firstAttribute="bottom" secondItem="ZZU-2l-w0p" secondAttribute="bottom" constant="20" id="HXE-nY-0Td"/>
+                                    <constraint firstItem="tw0-fY-cLL" firstAttribute="trailing" secondItem="ZZU-2l-w0p" secondAttribute="trailing" constant="20" id="NX1-2i-Ac8"/>
+                                    <constraint firstItem="ZZU-2l-w0p" firstAttribute="top" secondItem="tw0-fY-cLL" secondAttribute="top" constant="20" id="ctp-Bh-q76"/>
+                                    <constraint firstItem="ZZU-2l-w0p" firstAttribute="leading" secondItem="tw0-fY-cLL" secondAttribute="leading" constant="20" id="yfI-Qn-ukP"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="tw0-fY-cLL"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eDs-vK-JJw" firstAttribute="bottom" secondItem="i3d-PV-bIi" secondAttribute="bottom" id="GwK-DD-8NL"/>
+                            <constraint firstItem="eDs-vK-JJw" firstAttribute="trailing" secondItem="i3d-PV-bIi" secondAttribute="trailing" id="HwH-Dh-owH"/>
+                            <constraint firstItem="Z9V-aQ-QEk" firstAttribute="leading" secondItem="eDs-vK-JJw" secondAttribute="leading" constant="20" id="L3t-zw-xZC"/>
+                            <constraint firstItem="eDs-vK-JJw" firstAttribute="bottom" secondItem="Z9V-aQ-QEk" secondAttribute="bottom" constant="75" id="O8I-bs-sk4"/>
+                            <constraint firstItem="eDs-vK-JJw" firstAttribute="trailing" secondItem="Z9V-aQ-QEk" secondAttribute="trailing" constant="20" id="h2P-ke-5dH"/>
+                            <constraint firstItem="Z9V-aQ-QEk" firstAttribute="top" secondItem="eDs-vK-JJw" secondAttribute="top" constant="55" id="k6T-yf-lm4"/>
+                            <constraint firstItem="i3d-PV-bIi" firstAttribute="top" secondItem="hIb-s2-HBR" secondAttribute="top" id="oDA-4n-Kao"/>
+                            <constraint firstItem="i3d-PV-bIi" firstAttribute="leading" secondItem="eDs-vK-JJw" secondAttribute="leading" id="wkW-ZM-0H0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eDs-vK-JJw"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="i3d-PV-bIi" id="6ir-LA-LyA"/>
+                        <outlet property="gameOverResultView" destination="Z9V-aQ-QEk" id="eHe-x5-iBl"/>
+                        <outlet property="gameoverResultTextView" destination="ZZU-2l-w0p" id="dNQ-Eo-Zi1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cn8-cB-DrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="66"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="money0" width="750.719970703125" height="1334.4000244140625"/>
+    </resources>
+</document>
