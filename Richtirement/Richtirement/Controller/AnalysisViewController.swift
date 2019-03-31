@@ -11,6 +11,8 @@ import Charts
 
 class AnalysisViewController: UIViewController {
     // TODO: - 好像沒有結果的文字呢
+    @IBOutlet weak var wholeReportView: UIView!
+    @IBOutlet weak var wholeYearInfoView: UIView!
     @IBOutlet weak var wholeRadarView: UIView!
     @IBOutlet weak var radarChartView: UIView!
     @IBOutlet var illImgViews: [UIImageView]!
@@ -240,6 +242,12 @@ class AnalysisViewController: UIViewController {
         }
     }
 
+    @IBAction func BackgroundImageView_Tap(_ sender: Any) {
+        wholeYearInfoView.isHidden = false
+        wholeReportView.isHidden = false
+        wholeRadarView.isHidden = false
+    }
+    
     
     @IBAction func nextBtn_Click(_ sender: Any) {
         wholeRadarView.isHidden = true
