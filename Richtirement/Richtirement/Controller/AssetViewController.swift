@@ -50,6 +50,12 @@ class AssetViewController: UIViewController {
     var tempAnnuity = 0
     var tempMedicineInsurance = 0
     
+    var receivedDeposit: Int = 0
+    var receivedStock: Int = 0
+    var receivedFund: Int = 0
+    var receivedAnnuity: Int = 0
+    var receivedMedicineInsurance: Int = 0
+    
     @IBAction func stockUISlider(_ sender: UISlider) {
         sliderValueChanged(index: 0)
     }
@@ -106,8 +112,8 @@ class AssetViewController: UIViewController {
             tempMedicineInsurance = Int(medicineInsuranceUISlider.value)
         }
         
-        tempDeposit = Int(Float(tempTotalMoney) - Float(tempFund) - Float(tempStock) - Float(tempAnnuity) - Float(tempMedicineInsurance))
-        depositUISlider.value = 1.0 - stockUISlider.value - fundUISlider.value - ((Float(tempAnnuity) + Float(tempMedicineInsurance)) / Float(tempTotalMoney))
+        tempDeposit = Int(Float(tempTotalMoney) - Float(tempFund) - Float(tempStock) - Float(tempAnnuity) - Float(tempMedicineInsurance) - Float(p.annuity) - Float(p.medicineInsurance))
+        depositUISlider.value = 1.0 - stockUISlider.value - fundUISlider.value - ((Float(tempAnnuity) + Float(tempMedicineInsurance) + Float(p.annuity) + Float(p.medicineInsurance)) / Float(tempTotalMoney))
         
         
         assetPersent.text = String(Int(depositUISlider.value * 100)) + "%"
@@ -159,18 +165,40 @@ class AssetViewController: UIViewController {
     
     func getMoney(){
         let p = SystemSetting.getPlayer()
-        tempDeposit = p.deposit
-        tempStock = p.stock
-        tempFund = p.fund
-        tempTotalMoney = tempDeposit + tempStock + tempFund + p.annuity + p.medicineInsurance
+        
+        if(receivedDeposit != 0){
+            tempDeposit = receivedDeposit
+        }
+        else{
+            tempDeposit = p.deposit
+        }
+        if(receivedStock != 0){
+            tempStock = receivedStock
+        }
+        else{
+            tempStock = p.stock
+        }
+        if(receivedFund != 0){
+            tempFund = receivedFund
+        }
+        else{
+            tempFund = p.fund
+        }
+        tempAnnuity = receivedAnnuity
+        tempMedicineInsurance = receivedMedicineInsurance
+        
+        tempTotalMoney = tempDeposit + tempStock + tempFund + p.annuity + p.medicineInsurance + tempAnnuity + tempMedicineInsurance
         
         totalMoneyLabel.text = "總資產  " + String(tempTotalMoney) + "萬"
         depositUISlider.value = Float(Float(tempDeposit) / Float(tempTotalMoney))
         stockUISlider.value = Float(Float(tempStock) / Float(tempTotalMoney))
         fundUISlider.value = Float(Float(tempFund) / Float(tempTotalMoney))
+        annuityUISlider.value = Float(tempAnnuity)
+        medicineInsuranceUISlider.value = Float(tempMedicineInsurance)
+
         
         assetPersent.text = String(Int(depositUISlider.value * 100)) + "%"
-        insurancePersent.text = String(Int(Float(p.annuity + p.medicineInsurance) / Float(tempTotalMoney) * 100)) + "%"
+        insurancePersent.text = String(Int(Float(p.annuity + p.medicineInsurance + tempAnnuity + tempMedicineInsurance) / Float(tempTotalMoney) * 100)) + "%"
         investPersent.text = String(Int((stockUISlider.value + fundUISlider.value) * 100)) + "%"
 
         depositLabel.text = String(tempDeposit) + "萬"
@@ -189,14 +217,35 @@ class AssetViewController: UIViewController {
         medicinePersent.text = String(Int(medicineInsuranceUISlider.value)) + "%"
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        let p = SystemSetting.getPlayer()
+//    override func viewWillDisappear(_ animated: Bool) {
+//        let p = SystemSetting.getPlayer()
+//        
+//        p.stock = Int(Float(stockUISlider.value) * Float(tempTotalMoney))
+//        p.fund = Int(Float(fundUISlider.value) * Float(tempTotalMoney))
+//        p.annuity += Int(Float(annuityUISlider.value))
+//        p.medicineInsurance += Int(Float(medicineInsuranceUISlider.value))
+//        p.deposit = tempTotalMoney - p.stock - p.fund - p.annuity - p.medicineInsurance
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        p.stock = Int(Float(stockUISlider.value) * Float(tempTotalMoney))
-        p.fund = Int(Float(fundUISlider.value) * Float(tempTotalMoney))
-        p.annuity += Int(Float(annuityUISlider.value))
-        p.medicineInsurance += Int(Float(medicineInsuranceUISlider.value))
-        p.deposit = tempTotalMoney - p.stock - p.fund - p.annuity - p.medicineInsurance
+        if segue.identifier == "toConfirm" {
+            let p = SystemSetting.getPlayer()
+
+            let secondVC = segue.destination as! AssetConfirmViewController
+            
+            let stock = Int(Float(stockUISlider.value) * Float(tempTotalMoney))
+            let fund = Int(Float(fundUISlider.value) * Float(tempTotalMoney))
+            let annuity = Int(Float(annuityUISlider.value))
+            let medicineInsurance = Int(Float(medicineInsuranceUISlider.value))
+            
+            secondVC.receivedStock = stock
+            secondVC.receivedFund = fund
+            secondVC.receivedAnnuity = annuity
+            secondVC.receivedMedicineInsurance = medicineInsurance
+
+            secondVC.receivedDeposit = tempTotalMoney - stock - fund - annuity - medicineInsurance - p.annuity - p.medicineInsurance
+        }
     }
     
     @IBAction func ToConfirmBtn_Click(_ sender: UIButton) {

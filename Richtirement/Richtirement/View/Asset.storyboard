@@ -460,7 +460,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="ToConfirmBtn_Click:" destination="bLC-S9-rjM" eventType="touchUpInside" id="gzl-3Q-SRD"/>
-                                                                    <segue destination="iG8-BJ-dvh" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zCd-sm-Rmf"/>
+                                                                    <segue destination="iG8-BJ-dvh" kind="presentation" identifier="toConfirm" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zCd-sm-Rmf"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -914,7 +914,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="bLC-S9-rjM" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YCU-cl-LzP"/>
+                                                                    <segue destination="bLC-S9-rjM" kind="presentation" identifier="toBack" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YCU-cl-LzP"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6va-we-LaO">

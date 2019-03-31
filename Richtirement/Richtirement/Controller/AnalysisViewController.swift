@@ -19,8 +19,10 @@ class AnalysisViewController: UIViewController {
     @IBOutlet weak var totalMoneyLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     
+    @IBOutlet weak var resultTitleLabel: UILabel!
     @IBOutlet weak var resultTextLabel: UITextView!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     var fiveBIGData = [80, 64, 78, 82, 77]
     
     override func viewDidLoad() {
@@ -42,10 +44,10 @@ class AnalysisViewController: UIViewController {
         fiveBIGData[4] = min(max(p.getMoneyPersent(), 0), 100)
         
         // Finish: 結果文字稍微設定一下吧
-        totalMoneyLabel.text = String(Int(p.deposit + p.fund + p.stock)) + "萬"
+        totalMoneyLabel.text = String(max(Int(p.deposit + p.fund + p.stock), 0)) + "萬"
         ageLabel.text = "你的人生活到了 " + String(p.age) + "歲"
         
-        var resultText = ""
+        var resultText = DetectEndResult()
         for text in p.resultRecord{
             if(text != ""){
                 if(resultText != ""){
@@ -257,5 +259,47 @@ class AnalysisViewController: UIViewController {
         let y = ori.y + CGFloat(radius * sin(arc))
         
         return CGPoint(x: x, y: y)
+    }
+    
+    func DetectEndResult() -> String{
+        let p = SystemSetting.getPlayer()
+        let money = p.getMoneyPersent()
+        let phychological = p.phychological
+        let social = p.social
+        let healthy = p.healthy
+        
+        var resultText = ""
+        
+        if(money > 50 && phychological > 50 && social > 50 && healthy > 50 &&
+            money > phychological && money > social && money > healthy){
+//            backgroundImageView.image = UIImage(named: "life_colorful")
+            resultTitleLabel.text = "退休規劃達人"
+            resultText += "恭喜你！\n不僅金融管理能力佳，還能兼顧健康與心靈平衡、維持良好社交生活，擁有著人人稱羨、豐餘富足、多采多姿的退休生活！\n\n請繼續保持下去，開創嶄新的退休人生扉頁。"
+        }
+        else if(phychological > 0 &&
+            phychological > money && phychological > social && phychological > healthy){
+//            backgroundImageView.image = UIImage(named: "life_vigorous")
+            resultTitleLabel.text = "心靈富足者"
+            resultText += "或許累積資產不是那麼多，但很懂得如何維持健康心理狀態。\n\n若與人有不錯的社交交流，提升健康層面，這也不失為另一種富足的退休生活。"
+        }
+        else if(healthy > 0 &&
+            healthy > money && healthy > social && healthy > phychological){
+//            backgroundImageView.image = UIImage(named: "life_happy")
+            resultTitleLabel.text = "退休養生專家"
+            resultText += "健康是良好退休生活的根本原則，掌握得相當好，擁有良好生理狀態！\n\n也別忘要多尋求各領域專業資源，累積更平穩資產收入，同時積極參與社交活動也是維持心理健康的秘方哦！"
+        }
+        else if(social > 0 &&
+            social > money && social > healthy && social > phychological){
+//            backgroundImageView.image = UIImage(named: "life_balance")
+            resultTitleLabel.text = "人見人愛活躍者"
+            resultText += "積極參與社交是一項無形的資產，相信已擁有許多交心朋友、職場貴人，同時也與最重要的親人有緊密的良好關係。\n\n且試著從社交人脈中去找尋專家，請益維持健康、累積資產、提升心理愉悅的方法，讓退休生活達到更佳的平衡。"
+        }
+        else{
+//            backgroundImageView.image = UIImage(named: "life_nothing but money")
+            resultTitleLabel.text = "急需策略者"
+            resultText += "擁有足夠維持生活的良好條件與經濟狀態，卻因沒有良好運用導致過著沒有品質的生活，心理層面也未因資產而獲得滿足。\n\n建議嘗試更好的資產運用方式，讓生理、心理、社交層面為良好均衡狀態，提升退休生活的品質。"
+        }
+        
+        return resultText
     }
 }
