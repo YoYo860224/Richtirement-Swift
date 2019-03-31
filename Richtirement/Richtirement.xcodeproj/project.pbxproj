@@ -37,7 +37,6 @@
 		89BA07EB2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */; };
 		89BA081422378839007B4A6F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89BA081322378839007B4A6F /* Setting.storyboard */; };
 		89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA0815223789BD007B4A6F /* SettingViewController.swift */; };
-		89BA082122380D1C007B4A6F /* RadioBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA082022380D1C007B4A6F /* RadioBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +71,6 @@
 		89BA07EA2236B10D007B4A6F /* NotoSansCJKtc-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Medium.otf"; sourceTree = "<group>"; };
 		89BA081322378839007B4A6F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		89BA0815223789BD007B4A6F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		89BA082022380D1C007B4A6F /* RadioBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBtn.swift; sourceTree = "<group>"; };
 		C17385EDC1A885C0C9B8B8FA /* Pods-Richtirement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Richtirement.release.xcconfig"; path = "Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement.release.xcconfig"; sourceTree = "<group>"; };
 		C5A375F46DE23033574AD001 /* Pods-Richtirement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Richtirement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Richtirement/Pods-Richtirement.debug.xcconfig"; sourceTree = "<group>"; };
 		EC407BF6273F120FA92AE8A7 /* Pods_Richtirement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Richtirement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +187,6 @@
 		89BA081F22378F97007B4A6F /* MyUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				89BA082022380D1C007B4A6F /* RadioBtn.swift */,
 			);
 			path = MyUIKit;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 				89091F1C224A0374004C4212 /* IncomeViewController.swift in Sources */,
 				89411661223D5C02007D8E55 /* MainGameView2Controller.swift in Sources */,
 				897BD32D224B1A4D0064B545 /* AssetConfirmViewController.swift in Sources */,
-				89BA082122380D1C007B4A6F /* RadioBtn.swift in Sources */,
 				89BA0816223789BD007B4A6F /* SettingViewController.swift in Sources */,
 				89668FA2222D807C004D2394 /* MainViewController.swift in Sources */,
 				8941165D223D3FB3007D8E55 /* MainGameView1Controller.swift in Sources */,
