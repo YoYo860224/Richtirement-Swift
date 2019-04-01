@@ -374,13 +374,16 @@
                                             <outletCollection property="gestureRecognizers" destination="Ys0-Yc-VhC" appends="YES" id="eEg-UB-pYQ"/>
                                         </connections>
                                     </view>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StA-XI-c2y">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StA-XI-c2y">
                                         <rect key="frame" x="330" y="633" width="29" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="KXR-gs-AFE"/>
                                             <constraint firstAttribute="width" constant="29" id="Oeg-3F-uK0"/>
                                         </constraints>
                                         <state key="normal" image="Back"/>
+                                        <connections>
+                                            <action selector="pauseBtn_Click:" destination="xV0-fb-nhX" eventType="touchUpInside" id="LdY-xA-MxJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -427,6 +430,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="ViC-ER-aMM"/>
                                                 </constraints>
                                                 <state key="normal" image="BackBtn1"/>
+                                                <connections>
+                                                    <action selector="pContinueBtn_Click:" destination="xV0-fb-nhX" eventType="touchUpInside" id="wVx-zP-2pE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewW-tZ-Les">
                                                 <rect key="frame" x="0.0" y="68" width="275" height="50"/>
@@ -435,6 +441,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="9AX-DP-Lwb"/>
                                                 </constraints>
                                                 <state key="normal" image="BackBtn2"/>
+                                                <connections>
+                                                    <action selector="pSettingBtn_Click:" destination="xV0-fb-nhX" eventType="touchUpInside" id="Rgz-kc-QK7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-BZ-BmI">
                                                 <rect key="frame" x="0.0" y="136" width="275" height="50"/>
@@ -443,6 +452,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="toR-2A-u3v"/>
                                                 </constraints>
                                                 <state key="normal" image="BackBtn3"/>
+                                                <connections>
+                                                    <action selector="pGobackBtn_Click:" destination="xV0-fb-nhX" eventType="touchUpInside" id="OQw-0N-aTl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -482,6 +494,8 @@
                         <outlet property="healthLabel" destination="9pa-Gf-WaU" id="CTy-ls-njY"/>
                         <outlet property="imageView" destination="8zo-xd-fwZ" id="kUd-Wc-mWR"/>
                         <outlet property="moneyLabel" destination="M92-fg-SY1" id="l1b-ex-25G"/>
+                        <outlet property="pSettingBtn" destination="ewW-tZ-Les" id="2W5-Dt-BoI"/>
+                        <outlet property="pauseMenu" destination="YVe-fw-e1L" id="23K-Ku-aWz"/>
                         <outlet property="phychologicalLabel" destination="JLu-Bd-Xpt" id="iEy-7A-fJ3"/>
                         <outlet property="propH" destination="oiX-uC-3zw" id="yBG-A0-ccp"/>
                         <outlet property="propM" destination="AaZ-w4-DTH" id="AxD-zJ-2uh"/>

@@ -584,6 +584,29 @@ class MainGameView2Controller: UIViewController {
         }
 
     }
+    
+    // MARK: - 暫停功能區
+    @IBOutlet weak var pauseMenu: UIView!
+    @IBOutlet weak var pSettingBtn: UIButton!
+    
+    @IBAction func pauseBtn_Click(_ sender: Any) {
+        pauseMenu.isHidden = false
+        
+        // 似乎沒什麼要設定的呢 就先關掉吧
+        pSettingBtn.isHidden = true
+    }
+    
+    @IBAction func pContinueBtn_Click(_ sender: Any) {
+        pauseMenu.isHidden = true
+    }
+    
+    @IBAction func pSettingBtn_Click(_ sender: Any) {
+        // 似乎沒什麼要設定的呢 但還是放著吧
+    }
+    
+    @IBAction func pGobackBtn_Click(_ sender: Any) {
+        // segue 回去囉
+    }
 }
 
 class PropImageView: UIView {

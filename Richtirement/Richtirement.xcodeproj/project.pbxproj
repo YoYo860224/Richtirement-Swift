@@ -177,7 +177,6 @@
 		89BA07EE2236B8E4007B4A6F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				51FBDB60225113A0002278E5 /* GameOverViewController.swift */,
 				89668FA1222D807C004D2394 /* MainViewController.swift */,
 				89BA0815223789BD007B4A6F /* SettingViewController.swift */,
 				89411658223D0758007D8E55 /* RecordSelectViewController.swift */,
@@ -188,6 +187,7 @@
 				897BD32A224B17AB0064B545 /* AssetViewController.swift */,
 				897BD32C224B1A4D0064B545 /* AssetConfirmViewController.swift */,
 				897BD32E224B36720064B545 /* AnalysisViewController.swift */,
+				51FBDB60225113A0002278E5 /* GameOverViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
