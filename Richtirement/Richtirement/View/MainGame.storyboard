@@ -507,6 +507,7 @@
                         <segue destination="f5c-5m-0HH" kind="presentation" identifier="nextQuetion" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Qij-oM-Jrx"/>
                         <segue destination="asn-mM-XIM" kind="presentation" identifier="analysis" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ohL-L9-8Z2"/>
                         <segue destination="TUf-s4-UOl" kind="presentation" identifier="Income" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zWq-YV-4E2"/>
+                        <segue destination="xhZ-Kn-eMl" kind="presentation" identifier="gameover" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7IL-Qd-xhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-UE-SoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -548,6 +549,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSn-Ft-1P2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1473" y="162"/>
+        </scene>
+        <!--GameOver-->
+        <scene sceneID="2G7-Is-5X0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameOver" id="xhZ-Kn-eMl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3e-9t-Mw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="-54"/>
         </scene>
         <!--Analysis-->
         <scene sceneID="cvp-7e-6GA">

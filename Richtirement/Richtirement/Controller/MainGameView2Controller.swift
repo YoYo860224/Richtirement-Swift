@@ -569,9 +569,8 @@ class MainGameView2Controller: UIViewController {
         }
         
         if(p.isGameOver() != 0){
-            // TODO: 連接game over畫面
-            print("Game Over")
-            performSegue(withIdentifier: "analysis", sender: nil)
+            // Finish: 連接game over畫面
+            performSegue(withIdentifier: "gameover", sender: nil)
         }
         if(p.eventIDs.count <= 0){
             performSegue(withIdentifier: "analysis", sender: nil)

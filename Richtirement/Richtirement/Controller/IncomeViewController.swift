@@ -93,7 +93,7 @@ class IncomeViewController: UIViewController {
         
         // Finish: View 的文字也要套個
         nthYearTextView.text = "第" + String(Int(p.age - 55)) + "年"
-        allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock)) + "萬"
+        allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock + p.annuity + p.medicineInsurance)) + "萬"
         
         if(p.age > 65 && annuityTotal > 0){
             incomeText += "年金回饋" + String(annuityTotal) + "萬 "
