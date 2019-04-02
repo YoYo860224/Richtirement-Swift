@@ -13,11 +13,6 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var gameoverResultTextView: UITextView!
     @IBOutlet weak var gameOverResultView: UIView!
-    @IBOutlet weak var eventTextOuter: UIView!
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
     
     override func viewDidLoad() {
         setUI()
@@ -33,20 +28,17 @@ class GameOverViewController: UIViewController {
     
     @objc func backgroundImageTap(tapGestureRecognizer: UITapGestureRecognizer)
     {
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
-//        if(tappedImage == backgroundImageView){
         gameOverResultView.isHidden = false
         UIView.transition(with: gameOverResultView, duration: 0.5, options: .curveEaseInOut, animations: {
             self.gameOverResultView.alpha = 1
         }, completion: nil)
-//        }
     }
     
     @objc func gameoverResultTextViewTap(tapGestureRecognizer: UITapGestureRecognizer)
     {
         performSegue(withIdentifier: "analysis", sender: nil)
-
     }
+    
     func setUI(){
         let p = SystemSetting.getPlayer()
         let gameover = p.isGameOver()
@@ -78,7 +70,5 @@ class GameOverViewController: UIViewController {
         topCorrection = max(0, topCorrection)
         gameoverResultTextView.contentInset = UIEdgeInsets(top: topCorrection, left: 0, bottom: 0, right: 0)
     }
-    
-    
 }
 

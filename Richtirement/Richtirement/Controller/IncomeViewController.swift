@@ -33,8 +33,6 @@ class IncomeViewController: UIViewController {
         incomeTextView.text = ""
         outgoingTextview.text = ""
         
-        
-        // Finish: 去 player 撈資料套到 4 個參數 就有完美圖表
         allYear = p.age - 55 + 1
         for _ in 55..<p.age {
             self.incomeVals.append(0)
@@ -45,10 +43,6 @@ class IncomeViewController: UIViewController {
         var stockTotal = 0
         var fundTotal = 0
         
-        print(p.livingExpenseRecord.count)
-        print(p.stockRecord.count)
-        print(p.fundRecord.count)
-        
         if(p.age > 65){
             for i in 0..<p.annuityRecord.count{
                 if(p.annuityRecord.count - i <= 5){
@@ -58,7 +52,6 @@ class IncomeViewController: UIViewController {
             }
         }
 
-        
         for i in 0..<p.livingExpenseRecord.count{
             if(p.livingExpenseRecord.count - i <= 5){
                 expenseTotal += Int(p.livingExpenseRecord[i])
@@ -90,8 +83,6 @@ class IncomeViewController: UIViewController {
             }
         }
         
-        
-        // Finish: View 的文字也要套個
         nthYearTextView.text = "第" + String(Int(p.age - 55)) + "年"
         allMoneyTextView.text =  String(Int(p.deposit + p.fund + p.stock + p.annuity + p.medicineInsurance)) + "萬"
         
@@ -114,9 +105,7 @@ class IncomeViewController: UIViewController {
         
         incomeTextView.text = incomeText
         outgoingTextview.text = outgoingText
-
     }
-    
     
     func setChart() {
         var inEntries: [ChartDataEntry] = []

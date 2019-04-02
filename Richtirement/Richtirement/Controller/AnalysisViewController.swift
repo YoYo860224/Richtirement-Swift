@@ -30,37 +30,28 @@ class AnalysisViewController: UIViewController {
     @IBOutlet weak var monetPigImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStory()
         setUI()
         setChart()
     }
     
-    func setUI() {
+    func setStory() {
         let p = SystemSetting.getPlayer()
 
-        // Finish: 去 player 撈資料套到 fiveBIGData 就有完美圖表
         fiveBIGData[0] = p.age
         fiveBIGData[1] = min(max(p.social, 0), 100)
         fiveBIGData[2] = min(max(p.healthy,0), 100)
         fiveBIGData[3] = min(max(p.phychological,0), 100)
         fiveBIGData[4] = min(max(p.getMoneyPersent(), 0), 100)
         
-        // Finish: 結果文字稍微設定一下吧
         totalMoneyLabel.text = String(max(Int(p.deposit + p.fund + p.stock), 0)) + "萬"
         ageLabel.text = "你的人生活到了 " + String(p.age) + "歲"
         
-        var resultText = DetectEndResult()
-        for text in p.resultRecord{
-            if(text != ""){
-                if(resultText != ""){
-                    resultText += "\n\n"
-                }
-                resultText += text
-            }
-        }
+        let resultText = DetectEndResult()
         resultTextLabel.text = resultText
-        // TODO: 圖片好像要問一下 我好像弄錯的圖片
-        
-        
+    }
+    
+    func setUI() {
         monetPigImageView.image = monetPigImageView.image?.withRenderingMode(.alwaysTemplate)
         monetPigImageView.tintColor = UIColor(red: 255/255, green: 216/255, blue: 113/255, alpha: 1)
     }
@@ -74,7 +65,6 @@ class AnalysisViewController: UIViewController {
         let midx = w / 2
         let midy = h / 2
         let midPoint = CGPoint(x: midx, y: midy)
-        
         
         // x-Axis
         for i in 0...5 {
@@ -244,13 +234,13 @@ class AnalysisViewController: UIViewController {
             illTxtViews[i].font = UIFont(name: "NotoSansCJKtc-Regular", size: 16)
         }
     }
-
+    
+    // MARK: - IBAction
     @IBAction func BackgroundImageView_Tap(_ sender: Any) {
         wholeYearInfoView.isHidden = false
         wholeReportView.isHidden = false
         wholeRadarView.isHidden = false
     }
-    
     
     @IBAction func nextBtn_Click(_ sender: Any) {
         wholeRadarView.isHidden = true
@@ -309,6 +299,15 @@ class AnalysisViewController: UIViewController {
             backgroundImageView.image = UIImage(named: "life_nothing but money")
             resultTitleLabel.text = "急需策略者"
             resultText += "擁有足夠維持生活的良好條件與經濟狀態，卻因沒有良好運用導致過著沒有品質的生活，心理層面也未因資產而獲得滿足。\n\n建議嘗試更好的資產運用方式，讓生理、心理、社交層面為良好均衡狀態，提升退休生活的品質。"
+        }
+        
+        for text in p.resultRecord{
+            if(text != ""){
+                if(resultText != ""){
+                    resultText += "\n\n"
+                }
+                resultText += text
+            }
         }
         
         return resultText

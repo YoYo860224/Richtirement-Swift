@@ -235,6 +235,4 @@ class AssetViewController: UIViewController {
     @IBAction func ToConfirmBtn_Click(_ sender: UIButton) {
         
     }
-    
-    
 }

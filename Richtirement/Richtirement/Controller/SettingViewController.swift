@@ -42,6 +42,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setUI() {
+        // some UI style
         progressBarOuter.layer.cornerRadius = 2.5
         progressBarOuter.layer.masksToBounds = true
         
@@ -70,7 +71,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         nameTF.delegate = self
     }
     
-    // MARK: - keyboard issue
+    // MARK: - keyboard issue for page1 text field
     var originHeight: CGFloat = 0
     var keyBoardHeight: CGFloat = 0
     
@@ -137,7 +138,6 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
             })
         }
         else {
-            // TODO: - 建完直接進遊戲應改沒問題
             let nowPlayer = PlayerData()
             nowPlayer.name = getName
             nowPlayer.gender = getGender
@@ -155,6 +155,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+// MARK: - Scroll Delegate
 extension SettingViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
