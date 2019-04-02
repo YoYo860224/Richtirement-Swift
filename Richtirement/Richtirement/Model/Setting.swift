@@ -13,25 +13,44 @@ class SystemSetting {
     static let AnnuityMax = 50;              // 年金每年最多增加多少
     static let MedicineInsuranceMax = 50;    // 醫療保險每年最多增加多少
     
-    static var nowPlayerName = ""
-    static var Players: [String: PlayerData] = [:]
-    
+    static var nowBigPlayerName = ""
+    static var nowBigID = 0
+    static var BigPlayers: [String: BigPlayerData] = [:]
+
+    static func getBigPlayer() -> BigPlayerData {
+        return BigPlayers[nowBigPlayerName]!
+    }
     static func getPlayer() -> PlayerData {
-        return Players[nowPlayerName]!
+        return BigPlayers[nowBigPlayerName]!.Players[nowBigID]!
     }
 }
 
-class PlayerData: Codable {
-    // 基本人設
-    var name: String = ""
-    var age:Int = 55
-    var gender: Int = 1                 // 1 is male, 0 is female
+// BigPlayer 玩家
+// Player 每個紀錄
 
+
+class BigPlayerData: Codable {
+    var name: String = ""
+    var gender: Int = 1                 // 1 is male, 0 is female
+    
     var hasParent: Bool = false
     var hasFriend: Bool = false
     var hasCouple: Bool = false
     var hasChilds: Bool = false
+    var InitMoney: Int = 0
     
+    var bigIndex = 0
+    var Players: [Int: PlayerData] = [:]
+}
+
+class PlayerData: Codable {
+    // 偵測
+    var bigIndex = 0
+    
+    // 基本人設
+    var name: String = ""
+    var age:Int = 55
+
     // 四大數值
     var money = 100
     var phychological = 75
@@ -55,6 +74,7 @@ class PlayerData: Codable {
     // 故事內容
     var nowEvent: String = ""
     var eventIDs: [String] = ["E0"]
+    var resultTitle: String = ""
     
     func getMoneyPersent() -> Int{
         return min(Int(Float(deposit + stock + fund) / (Float(InitMoney) * 0.4) * 100), 100)
@@ -93,7 +113,7 @@ class PlayerData: Codable {
     func getNextEvent() {
         let number = Int.random(in: 0..<eventIDs.count)
         nowEvent = eventIDs[number]
-        eventIDs.remove(at: number)
+        // eventIDs.remove(at: number)
     }
 
     func isGameOver() -> Int{

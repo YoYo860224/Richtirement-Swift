@@ -98,7 +98,7 @@
                     </view>
                     <connections>
                         <segue destination="VS8-3n-5De" kind="presentation" identifier="first" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Umy-mh-WvQ"/>
-                        <segue destination="6a4-MN-5R5" kind="show" identifier="normal" id="O9p-qr-xeS"/>
+                        <segue destination="6a4-MN-5R5" kind="presentation" identifier="normal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="O9p-qr-xeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

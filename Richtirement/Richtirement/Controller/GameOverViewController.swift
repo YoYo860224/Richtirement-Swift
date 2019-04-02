@@ -49,20 +49,22 @@ class GameOverViewController: UIViewController {
         if(gameover == 1){
             backgroundImageView.image = UIImage(named: "money0")
             gameoverResultTextView.text = "資產值歸0\nGameOver"
+            p.resultTitle = "資產值歸0"
         }
         else if(gameover == 2){
             backgroundImageView.image = UIImage(named: "phychological0")
             gameoverResultTextView.text = "心理值歸0\nGameOver"
-
+            p.resultTitle = "心理值歸0"
         }
         else if(gameover == 3){
             backgroundImageView.image = UIImage(named: "healthy0")
             gameoverResultTextView.text = "健康值歸0\nGameOver"
-
+            p.resultTitle = "健康值歸0"
         }
         else if(gameover == 4){
             backgroundImageView.image = UIImage(named: "social0")
             gameoverResultTextView.text = "社交值歸0\nGameOver"
+            p.resultTitle = "社交值歸0"
         }
         
         // Vertical align

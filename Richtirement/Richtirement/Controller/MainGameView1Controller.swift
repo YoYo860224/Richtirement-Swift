@@ -16,6 +16,7 @@ class MainGameView1Controller: UIViewController {
     @IBOutlet weak var eventText: UITextView!
     
     var nowEventContent: Bool = true
+    var onlyOnce: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,8 @@ class MainGameView1Controller: UIViewController {
                 self.eventTextView.alpha = 1
             }, completion: nil)
         }
-        else {
+        else if onlyOnce {
+            onlyOnce = false
             UIView.animate(withDuration: 1.0,
                            delay: 0,
                            options: [],

@@ -489,6 +489,7 @@
                         <outlet property="healthLabel" destination="9pa-Gf-WaU" id="CTy-ls-njY"/>
                         <outlet property="imageView" destination="8zo-xd-fwZ" id="kUd-Wc-mWR"/>
                         <outlet property="moneyLabel" destination="M92-fg-SY1" id="l1b-ex-25G"/>
+                        <outlet property="pBtn" destination="StA-XI-c2y" id="QdU-7F-GsJ"/>
                         <outlet property="pSettingBtn" destination="ewW-tZ-Les" id="2W5-Dt-BoI"/>
                         <outlet property="pauseMenu" destination="YVe-fw-e1L" id="23K-Ku-aWz"/>
                         <outlet property="phychologicalLabel" destination="JLu-Bd-Xpt" id="iEy-7A-fJ3"/>
@@ -503,6 +504,7 @@
                         <segue destination="asn-mM-XIM" kind="presentation" identifier="analysis" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ohL-L9-8Z2"/>
                         <segue destination="TUf-s4-UOl" kind="presentation" identifier="Income" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zWq-YV-4E2"/>
                         <segue destination="xhZ-Kn-eMl" kind="presentation" identifier="gameover" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7IL-Qd-xhd"/>
+                        <segue destination="oOf-If-unr" kind="presentation" identifier="backRecord" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rVS-bV-IIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-UE-SoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,7 +537,7 @@
                 <viewControllerPlaceholder storyboardName="MainGame" id="f5c-5m-0HH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVQ-lS-f0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="80"/>
+            <point key="canvasLocation" x="1488" y="80"/>
         </scene>
         <!--Income-->
         <scene sceneID="g4j-pT-DtY">
@@ -543,7 +545,7 @@
                 <viewControllerPlaceholder storyboardName="Income" id="TUf-s4-UOl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSn-Ft-1P2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="162"/>
+            <point key="canvasLocation" x="1473" y="151"/>
         </scene>
         <!--GameOver-->
         <scene sceneID="2G7-Is-5X0">
@@ -551,7 +553,7 @@
                 <viewControllerPlaceholder storyboardName="GameOver" id="xhZ-Kn-eMl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3e-9t-Mw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-54"/>
+            <point key="canvasLocation" x="1488" y="-75"/>
         </scene>
         <!--Analysis-->
         <scene sceneID="cvp-7e-6GA">
@@ -559,7 +561,15 @@
                 <viewControllerPlaceholder storyboardName="Analysis" id="asn-mM-XIM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxq-Tk-AvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="-1"/>
+            <point key="canvasLocation" x="1478" y="-1"/>
+        </scene>
+        <!--RecordSelect-->
+        <scene sceneID="FC6-BN-8KM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecordSelect" id="oOf-If-unr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aen-oH-Raf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1502" y="215"/>
         </scene>
     </scenes>
     <resources>

@@ -123,7 +123,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         let getCouple = coupleBtn.checkState
         let getInitMoney = Int(sliderValue.text!)!
         
-        if SystemSetting.Players.keys.contains(getName) {
+        if SystemSetting.BigPlayers.keys.contains(getName) {
             nameHint.text = "已有此玩家姓名"
             nameHint.textColor = UIColor.red
             UIView.animate(withDuration: 0.5, animations: {
@@ -138,18 +138,28 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
             })
         }
         else {
-            let nowPlayer = PlayerData()
-            nowPlayer.name = getName
-            nowPlayer.gender = getGender
-            nowPlayer.hasChilds = getChilds
-            nowPlayer.hasParent = getParent
-            nowPlayer.hasCouple = getCouple
-            nowPlayer.hasFriend = getFriend
-            nowPlayer.deposit = getInitMoney
-            nowPlayer.InitMoney = getInitMoney
+            let bigPlayer = BigPlayerData()
+            bigPlayer.name = getName
+            bigPlayer.gender = getGender
+            bigPlayer.hasChilds = getChilds
+            bigPlayer.hasParent = getParent
+            bigPlayer.hasCouple = getCouple
+            bigPlayer.hasFriend = getFriend
+            bigPlayer.InitMoney = getInitMoney
             
-            SystemSetting.nowPlayerName = getName
-            SystemSetting.Players[getName] = nowPlayer
+            SystemSetting.nowBigPlayerName = getName
+            SystemSetting.BigPlayers[getName] = bigPlayer
+            
+            let player = PlayerData()
+            player.name = bigPlayer.name
+            player.deposit = bigPlayer.InitMoney
+            player.InitMoney = bigPlayer.InitMoney
+            player.bigIndex = bigPlayer.bigIndex
+            
+            SystemSetting.nowBigID = bigPlayer.bigIndex
+            bigPlayer.Players[bigPlayer.bigIndex] = player
+            bigPlayer.bigIndex += 1
+            
             performSegue(withIdentifier: "game", sender: nil)
         }
     }

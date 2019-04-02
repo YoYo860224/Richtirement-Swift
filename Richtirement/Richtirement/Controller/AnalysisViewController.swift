@@ -300,6 +300,7 @@ class AnalysisViewController: UIViewController {
             resultTitleLabel.text = "急需策略者"
             resultText += "擁有足夠維持生活的良好條件與經濟狀態，卻因沒有良好運用導致過著沒有品質的生活，心理層面也未因資產而獲得滿足。\n\n建議嘗試更好的資產運用方式，讓生理、心理、社交層面為良好均衡狀態，提升退休生活的品質。"
         }
+        p.resultTitle = resultTitleLabel.text!
         
         for text in p.resultRecord{
             if(text != ""){

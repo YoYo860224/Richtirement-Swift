@@ -16,33 +16,76 @@ class RecordSelectViewController: UIViewController {
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPlayerBolck()
+        setUI()
     }
     
-    // 用這個加入新的玩家框框喔！！
-    func addPlayerBolck() {
-        let a = PlayerBlock(frame: CGRect(x: 0, y: 0, width: 320, height: 130))
-        let cn1 = NSLayoutConstraint(item: a, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 320)
-        let cn2 = NSLayoutConstraint(item: a, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 130)
+    func setUI() {
+        for (_, v) in SystemSetting.BigPlayers {
+            addPlayerBolck(player: v)
+        }
         
-        stackView.addArrangedSubview(a)
-        a.translatesAutoresizingMaskIntoConstraints = false
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(newPlayer(_:)))
+        gesture.numberOfTapsRequired = 1
+        createNewPlayerView.isUserInteractionEnabled = true
+        createNewPlayerView.addGestureRecognizer(gesture)
+        createNewPlayerView.layer.cornerRadius = 3
+    }
+
+    func addPlayerBolck(player: BigPlayerData) {
+        let pb = PlayerBlock(player: player)
+        let cn1 = NSLayoutConstraint(item: pb, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 320)
+        let cn2 = NSLayoutConstraint(item: pb, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 130)
+        
+        stackView.addArrangedSubview(pb)
+        pb.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([cn1, cn2])
+        
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(targetViewDidTapped(_:)))
+        gesture.numberOfTapsRequired = 1
+        pb.isUserInteractionEnabled = true
+        pb.addGestureRecognizer(gesture)
+    }
+    
+    @objc func newPlayer(_ sender: Any) {
+        performSegue(withIdentifier: "goSet", sender: nil)
+    }
+    
+    @objc func targetViewDidTapped(_ sender: Any) {
+        let tg = sender as! UITapGestureRecognizer
+        let pb = tg.view as! PlayerBlock
+        SystemSetting.nowBigPlayerName = pb.playerName
+        self.performSegue(withIdentifier: "tocpt", sender: nil)
+    }
+    
+    @IBAction func unwindToSelect(_ unwindSegue: UIStoryboardSegue) {
+        
     }
 }
 
 class PlayerBlock: UIView {
-    // TODO: - 要改一些地方 對應到玩家 應該是要加一個屬性 再轉場的時候才知道是對應到什麼玩家
-    // 參考 MyUIKit/RadioBtn #16 #27 讓 UIView 加入點擊事件
+    var playerName = "沈政一"
+    var blockImage = "PB01"
+    
+    init(player: BigPlayerData) {
+        super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 130))
+        playerName = player.name
+        blockImage = "RB"
+        initSelf()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initSelf()
+    }
+    
     func initSelf() {
-        self.backgroundColor = UIColor(red: 1, green: 216/255, blue: 113/255, alpha: 1)
+        self.backgroundColor = UIColor(red: 1, green: 216/255, blue: 113/255, alpha: 0)
         
         let innerPic = UIImageView()
         innerPic.backgroundColor = UIColor.blue
-        // TODO: 改圖片
-        innerPic.image = UIImage(named: "PB01")
+        innerPic.image = UIImage(named: blockImage)
+        innerPic.backgroundColor = UIColor(white: 57.0 / 255.0, alpha: 0)
         
-        // 幹 我原本以為黃色框框要自己編 所以把 Image 包在裡面 結果圖片本身有含 所以 constant 改為 0 沒差
         let imCnW = NSLayoutConstraint(item: innerPic, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0)
         let imCnH = NSLayoutConstraint(item: innerPic, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 0)
         let imCnHor = NSLayoutConstraint(item: innerPic, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0)
@@ -52,26 +95,20 @@ class PlayerBlock: UIView {
         NSLayoutConstraint.activate([imCnHor, imCnVer, imCnW, imCnH])
         
         let innerText = UILabel()
-        // TODO: 改名字
-        innerText.text = "玩家 沈政一"
+        innerText.text = "玩家 " + playerName
         innerText.textColor = UIColor.white
         innerText.font = UIFont(name: "NotoSansCJKtc-Medium", size: 29)
+        innerText.backgroundColor = UIColor(white: 57.0 / 255.0, alpha: 1)
+        innerText.textAlignment = .center
         
         let tCnHor = NSLayoutConstraint(item: innerText, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0)
         let tCnVer = NSLayoutConstraint(item: innerText, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0)
+        let lCnW = NSLayoutConstraint(item: innerText, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: -30)
+        // let lCnH = NSLayoutConstraint(item: innerText, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 30)
+
         
         self.addSubview(innerText)
         innerText.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tCnHor, tCnVer])
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initSelf()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initSelf()
+        NSLayoutConstraint.activate([tCnHor, tCnVer, lCnW])
     }
 }

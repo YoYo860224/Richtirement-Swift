@@ -72,6 +72,7 @@ class MainGameView2Controller: UIViewController {
             c2View.isHidden = true
             quetionView.isHidden = true
             
+            pBtn.isHidden = true
             UIView.animate(withDuration: 1.0,
                            delay: 0,
                            options: [],
@@ -92,6 +93,7 @@ class MainGameView2Controller: UIViewController {
                 self.gameResultTitle.text = ""
                 self.gameResultText.text = self.r!.content
                 
+                self.p.eventIDs.remove(at: self.p.eventIDs.firstIndex(of: self.p.nowEvent)!)
                 for we in self.r!.willHappenedEvent {
                     if(we != ""){
                         self.p.eventIDs.append(we)
@@ -332,7 +334,8 @@ class MainGameView2Controller: UIViewController {
                 nowQuestion = s.questions[c1.nextQuestion!]!
                 setQuestion()
             }
-            else {                
+            else {
+                pBtn.isHidden = true
                 UIView.animate(
                     withDuration: 1.0,
                     delay: 0,
@@ -372,6 +375,7 @@ class MainGameView2Controller: UIViewController {
                         self.gameResultTitle.text = ""
                         self.gameResultText.text = self.r!.content
                         
+                        self.p.eventIDs.remove(at: self.p.eventIDs.firstIndex(of: self.p.nowEvent)!)
                         for we in self.r!.willHappenedEvent {
                             if(we != ""){
                                 self.p.eventIDs.append(we)
@@ -419,6 +423,7 @@ class MainGameView2Controller: UIViewController {
                 setQuestion()
             }
             else {
+                pBtn.isHidden = true
                 UIView.animate(
                     withDuration: 1.0,
                     delay: 0,
@@ -458,6 +463,7 @@ class MainGameView2Controller: UIViewController {
                         self.gameResultTitle.text = ""
                         self.gameResultText.text = self.r!.content
                         
+                        self.p.eventIDs.remove(at: self.p.eventIDs.firstIndex(of: self.p.nowEvent)!)
                         for we in self.r!.willHappenedEvent {
                             if(we != ""){
                                 self.p.eventIDs.append(we)
@@ -514,6 +520,7 @@ class MainGameView2Controller: UIViewController {
     // MARK: - 暫停功能區
     @IBOutlet weak var pauseMenu: UIView!
     @IBOutlet weak var pSettingBtn: UIButton!
+    @IBOutlet weak var pBtn: UIButton!
     
     @IBAction func pauseBtn_Click(_ sender: Any) {
         pauseMenu.isHidden = false
@@ -531,7 +538,7 @@ class MainGameView2Controller: UIViewController {
     }
     
     @IBAction func pGobackBtn_Click(_ sender: Any) {
-        // segue 回去囉
+        performSegue(withIdentifier: "backRecord", sender: nil)
     }
 }
 
