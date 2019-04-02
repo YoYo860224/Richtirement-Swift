@@ -459,7 +459,6 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="ToConfirmBtn_Click:" destination="bLC-S9-rjM" eventType="touchUpInside" id="gzl-3Q-SRD"/>
                                                                     <segue destination="iG8-BJ-dvh" kind="presentation" identifier="toConfirm" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zCd-sm-Rmf"/>
                                                                 </connections>
                                                             </button>

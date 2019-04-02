@@ -90,17 +90,10 @@ class PlayerData: Codable {
         }
     }
     
-    func getNextEvent() -> Bool{
-        if eventIDs.count > 0 {
-            let number = Int.random(in: 0..<eventIDs.count)
-            nowEvent = eventIDs[number]
-            eventIDs.remove(at: number)
-            return true
-        }
-        else {
-            // 沒事件 死亡？
-            return false
-        }
+    func getNextEvent() {
+        let number = Int.random(in: 0..<eventIDs.count)
+        nowEvent = eventIDs[number]
+        eventIDs.remove(at: number)
     }
 
     func isGameOver() -> Int{
@@ -145,7 +138,6 @@ class PlayerData: Codable {
         fund += Int(fundChange)
         print(fundChange)
         self.fundRecord[self.fundRecord.count - 1] += Double(fundChange)
-
     }
     
     func randomNormalNumber(deviation:Float, mean:Float) -> Float{

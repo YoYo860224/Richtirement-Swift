@@ -43,6 +43,33 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var annuityView: UIView!
     @IBOutlet weak var medicineView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        getMoney()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+    }
+    
+    func setUI() {
+        let p = SystemSetting.getPlayer()
+        
+        let gradient = CAGradientLayer()
+        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topBGView.frame.size)
+        gradient.colors = [
+            UIColor(red: 57/255, green: 57/255, blue: 57/255, alpha: 1.0).cgColor,
+            UIColor(red: 41/255, green: 41/255, blue: 41/255, alpha: 1.0).cgColor
+        ]
+        gradient.locations = [0.0, 1.0]
+        topBGView.layer.insertSublayer(gradient, at: 0)
+        
+        if(p.age > 65){
+            annuityView.isHidden = true
+            medicineView.isHidden = true
+        }
+    }
+    
     var tempTotalMoney = 0
     var tempDeposit = 0
     var tempStock = 0
@@ -120,33 +147,6 @@ class AssetViewController: UIViewController {
         medicinePersent.text = String(Int(medicineInsuranceUISlider.value)) + "%"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        getMoney()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUI()
-    }
-    
-    func setUI() {
-        let p = SystemSetting.getPlayer()
-
-        let gradient = CAGradientLayer()
-        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topBGView.frame.size)
-        gradient.colors = [
-            UIColor(red: 57/255, green: 57/255, blue: 57/255, alpha: 1.0).cgColor,
-            UIColor(red: 41/255, green: 41/255, blue: 41/255, alpha: 1.0).cgColor
-        ]
-        gradient.locations = [0.0, 1.0]
-        topBGView.layer.insertSublayer(gradient, at: 0)
-    
-        if(p.age > 65){
-            annuityView.isHidden = true
-            medicineView.isHidden = true
-        }
-    }
-    
     func getMoney(){
         let p = SystemSetting.getPlayer()
         
@@ -201,18 +201,7 @@ class AssetViewController: UIViewController {
         medicinePersent.text = String(Int(medicineInsuranceUISlider.value)) + "%"
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        let p = SystemSetting.getPlayer()
-//        
-//        p.stock = Int(Float(stockUISlider.value) * Float(tempTotalMoney))
-//        p.fund = Int(Float(fundUISlider.value) * Float(tempTotalMoney))
-//        p.annuity += Int(Float(annuityUISlider.value))
-//        p.medicineInsurance += Int(Float(medicineInsuranceUISlider.value))
-//        p.deposit = tempTotalMoney - p.stock - p.fund - p.annuity - p.medicineInsurance
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "toConfirm" {
             let p = SystemSetting.getPlayer()
 
@@ -230,9 +219,5 @@ class AssetViewController: UIViewController {
 
             secondVC.receivedDeposit = tempTotalMoney - stock - fund - annuity - medicineInsurance - p.annuity - p.medicineInsurance
         }
-    }
-    
-    @IBAction func ToConfirmBtn_Click(_ sender: UIButton) {
-        
     }
 }

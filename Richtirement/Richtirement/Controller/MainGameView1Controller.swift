@@ -27,7 +27,7 @@ class MainGameView1Controller: UIViewController {
         let s = Story.getStory()
         let p = SystemSetting.getPlayer()
         
-        let _ = p.getNextEvent()
+        p.getNextEvent()
 
         let nowEvent = s.events[p.nowEvent]!
         eventImageView.image = nowEvent.img
