@@ -113,6 +113,8 @@ class PlayerData: Codable {
     func getNextEvent() {
         let number = Int.random(in: 0..<eventIDs.count)
         nowEvent = eventIDs[number]
+        
+        // 為了存擋 改進 GameView 裡面處理
         // eventIDs.remove(at: number)
     }
 

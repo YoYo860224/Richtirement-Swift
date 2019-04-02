@@ -151,13 +151,21 @@ class RecordBlock: UIView {
         let innerText = UILabel()
         innerText.text = chapterName
         innerText.textColor = UIColor.white
+        innerText.textAlignment = .center
         innerText.font = UIFont(name: "NotoSansCJKtc-Medium", size: 29)
+        innerText.clipsToBounds = true
+        innerText.layer.cornerRadius = 3
+        innerText.backgroundColor = UIColor(white: 0, alpha: 0.2)
         
+        let tCnW = NSLayoutConstraint(item: innerText, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: -7)
+        let tCnH = NSLayoutConstraint(item: innerText, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: -7)
         let tCnHor = NSLayoutConstraint(item: innerText, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0)
         let tCnVer = NSLayoutConstraint(item: innerText, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0)
         
+        
+        
         self.addSubview(innerText)
         innerText.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tCnHor, tCnVer])
+        NSLayoutConstraint.activate([tCnW, tCnH, tCnHor, tCnVer])
     }
 }
