@@ -23,6 +23,46 @@ class SystemSetting {
     static func getPlayer() -> PlayerData {
         return BigPlayers[nowBigPlayerName]!.Players[nowBigID]!
     }
+    
+    static func save() {
+        let fm = FileManager()
+        let path = NSHomeDirectory() + "/tmp/bpdata.json"
+        if !fm.fileExists(atPath: path) {
+            fm.createFile(atPath: path, contents: nil, attributes: nil)
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        if let data = try? JSONEncoder().encode(BigPlayers) {
+            try? data.write(to: url)
+        }
+    }
+    
+    static func load() {
+        let fm = FileManager()
+        let path = NSHomeDirectory() + "/tmp/bpdata.json"
+        if !fm.fileExists(atPath: path) {
+            fm.createFile(atPath: path, contents: nil, attributes: nil)
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        if let data = try? Data(contentsOf: url) {
+            if let x = try? JSONDecoder().decode([String: BigPlayerData].self, from: data) {
+                BigPlayers = x
+            }
+        }
+    }
+    
+    static func clear() {
+        let fm = FileManager()
+        let path = NSHomeDirectory() + "/tmp/bpdata.json"
+        if fm.fileExists(atPath: path) {
+            let url = URL(fileURLWithPath: path)
+            try? fm.removeItem(at: url)
+        }
+        BigPlayers = [:]
+    }
 }
 
 // BigPlayer 玩家

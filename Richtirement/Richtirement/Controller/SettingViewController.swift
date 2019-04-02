@@ -37,6 +37,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+        SystemSetting.load()
         setUI()
         registerForKeyboardNotifications()
     }

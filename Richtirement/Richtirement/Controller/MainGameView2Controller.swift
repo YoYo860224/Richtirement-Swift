@@ -504,9 +504,11 @@ class MainGameView2Controller: UIViewController {
         }
         
         if(p.isGameOver() != 0){
+            SystemSetting.save()
             performSegue(withIdentifier: "gameover", sender: nil)
         }
         if(p.eventIDs.count <= 0){
+            SystemSetting.save()
             performSegue(withIdentifier: "analysis", sender: nil)
         }
         else if(p.age % 5 == 0){

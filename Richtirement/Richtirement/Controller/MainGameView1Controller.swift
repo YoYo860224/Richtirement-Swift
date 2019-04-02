@@ -20,6 +20,7 @@ class MainGameView1Controller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SystemSetting.save()
         setStory()
         setUI()
     }

@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+//        SystemSetting.clear()
+        SystemSetting.load()
     }
 
     @IBAction func startBtn_Click(_ sender: Any) {
