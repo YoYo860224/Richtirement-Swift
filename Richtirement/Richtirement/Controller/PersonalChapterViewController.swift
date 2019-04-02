@@ -103,7 +103,6 @@ class RecordBlock: UIView {
             isOver = true
             chapterName = player.resultTitle
 
-            
             if chapterName == "退休規劃達人" {
                 blockImage = UIImage(named: "life_colorful")!
             }
@@ -161,8 +160,6 @@ class RecordBlock: UIView {
         let tCnH = NSLayoutConstraint(item: innerText, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: -7)
         let tCnHor = NSLayoutConstraint(item: innerText, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0)
         let tCnVer = NSLayoutConstraint(item: innerText, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0)
-        
-        
         
         self.addSubview(innerText)
         innerText.translatesAutoresizingMaskIntoConstraints = false
