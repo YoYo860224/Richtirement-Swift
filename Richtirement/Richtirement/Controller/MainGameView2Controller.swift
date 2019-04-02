@@ -38,7 +38,6 @@ class MainGameView2Controller: UIViewController {
     @IBOutlet weak var c2ImageView: UIImageView!
 
     @IBOutlet weak var gameResultView: UIView!
-    @IBOutlet weak var gameResultTexOuter: UIView!
     @IBOutlet weak var gameResultTitle: UILabel!
     @IBOutlet weak var gameResultText: UITextView!
     
@@ -140,24 +139,7 @@ class MainGameView2Controller: UIViewController {
     }
     
     func setUI() {
-        let gradient = CAGradientLayer()
-        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.gameResultTexOuter.frame.size)
-        gradient.colors = [
-            UIColor(red: 255/255, green: 209/255, blue: 102/255, alpha: 1.0).cgColor,
-            UIColor(red: 231/255, green:  98/255, blue: 122/255, alpha: 1.0).cgColor,
-            UIColor(red:  63/255, green: 174/255, blue: 222/255, alpha: 1.0).cgColor,
-            UIColor(red:  62/255, green: 195/255, blue: 160/255, alpha: 1.0).cgColor
-        ]
-        gradient.locations = [ 0.0, 0.37, 0.77, 1.0]
-        
-        let shape = CAShapeLayer()
-        shape.lineWidth = 4
-        shape.path = UIBezierPath(rect: self.gameResultTexOuter.bounds).cgPath
-        shape.strokeColor = UIColor.black.cgColor
-        shape.fillColor = UIColor.clear.cgColor
-        gradient.mask = shape
 
-        self.gameResultTexOuter.layer.addSublayer(gradient)
     }
     
     @IBAction func c1_Click(_ sender: Any) {
@@ -388,8 +370,6 @@ class MainGameView2Controller: UIViewController {
             
             self.gameResultView.isHidden = false
 
-
-            
             UIView.transition(with: gameResultView, duration: 0.5, options: .curveEaseInOut, animations: {
                 self.gameResultView.alpha = 1
             }, completion: nil)

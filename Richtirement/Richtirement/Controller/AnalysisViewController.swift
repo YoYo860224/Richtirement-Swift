@@ -27,12 +27,11 @@ class AnalysisViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     var fiveBIGData = [80, 64, 78, 82, 77]
     
+    @IBOutlet weak var monetPigImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setChart()
-//        wholeRadarView.isHidden = true
-        
     }
     
     func setUI() {
@@ -60,6 +59,10 @@ class AnalysisViewController: UIViewController {
         }
         resultTextLabel.text = resultText
         // TODO: 圖片好像要問一下 我好像弄錯的圖片
+        
+        
+        monetPigImageView.image = monetPigImageView.image?.withRenderingMode(.alwaysTemplate)
+        monetPigImageView.tintColor = UIColor(red: 255/255, green: 216/255, blue: 113/255, alpha: 1)
     }
 
     func setChart() {

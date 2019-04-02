@@ -32,7 +32,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMR-Q6-Zqe">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="心理0" translatesAutoresizingMaskIntoConstraints="NO" id="xIT-Zn-t6v">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="social0" translatesAutoresizingMaskIntoConstraints="NO" id="xIT-Zn-t6v">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -342,6 +342,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="r6i-JF-wSi" id="UFX-DK-AaM"/>
                         <outlet property="backgroundImageView" destination="xIT-Zn-t6v" id="IR2-ec-G1O"/>
+                        <outlet property="monetPigImageView" destination="aFN-wT-Ycn" id="iWb-Zi-IBR"/>
                         <outlet property="radarChartView" destination="i47-Vv-7O4" id="Em1-qS-9hP"/>
                         <outlet property="resultTextLabel" destination="o8b-Wr-48I" id="Avo-el-xEd"/>
                         <outlet property="resultTitleLabel" destination="j7b-TK-hwW" id="f6L-Bj-r3k"/>
@@ -385,6 +386,6 @@
         <image name="propM" width="80" height="80"/>
         <image name="propP" width="80" height="80"/>
         <image name="propS" width="80" height="80"/>
-        <image name="心理0" width="750.719970703125" height="1334.4000244140625"/>
+        <image name="social0" width="750.239990234375" height="1334.4000244140625"/>
     </resources>
 </document>

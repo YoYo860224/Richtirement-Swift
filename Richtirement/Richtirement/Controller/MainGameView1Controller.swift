@@ -13,7 +13,6 @@ class MainGameView1Controller: UIViewController {
     @IBOutlet weak var eventImageView: UIImageView!
     
     @IBOutlet weak var eventTextView: UIView!
-    @IBOutlet weak var eventTextOuter: UIView!
     @IBOutlet weak var eventText: UITextView!
     
     var nowEventContent: Bool = true
@@ -42,26 +41,6 @@ class MainGameView1Controller: UIViewController {
     }
     
     func setUI() {
-        // Color Outer
-        let gradient = CAGradientLayer()
-        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.eventTextOuter.frame.size)
-        gradient.colors = [
-            UIColor(red: 255/255, green: 209/255, blue: 102/255, alpha: 1.0).cgColor,
-            UIColor(red: 231/255, green:  98/255, blue: 122/255, alpha: 1.0).cgColor,
-            UIColor(red:  63/255, green: 174/255, blue: 222/255, alpha: 1.0).cgColor,
-            UIColor(red:  62/255, green: 195/255, blue: 160/255, alpha: 1.0).cgColor
-        ]
-        gradient.locations = [ 0.0, 0.37, 0.77, 1.0]
-        
-        let shape = CAShapeLayer()
-        shape.lineWidth = 4
-        shape.path = UIBezierPath(rect: self.eventTextOuter.bounds).cgPath
-        shape.strokeColor = UIColor.black.cgColor
-        shape.fillColor = UIColor.clear.cgColor
-        gradient.mask = shape
-
-        self.eventTextOuter.layer.addSublayer(gradient)
-        
         // Vertical align
         var topCorrection = (eventText.bounds.size.height - eventText.contentSize.height * 1) / 2.0
         topCorrection = max(0, topCorrection)

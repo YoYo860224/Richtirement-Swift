@@ -1,1 +1,450 @@
-[{"index": "R0", "imgUrl": "0_2", "prob": "0.3", "resultContent": "恭喜！跟上這波漲潮，存款增加，龍心大悅", "year": "", "connectEvent": "", "valueChanged": ["P + 15 18", "$ + 30 80"], "willHappenedEvent": ["E1"], "endEffect": ""}, {"index": "R1", "imgUrl": "0_1", "prob": "0.7", "resultContent": "啊！真不巧，遭遇股市大跌！財富損失，心情受影響", "year": "", "connectEvent": "", "valueChanged": ["P - 15 18", "$ - 30 80"], "willHappenedEvent": ["E1"], "endEffect": "股票賠錢造成心理的憂鬱，在開始下一次的拼搏前建議先調適好心情並且嘗試改變操作方式，同時兼顧其他投資組合才能夠有效的提高投資報酬率。"}, {"index": "R2", "imgUrl": "0_3", "prob": "1.0", "resultContent": "成功與保險人購買保險", "year": "", "connectEvent": "", "valueChanged": ["P + 11 15"], "willHappenedEvent": ["E1"], "endEffect": ""}, {"index": "R3", "imgUrl": "0_4", "prob": "1.0", "resultContent": "將部分存款放入定存", "year": "", "connectEvent": "", "valueChanged": ["P - 12 15"], "willHappenedEvent": ["E1"], "endEffect": ""}, {"index": "R4", "imgUrl": "1_1", "prob": "1.0", "resultContent": "經常與廠商應酬傷害身心理健康", "year": "", "connectEvent": "", "valueChanged": ["P - 15 20", "H - 10 15", "S + 8 12"], "willHappenedEvent": ["E2"], "endEffect": "應酬中過度飲食及飲酒使心血管疾病的好發機率增加，帶來家人的擔憂與換來身體承受的痛苦，醫療險可以減輕醫療負擔，保險是防範於未然的工具，飲食的控制得當才是根本之道。"}, {"index": "R5", "imgUrl": "1_2", "prob": "1.0", "resultContent": "在每天繁忙的生活中，偶爾偷閒，可能損失社交力，但減少更多身心理的損失", "year": "", "connectEvent": "", "valueChanged": ["P - 8 13", "H - 8 13", "S - 15 18"], "willHappenedEvent": ["E2"], "endEffect": ""}, {"index": "R6", "imgUrl": "1_3", "prob": "1.0", "resultContent": "偶爾和家人去郊外走走，增進感情也更健康！", "year": "", "connectEvent": "", "valueChanged": ["P + 12 15", "H + 12 15", "S + 12 15"], "willHappenedEvent": ["E2"], "endEffect": ""}, {"index": "R7", "imgUrl": "1_4", "prob": "1.0", "resultContent": "偶爾與家人出去放鬆、看看電影，增進感情，但也要注意健康喔～", "year": "", "connectEvent": "", "valueChanged": ["P + 12 15", "H - 10 15", "S + 12 15"], "willHappenedEvent": ["E2"], "endEffect": ""}, {"index": "R8", "imgUrl": "1_5", "prob": "1.0", "resultContent": "迎接退休生活，要好好規劃呢！", "year": "", "connectEvent": "", "valueChanged": ["P - 13 18", "S - 12 15"], "willHappenedEvent": ["E3"], "endEffect": "提早進入退休階段，將資產平均分配使用在這個階段顯得更為重要，正確的金融觀念能幫助您更順利的做好退休規劃，現在開始努力還不算太遲。"}, {"index": "R9", "imgUrl": "1_6", "prob": "1.0", "resultContent": "進入新公司，準備迎接全新的挑戰吧！", "year": "", "connectEvent": "", "valueChanged": ["P - 13 18", "H - 10 13"], "willHappenedEvent": ["E3"], "endEffect": "中年以後尋找新工作會因為自身經驗累積，對工作條件更加謹慎考量，雇方也會因為年紀的顧及，讓待業時間因此較長，時代的更迭快速使市場工作需求變化大，保持年輕的心態學習新的事物這世代的人更該具備的。"}, {"index": "R10", "imgUrl": "2_1", "prob": "1.0", "resultContent": "和小孩大吵一架，心理指數大減。", "year": "", "connectEvent": "", "valueChanged": ["P - 15 20", "$ - 100"], "willHappenedEvent": ["E4"], "endEffect": "子女的失誤不一定要由父母承擔，但若決定要幫忙擺脫債務，必須先有具體可行的計劃，不再次讓債務纏身，也不連累自己。而子女在最落魄的時候仍然感受到家的依靠，親子之間的羈絆加深，心理指數因此增加。"}, {"index": "R11", "imgUrl": "2_2", "prob": "1.0", "resultContent": "孩子非常感謝你的幫助，感情加深。", "year": "", "connectEvent": "", "valueChanged": ["P + 10 13", "S + 10", "$ - 200"], "willHappenedEvent": ["E4"], "endEffect": "子女的失誤不一定要由父母承擔，但若決定要幫忙擺脫債務，必須先有具體可行的計劃，不再次讓債務纏身，也不連累自己。而子女在最落魄的時候仍然感受到家的依靠，親子之間的羈絆加深，心理指數因此增加。"}, {"index": "R12", "imgUrl": "2_1", "prob": "1.0", "resultContent": "和小孩大吵一架，心理指數大減。", "year": "", "connectEvent": "", "valueChanged": ["P - 12 15", "S - 5 8"], "willHappenedEvent": ["E4"], "endEffect": "不讓子女養成依賴父母的習慣，或許可以提供其他幫助子女的解決方式，而不是主動幫忙收拾全局，讓子女學習承擔責任，當作一次警惕的經驗。"}, {"index": "R13", "imgUrl": "3_1", "prob": "1.0", "resultContent": "偶爾出遊看看世界、認識新朋友，心情也跟著變好了呢！", "year": "", "connectEvent": "", "valueChanged": ["P + 13 15", "H + 13 15", "S + 10 12"], "willHappenedEvent": ["E5"], "endEffect": ""}, {"index": "R14", "imgUrl": "3_2", "prob": "1.0", "resultContent": "選擇待在家中，身心健康與社交能力大量下降。", "year": "", "connectEvent": "", "valueChanged": ["P - 15 18", "S - 15", "H - 15 18"], "willHappenedEvent": ["E5"], "endEffect": ""}, {"index": "R15", "imgUrl": "3_3", "prob": "1.0", "resultContent": "與老朋友聊聊近況與往事，心情大好", "year": "", "connectEvent": "", "valueChanged": ["P + 10 15", "S + 10 15"], "willHappenedEvent": ["E6"], "endEffect": ""}, {"index": "R16", "imgUrl": "3_4", "prob": "1.0", "resultContent": "一直待在家中，要注意健康...", "year": "", "connectEvent": "", "valueChanged": ["P - 10 15", "S - 15 18", "H - 10 15"], "willHappenedEvent": ["E6"], "endEffect": "人際關係也是一種財產， 只要擁有良好的人際關係，獨自一個人不見得會寂寞，若沒有伴侶，朋友是您更好的陪伴。"}, {"index": "R17", "imgUrl": "4_1", "prob": "0.5", "resultContent": "餐廳生意興隆，存款跟心情都大增！", "year": "", "connectEvent": "", "valueChanged": ["$ + 50", "P + 13 15", "H - 15 18", "S + 15 18"], "willHappenedEvent": ["E7"], "endEffect": ""}, {"index": "R18", "imgUrl": "4_2", "prob": "0.5", "resultContent": "餐廳營運因缺乏管理不如預期。", "year": "", "connectEvent": "", "valueChanged": ["$ - 150", "P - 15 18", "H - 12 15", "S + 10 15"], "willHappenedEvent": ["E7"], "endEffect": ""}, {"index": "R19", "imgUrl": "4_2", "prob": "1.0", "resultContent": "餐廳營運因缺乏管理不如預期。", "year": "", "connectEvent": "", "valueChanged": ["$ - 150", "P - 10 15", "H - 12", "S + 12"], "willHappenedEvent": ["E7"], "endEffect": ""}, {"index": "R20", "imgUrl": "4_3", "prob": "1.0", "resultContent": "還是覺得多放點錢在定存比較保險呢，但與朋友的友情指數下降", "year": "", "connectEvent": "", "valueChanged": ["P - 8 12", "S - 10 13"], "willHappenedEvent": ["E7"], "endEffect": ""}, {"index": "R21", "imgUrl": "5.0", "prob": "1.0", "resultContent": "生大病住院治療，花費驚人", "year": "", "connectEvent": "", "valueChanged": ["$ - 50 80", "P - 13 18", "H - 25"], "willHappenedEvent": ["E8"], "endEffect": ""}, {"index": "R22", "imgUrl": "5_1", "prob": "1.0", "resultContent": "多多運動，出去走走，恢復元氣也認識新朋友", "year": "", "connectEvent": "", "valueChanged": ["P + 13 15", "H + 15", "S + 10 12"], "willHappenedEvent": ["E9"], "endEffect": "培養興趣不只是為了打發時間，熱衷在一件事情的時候會讓人更有活力且自信，訓練心、腦協調手腳的戶外活動讓壽命更健康的延續下去，並擁有快樂的退休人生。"}, {"index": "R23", "imgUrl": "", "prob": "1.0", "resultContent": "行動不便，待在家", "year": "", "connectEvent": "", "valueChanged": [""], "willHappenedEvent": [""], "endEffect": "你50歲的努力與否，到了80以後就會顯現出來，老化後面臨的挑戰都是源自於逐漸弱化的身體機能，60秒過馬路的時間開始變得倉促，快速便利的手扶梯變成讓您跌倒的陷阱，若沒有固定的活動會加速身體機能喪失，提早面臨照護問題。"}, {"index": "R24", "imgUrl": "", "prob": "1.0", "resultContent": "老伴提前走了，心情大受影響，儀式也花了不少錢...", "year": "", "connectEvent": "", "valueChanged": ["$ - 80", "P - 20", "H - 10 12"], "willHappenedEvent": ["E10"], "endEffect": ""}, {"index": "R25", "imgUrl": "6_1", "prob": "1.0", "resultContent": "培養閱讀習慣，陶冶心靈，耶參加讀書會，認識新朋友", "year": "", "connectEvent": "", "valueChanged": ["P + 13 18", "H + 10", "S + 10 15"], "willHappenedEvent": [""], "endEffect": "學習新事物促進思考，而不斷的思考有助於大腦活化，不管年紀多少都要保持永恆學習的心態，您會在其中感受到許多樂趣的。"}, {"index": "R26", "imgUrl": "6_2", "prob": "1.0", "resultContent": "含飴弄孫，與孩子有也保有良好關係", "year": "", "connectEvent": "", "valueChanged": ["P + 13 15", "H + 12 15", "S + 8 12"], "willHappenedEvent": [""], "endEffect": ""}]
+[
+    {
+        "index": "R0",
+        "imgUrl": "0_2",
+        "prob": "0.3",
+        "resultContent": "恭喜！跟上這波漲潮，存款增加，龍心大悅",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 15 18",
+            "$ + 30 80"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R1",
+        "imgUrl": "0_1",
+        "prob": "0.7",
+        "resultContent": "啊！真不巧，遭遇股市大跌！財富損失，心情受影響",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 18",
+            "$ - 30 80"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ],
+        "endEffect": "股票賠錢造成心理的憂鬱，在開始下一次的拼搏前建議先調適好心情並且嘗試改變操作方式，同時兼顧其他投資組合才能夠有效的提高投資報酬率。"
+    },
+    {
+        "index": "R2",
+        "imgUrl": "0_3",
+        "prob": "1.0",
+        "resultContent": "成功與保險人購買保險",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 11 15"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R3",
+        "imgUrl": "0_4",
+        "prob": "1.0",
+        "resultContent": "將部分存款放入定存",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 12 15"
+        ],
+        "willHappenedEvent": [
+            "E1"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R4",
+        "imgUrl": "1_1",
+        "prob": "1.0",
+        "resultContent": "經常與廠商應酬傷害身心理健康",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 20",
+            "H - 10 15",
+            "S + 8 12"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ],
+        "endEffect": "應酬中過度飲食及飲酒使心血管疾病的好發機率增加，帶來家人的擔憂與換來身體承受的痛苦，醫療險可以減輕醫療負擔，保險是防範於未然的工具，飲食的控制得當才是根本之道。"
+    },
+    {
+        "index": "R5",
+        "imgUrl": "1_2",
+        "prob": "1.0",
+        "resultContent": "在每天繁忙的生活中，偶爾偷閒，可能損失社交力，但減少更多身心理的損失",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 8 13",
+            "H - 8 13",
+            "S - 15 18"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R6",
+        "imgUrl": "1_3",
+        "prob": "1.0",
+        "resultContent": "偶爾和家人去郊外走走，增進感情也更健康！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 12 15",
+            "H + 12 15",
+            "S + 12 15"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R7",
+        "imgUrl": "1_4",
+        "prob": "1.0",
+        "resultContent": "偶爾與家人出去放鬆、看看電影，增進感情，但也要注意健康喔～",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 12 15",
+            "H - 10 15",
+            "S + 12 15"
+        ],
+        "willHappenedEvent": [
+            "E2"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R8",
+        "imgUrl": "1_5",
+        "prob": "1.0",
+        "resultContent": "迎接退休生活，要好好規劃呢！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 13 18",
+            "S - 12 15"
+        ],
+        "willHappenedEvent": [
+            "E3"
+        ],
+        "endEffect": "提早進入退休階段，將資產平均分配使用在這個階段顯得更為重要，正確的金融觀念能幫助您更順利的做好退休規劃，現在開始努力還不算太遲。"
+    },
+    {
+        "index": "R9",
+        "imgUrl": "1_6",
+        "prob": "1.0",
+        "resultContent": "進入新公司，準備迎接全新的挑戰吧！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 13 18",
+            "H - 10 13"
+        ],
+        "willHappenedEvent": [
+            "E3"
+        ],
+        "endEffect": "中年以後尋找新工作會因為自身經驗累積，對工作條件更加謹慎考量，雇方也會因為年紀的顧及，讓待業時間因此較長，時代的更迭快速使市場工作需求變化大，保持年輕的心態學習新的事物這世代的人更該具備的。"
+    },
+    {
+        "index": "R10",
+        "imgUrl": "2_1",
+        "prob": "1.0",
+        "resultContent": "和小孩大吵一架，心理指數大減。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 20",
+            "$ - 100"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ],
+        "endEffect": "子女的失誤不一定要由父母承擔，但若決定要幫忙擺脫債務，必須先有具體可行的計劃，不再次讓債務纏身，也不連累自己。而子女在最落魄的時候仍然感受到家的依靠，親子之間的羈絆加深，心理指數因此增加。"
+    },
+    {
+        "index": "R11",
+        "imgUrl": "2_2",
+        "prob": "1.0",
+        "resultContent": "孩子非常感謝你的幫助，感情加深。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 10 13",
+            "S + 10",
+            "$ - 200"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ],
+        "endEffect": "子女的失誤不一定要由父母承擔，但若決定要幫忙擺脫債務，必須先有具體可行的計劃，不再次讓債務纏身，也不連累自己。而子女在最落魄的時候仍然感受到家的依靠，親子之間的羈絆加深，心理指數因此增加。"
+    },
+    {
+        "index": "R12",
+        "imgUrl": "2_1",
+        "prob": "1.0",
+        "resultContent": "和小孩大吵一架，心理指數大減。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 12 15",
+            "S - 5 8"
+        ],
+        "willHappenedEvent": [
+            "E4"
+        ],
+        "endEffect": "不讓子女養成依賴父母的習慣，或許可以提供其他幫助子女的解決方式，而不是主動幫忙收拾全局，讓子女學習承擔責任，當作一次警惕的經驗。"
+    },
+    {
+        "index": "R13",
+        "imgUrl": "3_1",
+        "prob": "1.0",
+        "resultContent": "偶爾出遊看看世界、認識新朋友，心情也跟著變好了呢！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 13 15",
+            "S + 10 12"
+        ],
+        "willHappenedEvent": [
+            "E5"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R14",
+        "imgUrl": "3_2",
+        "prob": "1.0",
+        "resultContent": "選擇待在家中，身心健康與社交能力大量下降。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 15 18",
+            "S - 15",
+            "H - 15 18"
+        ],
+        "willHappenedEvent": [
+            "E5"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R15",
+        "imgUrl": "3_3",
+        "prob": "1.0",
+        "resultContent": "與老朋友聊聊近況與往事，心情大好",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 10 15",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            "E6"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R16",
+        "imgUrl": "3_4",
+        "prob": "1.0",
+        "resultContent": "一直待在家中，要注意健康...",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 10 15",
+            "S - 15 18",
+            "H - 10 15"
+        ],
+        "willHappenedEvent": [
+            "E6"
+        ],
+        "endEffect": "人際關係也是一種財產， 只要擁有良好的人際關係，獨自一個人不見得會寂寞，若沒有伴侶，朋友是您更好的陪伴。"
+    },
+    {
+        "index": "R17",
+        "imgUrl": "4_1",
+        "prob": "0.5",
+        "resultContent": "餐廳生意興隆，存款跟心情都大增！",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ + 50",
+            "P + 13 15",
+            "H - 15 18",
+            "S + 15 18"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R18",
+        "imgUrl": "4_2",
+        "prob": "0.5",
+        "resultContent": "餐廳營運因缺乏管理不如預期。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 150",
+            "P - 15 18",
+            "H - 12 15",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R19",
+        "imgUrl": "4_2",
+        "prob": "1.0",
+        "resultContent": "餐廳營運因缺乏管理不如預期。",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 150",
+            "P - 10 15",
+            "H - 12",
+            "S + 12"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R20",
+        "imgUrl": "4_3",
+        "prob": "1.0",
+        "resultContent": "還是覺得多放點錢在定存比較保險呢，但與朋友的友情指數下降",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P - 8 12",
+            "S - 10 13"
+        ],
+        "willHappenedEvent": [
+            "E7"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R21",
+        "imgUrl": "5.0",
+        "prob": "1.0",
+        "resultContent": "生大病住院治療，花費驚人",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 50 80",
+            "P - 13 18",
+            "H - 25"
+        ],
+        "willHappenedEvent": [
+            "E8"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R22",
+        "imgUrl": "5_1",
+        "prob": "1.0",
+        "resultContent": "多多運動，出去走走，恢復元氣也認識新朋友",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 15",
+            "S + 10 12"
+        ],
+        "willHappenedEvent": [
+            "E9"
+        ],
+        "endEffect": "培養興趣不只是為了打發時間，熱衷在一件事情的時候會讓人更有活力且自信，訓練心、腦協調手腳的戶外活動讓壽命更健康的延續下去，並擁有快樂的退休人生。"
+    },
+    {
+        "index": "R23",
+        "imgUrl": "",
+        "prob": "1.0",
+        "resultContent": "行動不便，待在家",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            ""
+        ],
+        "willHappenedEvent": [
+            ""
+        ],
+        "endEffect": "你50歲的努力與否，到了80以後就會顯現出來，老化後面臨的挑戰都是源自於逐漸弱化的身體機能，60秒過馬路的時間開始變得倉促，快速便利的手扶梯變成讓您跌倒的陷阱，若沒有固定的活動會加速身體機能喪失，提早面臨照護問題。"
+    },
+    {
+        "index": "R24",
+        "imgUrl": "",
+        "prob": "1.0",
+        "resultContent": "老伴提前走了，心情大受影響，儀式也花了不少錢...",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "$ - 80",
+            "P - 20",
+            "H - 10 12"
+        ],
+        "willHappenedEvent": [
+            "E10"
+        ],
+        "endEffect": ""
+    },
+    {
+        "index": "R25",
+        "imgUrl": "6_1",
+        "prob": "1.0",
+        "resultContent": "培養閱讀習慣，陶冶心靈，耶參加讀書會，認識新朋友",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 18",
+            "H + 10",
+            "S + 10 15"
+        ],
+        "willHappenedEvent": [
+            ""
+        ],
+        "endEffect": "學習新事物促進思考，而不斷的思考有助於大腦活化，不管年紀多少都要保持永恆學習的心態，您會在其中感受到許多樂趣的。"
+    },
+    {
+        "index": "R26",
+        "imgUrl": "6_2",
+        "prob": "1.0",
+        "resultContent": "含飴弄孫，與孩子有也保有良好關係",
+        "year": "",
+        "connectEvent": "",
+        "valueChanged": [
+            "P + 13 15",
+            "H + 12 15",
+            "S + 8 12"
+        ],
+        "willHappenedEvent": [
+            ""
+        ],
+        "endEffect": ""
+    }
+]
