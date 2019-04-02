@@ -362,7 +362,7 @@ class MainGameView2Controller: UIViewController {
                         self.healthLabel.text = " "
                         self.socialLabel.text = " "
                         
-                        let rStr = c1.connectResult[0]!
+                        let rStr = c1.getResult()
                         self.r = self.s.results[rStr]!
                         if(self.r!.img != nil ){
                             self.imageView.image = self.r!.img
@@ -450,7 +450,7 @@ class MainGameView2Controller: UIViewController {
                         self.healthLabel.text = " "
                         self.socialLabel.text = " "
                         
-                        let rStr = c2.connectResult[0]!
+                        let rStr = c2.getResult()
                         self.r = self.s.results[rStr]
                         if(self.r!.img != nil){
                             self.imageView.image = self.r!.img
