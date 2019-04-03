@@ -29,14 +29,12 @@ class AssetConfirmViewController: UIViewController {
     var receivedMedicineInsurance: Int = 0
 
     override func viewWillAppear(_ animated: Bool) {
-        let p = SystemSetting.getPlayer()
-
-        totalMoneyLabel.text = "總資產  " + String(receivedDeposit + receivedStock + receivedFund + receivedAnnuity + receivedMedicineInsurance + p.annuity + p.medicineInsurance) + "萬"
+        totalMoneyLabel.text = "總資產  " + String(receivedDeposit + receivedStock + receivedFund + receivedAnnuity + receivedMedicineInsurance) + "萬"
         
         depositLabel.text = String(receivedDeposit) + "萬"
         stockLabel.text = String(receivedStock) + "萬"
         fundLabel.text = String(receivedFund) + "萬"
-        medicineInsuranceLabel.text = String(p.medicineInsurance + receivedMedicineInsurance) + "萬"
+        medicineInsuranceLabel.text = String(receivedMedicineInsurance) + "萬"
     }
     
     override func viewDidLoad() {
@@ -75,8 +73,8 @@ class AssetConfirmViewController: UIViewController {
         
         p.stock = receivedStock
         p.fund = receivedFund
-        p.annuity += receivedAnnuity
-        p.medicineInsurance += receivedMedicineInsurance
+        p.annuity = receivedAnnuity
+        p.medicineInsurance = receivedMedicineInsurance
         p.deposit = receivedDeposit
     }
     
