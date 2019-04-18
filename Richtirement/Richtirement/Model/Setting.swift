@@ -113,7 +113,7 @@ class PlayerData: Codable {
 
     // 故事內容
     var nowEvent: String = ""
-    var eventIDs: [String] = ["E0"]
+    var eventIDs: [String] = ["E1"]
     var resultTitle: String = ""
     
     func getMoneyPersent() -> Int{

@@ -11,16 +11,16 @@
         "index": "E1",
         "imgUrl": "1.0",
         "prob": "",
-        "eventContent": "60歲了，小孩也都長大了，再五年就可以享受退休生活了，再努力一下吧！",
-        "year": "4.0",
+        "eventContent": "轉眼間也到了再十年就要退休的年紀呢！",
+        "year": "5.0",
         "connectEvent": "Q2"
     },
     {
         "index": "E2",
         "imgUrl": "company",
         "prob": "",
-        "eventContent": "",
-        "year": "1.0",
+        "eventContent": "60歲，開始想像自己的退休生活會是什麼樣的呢？哪種是你嚮往的？",
+        "year": "5.0",
         "connectEvent": "Q5"
     },
     {
