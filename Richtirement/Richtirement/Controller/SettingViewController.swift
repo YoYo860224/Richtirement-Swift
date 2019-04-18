@@ -111,7 +111,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     // Page 4 Slider
     @IBAction func SliderDrag(_ sender: Any) {
         // thumb size is 57
-        sliderValue.text = String(Int(4000 * slider.value) + 1000)
+        sliderValue.text = String(Int(4500 * slider.value) + 500)
         sliderValue.center.x = CGFloat(Float(slider.frame.minX + 14.25) + Float(slider.frame.width - 28.5) * slider.value)
     }
     
