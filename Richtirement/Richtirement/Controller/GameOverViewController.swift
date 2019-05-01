@@ -49,28 +49,30 @@ class GameOverViewController: UIViewController {
         if(gameover == 1){
             backgroundImageView.image = UIImage(named: "money0")
             gameoverResultTextView.text = "資產值歸0\nGameOver"
-            p.resultTitle = "資產值歸0"
+            p.resultTitle = "money0"
         }
         else if(gameover == 2){
             backgroundImageView.image = UIImage(named: "phychological0")
             gameoverResultTextView.text = "心理值歸0\nGameOver"
-            p.resultTitle = "心理值歸0"
+            p.resultTitle = "phychological0"
         }
         else if(gameover == 3){
             backgroundImageView.image = UIImage(named: "healthy0")
             gameoverResultTextView.text = "健康值歸0\nGameOver"
-            p.resultTitle = "健康值歸0"
+            p.resultTitle = "healthy0"
         }
         else if(gameover == 4){
             backgroundImageView.image = UIImage(named: "social0")
             gameoverResultTextView.text = "社交值歸0\nGameOver"
-            p.resultTitle = "社交值歸0"
+            p.resultTitle = "social0"
         }
         
         // Vertical align
         var topCorrection = (gameoverResultTextView.bounds.size.height - gameoverResultTextView.contentSize.height * 1) / 2.0
         topCorrection = max(0, topCorrection)
         gameoverResultTextView.contentInset = UIEdgeInsets(top: topCorrection, left: 0, bottom: 0, right: 0)
+        
+        SystemSetting.save()
     }
 }
 

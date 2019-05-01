@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKtc-Bold.otf">
+            <string>NotoSansCJKtc-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Richtirement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8EX-7y-384">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8EX-7y-384" secondAttribute="height" multiplier="9:16" id="QRl-gU-RtK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUy-p6-cub">
+                                <rect key="frame" x="23.5" y="599" width="328" height="53"/>
+                                <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="LUw-8o-JHc"/>
+                                    <constraint firstAttribute="height" constant="53" id="ggd-em-D3O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="28"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBtn_Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vWW-zw-psz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Retirement Financing  And Living Navigator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbZ-Zi-OZk">
+                                <rect key="frame" x="72" y="103" width="247" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.77863901853561401" green="0.68200486898422241" blue="0.39994150400161743" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Richtirement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-ds-bzc">
+                                <rect key="frame" x="69" y="48" width="250" height="60"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Bold" family="Noto Sans CJK TC" pointSize="38"/>
+                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mUy-p6-cub" firstAttribute="centerX" secondItem="8EX-7y-384" secondAttribute="centerX" id="Kpw-81-TCP"/>
+                            <constraint firstItem="8EX-7y-384" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MAM-tY-MVV"/>
+                            <constraint firstItem="zW6-ds-bzc" firstAttribute="centerX" secondItem="8EX-7y-384" secondAttribute="centerX" id="REx-vW-LjA"/>
+                            <constraint firstItem="mUy-p6-cub" firstAttribute="bottom" secondItem="8EX-7y-384" secondAttribute="bottom" constant="-15" id="Ri2-kb-hZk"/>
+                            <constraint firstItem="8EX-7y-384" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vzx-po-NEX"/>
+                            <constraint firstItem="WbZ-Zi-OZk" firstAttribute="top" secondItem="zW6-ds-bzc" secondAttribute="bottom" id="aaT-eO-aSj"/>
+                            <constraint firstItem="WbZ-Zi-OZk" firstAttribute="width" secondItem="zW6-ds-bzc" secondAttribute="width" id="fn7-Lj-Uvh"/>
+                            <constraint firstAttribute="trailing" secondItem="8EX-7y-384" secondAttribute="trailing" id="geL-VX-fLy"/>
+                            <constraint firstItem="zW6-ds-bzc" firstAttribute="top" secondItem="8EX-7y-384" secondAttribute="top" constant="47" id="h7T-6V-sr8"/>
+                            <constraint firstItem="WbZ-Zi-OZk" firstAttribute="centerX" secondItem="zW6-ds-bzc" secondAttribute="centerX" id="lz9-i6-VXH"/>
+                            <constraint firstItem="8EX-7y-384" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="olY-8S-X8L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="VS8-3n-5De" kind="presentation" identifier="first" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Umy-mh-WvQ"/>
+                        <segue destination="6a4-MN-5R5" kind="presentation" identifier="normal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="O9p-qr-xeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="-134.5108695652174"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="0eZ-98-Qkr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="VS8-3n-5De" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rvy-od-SaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="-185"/>
+        </scene>
+        <!--RecordSelect-->
+        <scene sceneID="nhu-3I-06T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecordSelect" id="6a4-MN-5R5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YPg-O1-9wA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzw-PF-a6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Splash_bg" width="375" height="667"/>
+    </resources>
+</document>

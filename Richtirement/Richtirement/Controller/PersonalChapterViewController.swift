@@ -95,6 +95,8 @@ class RecordBlock: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 130))
         
         bigIndex = player.bigIndex
+        print("resultTitle")
+        print(player.resultTitle)
         if player.resultTitle == "" {
             let c = (player.age - 55) / 5 + 1
             chapterName = "章節 " + String(c)
@@ -123,6 +125,19 @@ class RecordBlock: UIView {
             else if chapterName == "急需策略者" {
                 blockImage = UIImage(named: "life_nothing but money")!
             }
+//            else if chapterName == "money0" {
+//                blockImage = UIImage(named: "money0")!
+//            }
+//            else if chapterName == "phychological0" {
+//                blockImage = UIImage(named: "phychological0")!
+//            }
+//            else if chapterName == "healthy0" {
+//                blockImage = UIImage(named: "healthy0")!
+//            }
+//            else if chapterName == "social0" {
+//                blockImage = UIImage(named: "social0")!
+//            }
+            
         }
     
         initSelf()

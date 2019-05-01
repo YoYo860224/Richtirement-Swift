@@ -165,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="465"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a7w-Q7-uf1">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="795"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfw-iZ-XRX">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -448,8 +448,118 @@
                                                             <constraint firstAttribute="trailing" secondItem="0hy-DC-zcN" secondAttribute="trailing" constant="100" id="rpy-TA-gFW"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-U4-o1k">
+                                                        <rect key="frame" x="0.0" y="520" width="375" height="90"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="儲蓄險" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRo-bv-lhe">
+                                                                <rect key="frame" x="20" y="6" width="72" height="36"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="24"/>
+                                                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700 萬" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pei-iW-fA3">
+                                                                <rect key="frame" x="305" y="10" width="55" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="19"/>
+                                                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-b7-vqx">
+                                                                <rect key="frame" x="34" y="52" width="243" height="31"/>
+                                                                <color key="tintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="thumbTintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <action selector="MedicineUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="Gyq-p6-Ztn"/>
+                                                                    <action selector="SavingsUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="nfl-7r-CtN"/>
+                                                                    <action selector="fundUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="uth-BF-Zqd"/>
+                                                                </connections>
+                                                            </slider>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eb-Ka-lpp">
+                                                                <rect key="frame" x="0.0" y="87" width="375" height="3"/>
+                                                                <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="3" id="4Mf-fX-B17"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yut-Ck-vEO">
+                                                                <rect key="frame" x="317" y="53" width="43" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="19"/>
+                                                                <color key="textColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="e4i-b7-vqx" secondAttribute="trailing" constant="100" id="4aQ-mx-kRn"/>
+                                                            <constraint firstItem="qRo-bv-lhe" firstAttribute="top" secondItem="Veg-U4-o1k" secondAttribute="top" constant="6" id="8NN-Br-J5J"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yut-Ck-vEO" secondAttribute="trailing" constant="15" id="BxP-Y5-6IC"/>
+                                                            <constraint firstItem="yut-Ck-vEO" firstAttribute="centerY" secondItem="e4i-b7-vqx" secondAttribute="centerY" id="Fvf-9J-7IL"/>
+                                                            <constraint firstItem="0eb-Ka-lpp" firstAttribute="leading" secondItem="Veg-U4-o1k" secondAttribute="leading" id="O7v-rt-6Ej"/>
+                                                            <constraint firstItem="e4i-b7-vqx" firstAttribute="top" secondItem="qRo-bv-lhe" secondAttribute="bottom" constant="10" id="RLt-Et-Czj"/>
+                                                            <constraint firstAttribute="height" constant="90" id="RPN-rv-6Cl"/>
+                                                            <constraint firstAttribute="bottom" secondItem="0eb-Ka-lpp" secondAttribute="bottom" id="Ru5-am-QRo"/>
+                                                            <constraint firstItem="qRo-bv-lhe" firstAttribute="leading" secondItem="Veg-U4-o1k" secondAttribute="leading" constant="20" id="SIC-ol-USx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Pei-iW-fA3" secondAttribute="trailing" constant="15" id="Wbw-1L-npP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="0eb-Ka-lpp" secondAttribute="trailing" id="ZZ5-aO-5mK"/>
+                                                            <constraint firstItem="Pei-iW-fA3" firstAttribute="centerY" secondItem="qRo-bv-lhe" secondAttribute="centerY" id="rCu-AN-AXS"/>
+                                                            <constraint firstItem="e4i-b7-vqx" firstAttribute="leading" secondItem="Veg-U4-o1k" secondAttribute="leading" constant="36" id="v1F-gu-r8j"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHa-Zc-pN1">
+                                                        <rect key="frame" x="0.0" y="610" width="375" height="90"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意外險" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-0m-ztt">
+                                                                <rect key="frame" x="20" y="6" width="72" height="36"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="24"/>
+                                                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700 萬" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wc-rx-htt">
+                                                                <rect key="frame" x="305" y="10" width="55" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="19"/>
+                                                                <color key="textColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1Ch-5j-HRd">
+                                                                <rect key="frame" x="34" y="52" width="243" height="31"/>
+                                                                <color key="tintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="thumbTintColor" red="1" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <action selector="MedicineUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="d5F-Sd-6bx"/>
+                                                                    <action selector="accidentUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="ghe-YT-53g"/>
+                                                                    <action selector="fundUISlider:" destination="bLC-S9-rjM" eventType="valueChanged" id="YfX-t5-Bp8"/>
+                                                                </connections>
+                                                            </slider>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7T-Zl-kux">
+                                                                <rect key="frame" x="0.0" y="87" width="375" height="3"/>
+                                                                <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="3" id="gTE-bR-bF5"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baJ-DG-9pD">
+                                                                <rect key="frame" x="317" y="53" width="43" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="19"/>
+                                                                <color key="textColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="8Wc-rx-htt" secondAttribute="trailing" constant="15" id="GNR-Kt-VIC"/>
+                                                            <constraint firstItem="1Ch-5j-HRd" firstAttribute="leading" secondItem="vHa-Zc-pN1" secondAttribute="leading" constant="36" id="K7b-dw-Ewi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1Ch-5j-HRd" secondAttribute="trailing" constant="100" id="NE3-uD-5iZ"/>
+                                                            <constraint firstItem="1Ch-5j-HRd" firstAttribute="top" secondItem="sq5-0m-ztt" secondAttribute="bottom" constant="10" id="OJc-iF-6Bd"/>
+                                                            <constraint firstItem="sq5-0m-ztt" firstAttribute="top" secondItem="vHa-Zc-pN1" secondAttribute="top" constant="6" id="Oc3-NT-FLf"/>
+                                                            <constraint firstItem="baJ-DG-9pD" firstAttribute="centerY" secondItem="1Ch-5j-HRd" secondAttribute="centerY" id="WRb-eZ-Ofz"/>
+                                                            <constraint firstAttribute="height" constant="90" id="ZXR-ed-gPV"/>
+                                                            <constraint firstItem="8Wc-rx-htt" firstAttribute="centerY" secondItem="sq5-0m-ztt" secondAttribute="centerY" id="ZbP-mS-ElI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="w7T-Zl-kux" secondAttribute="bottom" id="cAi-Tj-wQu"/>
+                                                            <constraint firstItem="w7T-Zl-kux" firstAttribute="leading" secondItem="vHa-Zc-pN1" secondAttribute="leading" id="gun-bG-dbx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="baJ-DG-9pD" secondAttribute="trailing" constant="15" id="j1k-yd-arw"/>
+                                                            <constraint firstItem="sq5-0m-ztt" firstAttribute="leading" secondItem="vHa-Zc-pN1" secondAttribute="leading" constant="20" id="tDu-Su-uvk"/>
+                                                            <constraint firstAttribute="trailing" secondItem="w7T-Zl-kux" secondAttribute="trailing" id="wxC-sY-AqE"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tra-f7-vJM">
-                                                        <rect key="frame" x="0.0" y="520" width="375" height="95"/>
+                                                        <rect key="frame" x="0.0" y="700" width="375" height="95"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvO-8e-uCs">
                                                                 <rect key="frame" x="23" y="35" width="329" height="48"/>
@@ -503,6 +613,10 @@
                         <viewLayoutGuide key="safeArea" id="rMA-hw-zqR"/>
                     </view>
                     <connections>
+                        <outlet property="accidentInsuranceUISlider" destination="1Ch-5j-HRd" id="8VV-Gh-ahJ"/>
+                        <outlet property="accidentLabel" destination="8Wc-rx-htt" id="YSL-AZ-kAp"/>
+                        <outlet property="accidentPersent" destination="baJ-DG-9pD" id="diI-P9-We5"/>
+                        <outlet property="accidentView" destination="vHa-Zc-pN1" id="j7S-OR-vLw"/>
                         <outlet property="annuityLabel" destination="0Fd-JM-4Bd" id="4pY-8E-QUa"/>
                         <outlet property="annuityPersent" destination="VFc-4D-cxL" id="h4M-XS-l0h"/>
                         <outlet property="annuityUISlider" destination="xhG-t7-HUk" id="MXH-8L-VRe"/>
@@ -520,6 +634,10 @@
                         <outlet property="medicineLabel" destination="2Iq-Yi-fT0" id="YJ6-Q2-gx5"/>
                         <outlet property="medicinePersent" destination="1VN-6r-hhZ" id="yi1-Ge-dNt"/>
                         <outlet property="medicineView" destination="RDR-54-02e" id="29w-wf-FjB"/>
+                        <outlet property="savingsInsuranceUISlider" destination="e4i-b7-vqx" id="P1k-Fs-HDj"/>
+                        <outlet property="savingsLabel" destination="Pei-iW-fA3" id="gIy-Tl-BVR"/>
+                        <outlet property="savingsPersent" destination="yut-Ck-vEO" id="7Ub-UX-KrG"/>
+                        <outlet property="savingsView" destination="Veg-U4-o1k" id="usD-wu-992"/>
                         <outlet property="stockLabel" destination="U3M-Fc-dFQ" id="PMY-In-AnU"/>
                         <outlet property="stockPersent" destination="qpu-o8-u1X" id="Uke-hv-M4A"/>
                         <outlet property="stockUISlider" destination="WNJ-F8-Qdg" id="cs8-ng-jaD"/>
@@ -972,9 +1090,11 @@
                         <viewLayoutGuide key="safeArea" id="V89-VF-6dW"/>
                     </view>
                     <connections>
+                        <outlet property="accidentInsuranceLabel" destination="lqj-rm-KQc" id="8Ph-AI-xY3"/>
                         <outlet property="depositLabel" destination="TCM-TD-AMz" id="gIJ-bF-M0h"/>
                         <outlet property="fundLabel" destination="3tU-vd-0Ct" id="fSv-Vp-HN0"/>
                         <outlet property="medicineInsuranceLabel" destination="CbV-y0-CFz" id="R3f-2O-yat"/>
+                        <outlet property="savingsInsuranceLabel" destination="O7T-ef-5Hq" id="Xh9-9p-vmY"/>
                         <outlet property="stockLabel" destination="i0f-gW-UV2" id="8Zk-3p-5XC"/>
                         <outlet property="topBGView" destination="w8m-MJ-dhM" id="uxI-Jt-kol"/>
                         <outlet property="totalMoneyLabel" destination="pRs-gl-vPA" id="fCV-35-6P2"/>

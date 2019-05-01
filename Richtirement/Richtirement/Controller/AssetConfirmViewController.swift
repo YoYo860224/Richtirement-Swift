@@ -22,11 +22,17 @@ class AssetConfirmViewController: UIViewController {
     
     @IBOutlet weak var medicineInsuranceLabel: UILabel!
     
+    @IBOutlet weak var accidentInsuranceLabel: UILabel!
+    
+    @IBOutlet weak var savingsInsuranceLabel: UILabel!
+    
     var receivedDeposit: Int = 0
     var receivedStock: Int = 0
     var receivedFund: Int = 0
     var receivedAnnuity: Int = 0
     var receivedMedicineInsurance: Int = 0
+    var receivedSavingsInsurance: Int = 0
+    var receivedAccidentInsurance: Int = 0
 
     override func viewWillAppear(_ animated: Bool) {
         totalMoneyLabel.text = "總資產  " + String(receivedDeposit + receivedStock + receivedFund + receivedAnnuity + receivedMedicineInsurance) + "萬"
@@ -35,6 +41,8 @@ class AssetConfirmViewController: UIViewController {
         stockLabel.text = String(receivedStock) + "萬"
         fundLabel.text = String(receivedFund) + "萬"
         medicineInsuranceLabel.text = String(receivedMedicineInsurance) + "萬"
+        savingsInsuranceLabel.text = String(receivedSavingsInsurance) + "萬"
+        accidentInsuranceLabel.text = String(receivedAccidentInsurance) + "萬"
     }
     
     override func viewDidLoad() {
@@ -63,6 +71,8 @@ class AssetConfirmViewController: UIViewController {
             secondVC.receivedFund = receivedFund
             secondVC.receivedAnnuity = receivedAnnuity
             secondVC.receivedMedicineInsurance = receivedMedicineInsurance
+            secondVC.receivedSavingsInsurance = receivedSavingsInsurance
+            secondVC.receivedAccidentInsurance = receivedAccidentInsurance
             
             secondVC.receivedDeposit = receivedDeposit
         }
@@ -75,6 +85,8 @@ class AssetConfirmViewController: UIViewController {
         p.fund = receivedFund
         p.annuity = receivedAnnuity
         p.medicineInsurance = receivedMedicineInsurance
+        p.savingsInsurance = receivedSavingsInsurance
+        p.accidentInsurance = receivedAccidentInsurance
         p.deposit = receivedDeposit
     }
     

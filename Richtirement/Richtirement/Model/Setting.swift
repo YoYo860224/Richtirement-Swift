@@ -103,6 +103,8 @@ class PlayerData: Codable {
     var fund: Int = 0                   // 基金
     var annuity: Int = 0                // 年金
     var medicineInsurance: Int = 0      // 醫療險
+    var savingsInsurance: Int = 0       // 儲蓄險
+    var accidentInsurance: Int = 0      // 意外險
     
     var resultRecord: [String] = []
     

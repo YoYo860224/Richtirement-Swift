@@ -24,6 +24,8 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var fundUISlider: UISlider!
     @IBOutlet weak var annuityUISlider: UISlider!
     @IBOutlet weak var medicineInsuranceUISlider: UISlider!
+    @IBOutlet weak var savingsInsuranceUISlider: UISlider!
+    @IBOutlet weak var accidentInsuranceUISlider: UISlider!
     
     @IBOutlet weak var depositLabel: UILabel!
     @IBOutlet weak var depositPersent: UILabel!
@@ -40,8 +42,16 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var medicineLabel: UILabel!
     @IBOutlet weak var medicinePersent: UILabel!
     
+    @IBOutlet weak var savingsLabel: UILabel!
+    @IBOutlet weak var savingsPersent: UILabel!
+    
+    @IBOutlet weak var accidentLabel: UILabel!
+    @IBOutlet weak var accidentPersent: UILabel!
+    
     @IBOutlet weak var annuityView: UIView!
     @IBOutlet weak var medicineView: UIView!
+    @IBOutlet weak var savingsView: UIView!
+    @IBOutlet weak var accidentView: UIView!
     
 //    override func viewWillAppear(_ animated: Bool) {
 //    }
@@ -67,6 +77,8 @@ class AssetViewController: UIViewController {
         if(p.age > 65){
             annuityView.isHidden = true
             medicineView.isHidden = true
+            savingsView.isHidden = true
+            accidentView.isHidden = true
         }
     }
     
@@ -76,12 +88,16 @@ class AssetViewController: UIViewController {
     var tempFund = 0
     var tempAnnuity = 0
     var tempMedicineInsurance = 0
+    var tempSavingsInsurance = 0
+    var tempAccidentInsurance = 0
     
     var receivedDeposit: Int = 0
     var receivedStock: Int = 0
     var receivedFund: Int = 0
     var receivedAnnuity: Int = 0
     var receivedMedicineInsurance: Int = 0
+    var receivedSavingsInsurance: Int = 0
+    var receivedAccidentInsurance: Int = 0
     
     @IBAction func stockUISlider(_ sender: UISlider) {
         sliderValueChanged(index: 0)
@@ -95,6 +111,13 @@ class AssetViewController: UIViewController {
     @IBAction func MedicineUISlider(_ sender: UISlider) {
         sliderValueChanged(index: 3)
     }
+    @IBAction func SavingsUISlider(_ sender: UISlider) {
+        sliderValueChanged(index: 4)
+    }
+    @IBAction func accidentUISlider(_ sender: UISlider) {
+        sliderValueChanged(index: 5)
+    }
+    
     
     func sliderValueChanged(index: Int){
         let p = SystemSetting.getPlayer()
@@ -102,33 +125,46 @@ class AssetViewController: UIViewController {
         let fundSlideValue = Float(fundUISlider.value)
         let annuitySlideValue = Float(annuityUISlider.value)
         let medicineInsuranceSlideValue = Float(medicineInsuranceUISlider.value)
-        tempDeposit = Int(Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue)
+        let savingsSlideValue = Float(savingsInsuranceUISlider.value)
+        let accidentSlideValue = Float(accidentInsuranceUISlider.value)
+        
+        tempDeposit = Int(Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue - savingsSlideValue - accidentSlideValue)
         
         if(tempDeposit <= 0){
             if(index == 0){
-                stockUISlider.value = Float(tempTotalMoney) - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue
+                stockUISlider.value = Float(tempTotalMoney) - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue - savingsSlideValue - accidentSlideValue
             }
             else if (index == 1){
-                fundUISlider.value = Float(tempTotalMoney) - stockSlideValue - annuitySlideValue - medicineInsuranceSlideValue
+                fundUISlider.value = Float(tempTotalMoney) - stockSlideValue - annuitySlideValue - medicineInsuranceSlideValue - savingsSlideValue - accidentSlideValue
             }
             else if(index == 2){
-                annuityUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - medicineInsuranceSlideValue
+                annuityUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - medicineInsuranceSlideValue - savingsSlideValue - accidentSlideValue
             }
             else if(index == 3){
-                medicineInsuranceUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue
+                medicineInsuranceUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue - savingsSlideValue - accidentSlideValue
+            }
+            else if(index == 4){
+                savingsInsuranceUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue - accidentSlideValue
+            }
+            else if(index == 5){
+                accidentInsuranceUISlider.value = Float(tempTotalMoney) - stockSlideValue - fundSlideValue - annuitySlideValue - medicineInsuranceSlideValue - savingsSlideValue
             }
         }
         tempStock = Int(stockUISlider.value)
         tempFund = Int(fundUISlider.value)
         tempAnnuity = Int(annuityUISlider.value)
         tempMedicineInsurance = Int(medicineInsuranceUISlider.value)
-
-        tempDeposit = Int(Float(tempTotalMoney) - Float(tempFund) - Float(tempStock) - Float(tempAnnuity) - Float(tempMedicineInsurance))
+        tempSavingsInsurance = Int(savingsInsuranceUISlider.value)
+        tempAccidentInsurance = Int(accidentInsuranceUISlider.value)
+        
+        
+        tempDeposit = Int(Float(tempTotalMoney) - Float(tempFund) - Float(tempStock) - Float(tempAnnuity) - Float(tempMedicineInsurance) - Float(tempSavingsInsurance) - Float(tempAccidentInsurance))
 
         depositUISlider.value = Float(tempDeposit)
         
+        
         assetPersent.text = String(Int(depositUISlider.value / Float(tempTotalMoney) * 100)) + "%"
-        insurancePersent.text = String(Int(Float(tempAnnuity + tempMedicineInsurance) / Float(tempTotalMoney) * 100)) + "%"
+        insurancePersent.text = String(Int(Float(tempAnnuity + tempMedicineInsurance + tempSavingsInsurance + tempAccidentInsurance) / Float(tempTotalMoney) * 100)) + "%"
         investPersent.text = String(Int((stockUISlider.value + fundUISlider.value) / Float(tempTotalMoney) * 100)) + "%"
         
         depositLabel.text = String(tempDeposit) + "萬"
@@ -145,6 +181,12 @@ class AssetViewController: UIViewController {
         
         medicineLabel.text = String(tempMedicineInsurance) + "萬"
         medicinePersent.text = String(Int(medicineInsuranceUISlider.value - Float(p.medicineInsurance))) + "%"
+        
+        savingsLabel.text = String(tempSavingsInsurance) + "萬"
+        savingsPersent.text = String(Int(savingsInsuranceUISlider.value - Float(p.savingsInsurance))) + "%"
+        
+        accidentLabel.text = String(tempAccidentInsurance) + "萬"
+        accidentPersent.text = String(Int(accidentInsuranceUISlider.value - Float(p.accidentInsurance))) + "%"
     }
     
     func getMoney(){
@@ -184,8 +226,22 @@ class AssetViewController: UIViewController {
         else{
             tempMedicineInsurance = p.medicineInsurance
         }
+
+        if(receivedSavingsInsurance != p.savingsInsurance && receivedSavingsInsurance != 0){
+            tempSavingsInsurance = receivedSavingsInsurance
+        }
+        else{
+            tempSavingsInsurance = p.savingsInsurance
+        }
         
-        tempTotalMoney = tempDeposit + tempStock + tempFund + tempAnnuity + tempMedicineInsurance
+        if(receivedAccidentInsurance != p.accidentInsurance && receivedAccidentInsurance != 0){
+            tempAccidentInsurance = receivedAccidentInsurance
+        }
+        else{
+            tempAccidentInsurance = p.accidentInsurance
+        }
+
+        tempTotalMoney = tempDeposit + tempStock + tempFund + tempAnnuity + tempMedicineInsurance + tempSavingsInsurance + tempAccidentInsurance
 
         depositUISlider.maximumValue = Float(tempTotalMoney)
         stockUISlider.maximumValue = Float(tempTotalMoney)
@@ -193,9 +249,13 @@ class AssetViewController: UIViewController {
         
         annuityUISlider.minimumValue = Float(p.annuity)
         medicineInsuranceUISlider.minimumValue = Float(p.medicineInsurance)
+        savingsInsuranceUISlider.minimumValue = Float(p.savingsInsurance)
+        accidentInsuranceUISlider.minimumValue = Float(p.accidentInsurance)
+        
         annuityUISlider.maximumValue = Float(p.annuity) + 100
         medicineInsuranceUISlider.maximumValue = Float(p.medicineInsurance) + 100
-        
+        savingsInsuranceUISlider.maximumValue = Float(p.accidentInsurance) + 100
+        accidentInsuranceUISlider.maximumValue = Float(p.accidentInsurance) + 100
         
         totalMoneyLabel.text = "總資產  " + String(tempTotalMoney) + "萬"
         depositUISlider.value = Float(tempDeposit)
@@ -203,11 +263,14 @@ class AssetViewController: UIViewController {
         fundUISlider.value = Float(tempFund)
         annuityUISlider.value = Float(tempAnnuity)
         medicineInsuranceUISlider.value = Float(tempMedicineInsurance)
-
+        savingsInsuranceUISlider.value = Float(tempSavingsInsurance)
+        accidentInsuranceUISlider.value = Float(tempAccidentInsurance)
+        
+        
         assetPersent.text = String(Int(depositUISlider.value / Float(tempTotalMoney) * 100)) + "%"
-        insurancePersent.text = String(Int(Float(tempAnnuity + tempMedicineInsurance) / Float(tempTotalMoney) * 100)) + "%"
+        insurancePersent.text = String(Int(Float(tempAnnuity + tempMedicineInsurance + tempSavingsInsurance + tempAccidentInsurance) / Float(tempTotalMoney) * 100)) + "%"
         investPersent.text = String(Int((stockUISlider.value + fundUISlider.value) / Float(tempTotalMoney) * 100)) + "%"
-
+        
         depositLabel.text = String(tempDeposit) + "萬"
         depositPersent.text = String(Int(depositUISlider.value / Float(tempTotalMoney) * 100)) + "%"
         
@@ -222,6 +285,12 @@ class AssetViewController: UIViewController {
         
         medicineLabel.text = String(tempMedicineInsurance) + "萬"
         medicinePersent.text = String(Int(medicineInsuranceUISlider.value - Float(p.medicineInsurance))) + "%"
+        
+        savingsLabel.text = String(tempSavingsInsurance) + "萬"
+        savingsPersent.text = String(Int(savingsInsuranceUISlider.value - Float(p.savingsInsurance))) + "%"
+        
+        accidentLabel.text = String(tempAccidentInsurance) + "萬"
+        accidentPersent.text = String(Int(accidentInsuranceUISlider.value - Float(p.accidentInsurance))) + "%"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -232,13 +301,17 @@ class AssetViewController: UIViewController {
             let fund = Int(Float(fundUISlider.value))
             let annuity = Int(Float(annuityUISlider.value))
             let medicineInsurance = Int(Float(medicineInsuranceUISlider.value))
+            let savingsInsurance = Int(Float(savingsInsuranceUISlider.value))
+            let accidentInsurance = Int(Float(accidentInsuranceUISlider.value))
             
             secondVC.receivedStock = stock
             secondVC.receivedFund = fund
             secondVC.receivedAnnuity = annuity
             secondVC.receivedMedicineInsurance = medicineInsurance
-
-            secondVC.receivedDeposit = tempTotalMoney - stock - fund - annuity - medicineInsurance
+            secondVC.receivedSavingsInsurance = savingsInsurance
+            secondVC.receivedAccidentInsurance = accidentInsurance
+            
+            secondVC.receivedDeposit = tempTotalMoney - stock - fund - annuity - medicineInsurance - savingsInsurance - accidentInsurance
         }
     }
 }
