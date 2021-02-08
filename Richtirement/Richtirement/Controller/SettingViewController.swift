@@ -60,6 +60,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         bottomLine.backgroundColor = UIColor.white.cgColor
         nameTF.borderStyle = UITextField.BorderStyle.none
         nameTF.layer.addSublayer(bottomLine)
+        nameTF.text = "Player"
         
         // Page2 gender select
         maleRdBtn.check()
